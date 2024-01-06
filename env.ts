@@ -1,14 +1,16 @@
 import { config } from 'dotenv'
 import populateEnv from 'populate-env'
 
-
 config()
 
-export let env = {
-    DB_NAME:'',
-    DB_USER:'',
-    DB_PASSWORD:'',
-    SESSION_SECRET:'',
+export const env = {
+  PORT:8200,
+  NODE_ENV:'development',
+  DB_HOST: 'localhost',
+  DB_PORT: 5432,
+  DB_NAME: '',
+  DB_USERNAME: '',
+  DB_PASSWORD: '',
 }
 
-populateEnv(env,{ mode:'halt'})
+populateEnv(env, { mode: 'halt' })

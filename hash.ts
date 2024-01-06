@@ -13,3 +13,4 @@ export function comparePassword (options:{
 }):Promise<boolean>{
     return compare(options.password, options.password_hash)
 }
+

@@ -1,11 +1,7 @@
-import pg from 'pg'
+import Knex from 'knex'
 import { env } from './env'
 
+let config = require('./knexfile')
+let profile = config[env.NODE_ENV]
 
-export let client = new pg.Client({
-    user: env.DB_USER,
-    password: env.DB_PASSWORD,
-    database: env.DB_NAME,
-})
-
-client.connect()
+export let knex = Knex(profile)
