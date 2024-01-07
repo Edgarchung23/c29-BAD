@@ -19,7 +19,7 @@ env:
   PM2_NAME: c29-bad-grp3
 
 jobs:
-  test:
+  testing:
     runs-on: ubuntu-latest
     container: node:20.10.0-slim
     services:
