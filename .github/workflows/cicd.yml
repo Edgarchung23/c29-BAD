@@ -13,7 +13,7 @@ env:
   POSTGRES_PORT: 5432
   NODE_ENV: ci
   SERVER_USER: c29-bad-grp3
-  SERVER_DOMAIN: bad/bad011/c29-bad-grp3
+  SERVER_DOMAIN: Project/c29-BAD-GRP3
   SERVER_HOST: c29bad
   SERVER_DIR: ~/c29-bad-grp3
   PM2_NAME: c29-bad-grp3
