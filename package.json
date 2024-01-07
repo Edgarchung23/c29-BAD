@@ -1,5 +1,5 @@
 {
-  "name": "c29-BAD-GRP3",
+  "name": "c29-bad-grp3",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,8 +7,7 @@
     "test": "npm run type-check && npm run jest",
     "type-check": "tsc --noEmit",
     "jest": "jest --runInBand",
-    "start": "ts-node-dev server.ts",
-    "build": "tsc -p ."
+    "start": "ts-node-dev server.ts"
   },
   "keywords": [],
   "author": "",
