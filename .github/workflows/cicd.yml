@@ -41,29 +41,29 @@ jobs:
         run: |
           npm test
   build:
-    runs-on: ubuntu-latest
-    container: node:20.10.0-slim
-    steps:
+     runs-on: ubuntu-latest
+     container: node:20.10.0-slim
+     steps:
        - uses: actions/checkout@v3
        - name: install dependencies
          run: |
           npm install
-              - name: build typescript project
-                run: |
-                  npm run build
-              - name: prepare archive built files
-                run: |
-                  mkdir -p release
-                  mv package.json dist public release
-              - name: upload release archive
-                uses: actions/upload-artifact@v4
-                with:
-                  name: release-archive
-                  path: BAD/BAD011/03-dark-forest/release
+       - name: build typescript project
+         run: |
+          npm run build
+       - name: prepare archive built files
+         run: |
+          mkdir -p release
+          mv package.json dist public release
+       - name: upload release archive
+         uses: actions/upload-artifact@v4
+         with:
+            name: release-archive
+            path: BAD/BAD011/03-dark-forest/release
 
   deploy:
     if: github.ref_name == 'production'
-    needs: [test, build]
+    needs: [testing, build]
     runs-on: ubuntu-latest
     steps:
       - name: add server fingerprint
@@ -73,7 +73,7 @@ jobs:
          ssh-keyscan ${{env.SERVER_DOMAIN}} >> known_hosts
       - name: save ssh private key
         run: |
-         echo "${{secrets.SSH_PRIVATE_KEY}}" > ~/.ssh/key.pem
+          echo "${{secrets.SSH_PRIVATE_KEY}}" > ~/.ssh/key.pem
       - name: chmod ssh private key
         run: |
          chmod 400 ~/.ssh/key.pem
