@@ -21,15 +21,15 @@ describe('Migration TestSuit', () => {
   })
 })
 
-// describe('Seed TestSuit', () => {
-//   it('should populate seed data', async () => {
-//     await knex.seed.run()
+describe('Seed TestSuit', () => {
+  it('should populate seed data', async () => {
+    await knex.seed.run()
 
-//     let tables = ['user', 'memo']
+    let tables = ['user', 'memo']
 
-//     for (let table of tables) {
-//       let row = await knex.count('id as count').from(table).first()
-//       expect(+row.count).toBeGreaterThan(0)
-//     }
-//   })
-// })
+    for (let table of tables) {
+      let row = await knex.count('id as count').from(table).first()
+      expect(+row.count).toBeGreaterThan(0)
+    }
+  })
+})
