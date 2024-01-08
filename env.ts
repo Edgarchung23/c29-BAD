@@ -65,7 +65,7 @@ function loadEnv() {
     }
     default:
       throw new Error('Unknown NODE_ENV: ' + env.NODE_ENV)
-  }web-scraper-
+  }
 }
 
 export const env = loadEnv()
