@@ -4,8 +4,6 @@ export interface UserService {
     register(input:{
         username: string
         password:string
-        avatar:string | null
         email: string
-        tel: string
     }):Promise<{ id : number}>
 }

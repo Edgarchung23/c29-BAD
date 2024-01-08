@@ -1,15 +1,19 @@
-import { Client } from "pg";
 import { UserService } from "./user.service";
 import { HttpError } from "../http.error";
+import { Knex } from "knex";
 
 export class UserServiceImpl implements UserService {
-  constructor(private client: Client) {}
+  constructor(private knex: Knex) {}
 
-  login(input: {
+  async login(input: {
     username: string;
     password: string;
   }): Promise<{ id: number }> {
-    throw new HttpError(501, "Method not implemented.");
+    let user = await this.knex("user")
+      .select("id", "password__pash")
+      .where({ username: input.username })
+      .first();
+    if(!user)
   }
 
   register(input: {
@@ -19,6 +23,6 @@ export class UserServiceImpl implements UserService {
     email: string;
     tel: string;
   }): Promise<{ id: number }> {
-    throw new HttpError(501, 'Method not implemented.')
+    throw new HttpError(501, "Method not implemented.");
   }
 }
