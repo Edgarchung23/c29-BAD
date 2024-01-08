@@ -15,8 +15,8 @@ function loadEnv() {
         NODE_ENV: 'development',
         TEST_DB_HOST: 'localhost',
         TEST_DB_PORT: 5432,
-        TEST_DB_NAME: '',
-        TEST_DB_USERNAME: '',
+        TEST_DB_NAME: 'c29-bad-grp3',
+        TEST_DB_USERNAME: 'postgres',
         TEST_DB_PASSWORD: '',
       }
       populateEnv(env, { mode: 'halt' })
@@ -56,8 +56,8 @@ function loadEnv() {
         NODE_ENV: 'development',
         DB_HOST: 'localhost',
         DB_PORT: 5432,
-        DB_NAME: '',
-        DB_USERNAME: '',
+        DB_NAME: 'c29-bad-grp3',
+        DB_USERNAME: 'postgres',
         DB_PASSWORD: '',
       }
       populateEnv(env, { mode: 'halt' })

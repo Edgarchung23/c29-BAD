@@ -14,7 +14,7 @@ async function getFormulaOneDrivers(){
         const $ = cheerio.load(body);
 
         //Create empty array
-        const items = [];
+        const items: { rank: string; points: string; firstName: string; lastName: string; team: string; photo: string | undefined; }[] = [];
 
         // Selection Each col-12 class name and iterate through the list
         $('.listing-items--wrapper >.row >.col-12').map((i, el) => {
