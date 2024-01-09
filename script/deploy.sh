@@ -1,8 +1,10 @@
 set -e
 set -o pipefail
+
+
 steps=4
 server=c29bad
-server_dir="c29-bad-grp3"
+server_dir="~/c29-bad-grp3"
 echo ==========[1/$steps] Build Typescript Project ... ==========
 npm run build
 
