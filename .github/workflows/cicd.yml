@@ -13,7 +13,7 @@ env:
   POSTGRES_PORT: 5432
   NODE_ENV: ci
   SERVER_USER: c29-bad-grp3
-  SERVER_HOST: https://c29-bad-grp3.yodaandkeungjai.com/
+  SERVER_HOST: c29-bad-grp3.yodaandkeungjai.com
 
 jobs:
   testing:
@@ -40,7 +40,7 @@ jobs:
         run: |
           mkdir -p ~/.ssh
           cd ~/.ssh
-          ssh keyscan ${{env.SERVER_HOST}} >> known_hosts
+          ssh-keyscan ${{env.SERVER_HOST}} >> known_hosts
 
       - name: save ssh private key
         run: |
