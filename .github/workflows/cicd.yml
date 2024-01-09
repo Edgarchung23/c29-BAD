@@ -58,7 +58,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: release-archive
-          path: /release
+          path: ./release
   deploy:
     if: github.ref_name == 'production'
     needs: build
@@ -91,7 +91,7 @@ jobs:
         uses: actions/download-artifact@v4
         with: 
           name: release-archive
-          path: /release
+          path: ./release
       - name: upload to server
         run: |
          ls -l
