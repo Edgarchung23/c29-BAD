@@ -57,7 +57,7 @@ jobs:
           Host ${{env.SERVER_HOST}}
             Hostname ${{env.SERVER_DOMAIN}}
             User ${{env.SERVER_USER}}
-            IdentityFile = ~/.ssh/key.pem
+            IdentityFile ~/.ssh/c29-bad-ec2
           " > ~/.ssh/config
       - name: check connection to sever
         run: |
