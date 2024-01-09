@@ -54,7 +54,7 @@ jobs:
         run: |
           mkdir -p release
           mv package.json dist public release
-      - name: upload release archive
+      - name: archive release files
         uses: actions/upload-artifact@v4
         with:
           name: release-archive
@@ -70,15 +70,12 @@ jobs:
           mkdir -p ~/.ssh
           cd ~/.ssh
           ssh-keyscan ${{env.SERVER_DOMAIN}} >> known_hosts
-
       - name: save ssh private key
         run: |
            echo "${{secrets.SSH_PRIVATE_KEY}}" > ~/.ssh/key.pem
-          
       - name: chmod ssh private key
         run: |
-          chmod 400 ~/.ssh/key.pem
-
+          chmod 400 ~/.ssh/key.pem 
       - name: setup ssh config
         run: |
           echo "
@@ -90,13 +87,11 @@ jobs:
       - name: check connection to sever
         run: |
           ssh ${{env.SERVER_HOST}}
-
       - name: download release archive
         uses: actions/download-artifact@v4
         with: 
           name: release-archive
-          path: c29-bad-grp3/release
-      
+          path: /release
       - name: upload to server
         run: |
          ls -l
