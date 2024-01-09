@@ -36,18 +36,20 @@ jobs:
     runs-on: ubuntu-latest
     # needs: test
     steps:
-      - name: check connection to server
+      - name: add server fingerprint
         run: |
           mkdir -p ~/.ssh
           cd ~/.ssh
           ssh keyscan ${{env.SERVER_HOST}} >> known_hosts
-          
-      - name: setup ssh private key
+
+      - name: save ssh private key
         run: |
-          cd ~/.ssh
-          echo ${{secrets.SSH_PRIVATE_KEY}} > key.pem
-          chmode 400 key.pem
+           echo ${{secrets.SSH_PRIVATE_KEY}} > key.pem
           
+      - name: chmod ssh private key
+        run: |
+          chmode 400 key.pem
+
       - name: check connection to sever
         run: |
           ssh -i key.pem ${{env.SERVER_USER}}@${{env.SERVER_HOST}}
