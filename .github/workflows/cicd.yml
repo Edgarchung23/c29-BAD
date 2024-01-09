@@ -13,7 +13,10 @@ env:
   POSTGRES_PORT: 5432
   NODE_ENV: ci
   SERVER_USER: c29-bad-grp3
-  SERVER_HOST: c29-bad-grp3.yodaandkeungjai.com
+  SERVER_DOMAIN: https://c29-bad-grp3.yodaandkeungjai.com
+  SERVER_HOST: c29bad
+  SERVER_DIR: ~/c29-bad-grp3
+  PM2_NAME: c29-bad-grp3
 
 jobs:
   testing:
@@ -50,6 +53,15 @@ jobs:
         run: |
           chmod 400 key.pem
 
+      - name: setup ssh config
+        run: |
+          echo "
+          Host ${{env.SERVER_HOST}}
+            Hostname ${{env.SERVER_DOMAIN}}
+            User ${{env.SERVER_USER}}
+            IdentifyFile = ~/.ssh/key.pem
+          " > ~/.ssh/config
+          cat ~/.ssh/config
       - name: check connection to sever
         run: |
-          ssh -i key.pem ${{env.SERVER_USER}}@${{env.SERVER_HOST}}
+          ssh ${{env.SERVER_HOST}}
