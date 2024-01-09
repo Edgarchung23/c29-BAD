@@ -54,7 +54,7 @@ jobs:
         run: |
           mkdir -p release
           mv package.json dist public release
-      - name: archive release files
+      - name: upload release archive
         uses: actions/upload-artifact@v4
         with:
           name: release-archive
