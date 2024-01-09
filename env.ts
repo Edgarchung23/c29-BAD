@@ -17,7 +17,7 @@ function loadEnv() {
         TEST_DB_PORT: 5432,
         TEST_DB_NAME: 'c29-bad-grp3',
         TEST_DB_USERNAME: 'postgres',
-        TEST_DB_PASSWORD: '',
+        TEST_DB_PASSWORD: 'c29-bad-grp3',
       }
       populateEnv(env, { mode: 'halt' })
       return {
@@ -58,7 +58,7 @@ function loadEnv() {
         DB_PORT: 5432,
         DB_NAME: 'c29-bad-grp3',
         DB_USERNAME: 'postgres',
-        DB_PASSWORD: '',
+        DB_PASSWORD: 'c29-bad-grp3',
       }
       populateEnv(env, { mode: 'halt' })
       return env
