@@ -9,6 +9,8 @@ export async function up(knex: Knex): Promise<void> {
         table.integer("user_id").unsigned();
         table.foreign("user_id").references("users.id");
         table.timestamps(false, true);
+        // table.timestamp('updated_at').defaultTo(knex.raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
+
     })
 }
 
