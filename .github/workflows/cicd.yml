@@ -14,7 +14,7 @@ env:
   NODE_ENV: ci
   SERVER_USER: c29-bad-grp3
   SERVER_DOMAIN: c29-bad-grp3.yodaandkeungjai.com
-  SERVER_HOST: c29bad
+  SERVER_HOST: c29-bad
 
 jobs:
   testing:
