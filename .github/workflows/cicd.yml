@@ -122,4 +122,5 @@ jobs:
         run: |
           ssh ${{env.SERVER_HOST}} "
            source ~/.nvm/nvm.sh
-            pm2 reload ${{env.PM2_NAME}}"
+            pm2 reload ${{env.PM2_NAME}}
+          "
