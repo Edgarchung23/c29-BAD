@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 // import expressSession from "express-session";
 // import { env } from "./env";
 
@@ -17,4 +15,3 @@
 //         }
 //     }
 // }
->>>>>>> 0a2091b273fda3e39ee36be205b97e07f948aacf

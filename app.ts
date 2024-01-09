@@ -1,6 +1,7 @@
 import express from "express";
 import { isAdmin } from "./middelware";
 import { createKnex } from "./db"; 
+import { adminRouter } from "./router/is_adminRouter";
 
 export const knex = createKnex()
 const app = express();
@@ -15,11 +16,15 @@ declare module "express-session"{
     }
 }
 
+
+
 app.use(express.urlencoded({ extended:true }));
 app.use(express.json());
 
 app.use(express.static("public"));
 app.use("/admin", isAdmin, express.static("private"));
+
+app.use(adminRouter)
 
 app.listen(port, async()=>{
     console.log(`App running at http://localhost:${port}`);
