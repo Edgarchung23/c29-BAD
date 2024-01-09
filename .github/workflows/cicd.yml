@@ -57,7 +57,7 @@ jobs:
           Host ${{env.SERVER_HOST}}
             Hostname ${{env.SERVER_DOMAIN}}
             User ${{env.SERVER_USER}}
-            IdentifyFile = ~/.ssh/key.pem
+            IdentityFile = ~/.ssh/key.pem
           " > ~/.ssh/config
       - name: check connection to sever
         run: |
