@@ -41,7 +41,7 @@ jobs:
             npm test
   build: 
     runs-on: ubuntu-latest
-    container: node 20.10.0-slim
+    container: node:20.10.0-slim
     steps:
       - uses: actions/checkout@v3
       - name: install dependencies
