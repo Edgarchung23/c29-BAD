@@ -8,6 +8,7 @@
     "type-check": "tsc --noEmit",
     "jest": "jest --runInBand",
     "start": "ts-node-dev server.ts",
+    "app": "ts-node-dev app.ts",
     "build": "tsc -p ."
   },
   "keywords": [],
