@@ -33,6 +33,7 @@
     "jsonfile": "^6.1.0",
     "knex": "^3.1.0",
     "listening-on": "^2.0.9",
+    "node-fetch": "^3.3.2",
     "pg": "^8.11.3",
     "populate-env": "^2.0.0",
     "ts-node": "^10.9.2",
