@@ -43,6 +43,7 @@ jobs:
   build: 
     runs-on: ubuntu-latest
     container: node:20.10.0-slim
+    needs: testing
     steps:
       - uses: actions/checkout@v3
       - name: install dependencies
@@ -62,6 +63,7 @@ jobs:
           path: ./release
   deploy:
     if: github.ref_name == 'production'
+
     needs: build
     runs-on: ubuntu-latest
     steps:
