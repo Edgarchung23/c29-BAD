@@ -61,9 +61,25 @@ app.use((req, res, next) =>
 let port = env.PORT;
 app.listen(port, async () => {
   print(port);
-  const bookHtml = await epubToText(inputFilePath, 1);
-  console.log(bookHtml)
-});
+  try {
+    // Get the total length of sections in the EPUB
+    const totalLength = await getEpubLength(inputFilePath);
+    
+    // Loop through each section
+    for (let i = 0; i < totalLength; i++) {
+      console.log(`Processing section ${i}`);
+      
+      // Extract HTML content for the current section
+      const sectionHtml = await epubToText(inputFilePath, i);
+      
+      // Do something with the HTML content (you can modify this part)
+      console.log(`HTML content of section ${i}:`, sectionHtml);
+    }
+  } catch (error: any) {
+    console.error('Error processing EPUB sections:', error.message);
+  }
+})
+
 
 // Scraping
 async function scrapeHaodoo() {
@@ -92,6 +108,18 @@ async function scrapeHaodoo() {
 const inputFilePath = "./private/book.epub";
 const outputFilePath = "./private/output.txt";
 
+async function getEpubLength(inputFilePath: string): Promise<number> {
+  const epubObj = await parseEpub(inputFilePath, {
+    type: "path",
+  });
+
+  if (epubObj?.sections?.length) {
+    // console.log("Number of sections:", epubObj.sections.length);
+    return epubObj.sections.length
+  }
+  return 0
+}
+
 async function epubToText(
   inputFilePath: string,
   targetSectionIndex: number
@@ -102,7 +130,8 @@ async function epubToText(
     });
 
     if (epubObj?.sections?.length) {
-      console.log("Number of sections:", epubObj.sections.length);
+      // console.log("Number of sections:", epubObj.sections.length);
+      
       if (!epubObj.sections[targetSectionIndex]) {
         throw new Error(`Section at index ${targetSectionIndex} not found.`);
       }
@@ -116,6 +145,7 @@ async function epubToText(
   }
 }
 
+// console.log(epubToText)
 // async function epubToText(inputFilePath: string) {
 //   const epubObj = await parseEpub(inputFilePath, {
 //     type: 'path',
