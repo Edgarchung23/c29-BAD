@@ -44,7 +44,7 @@ jobs:
 
       - name: save ssh private key
         run: |
-           echo ${{secrets.SSH_PRIVATE_KEY}} > key.pem
+           echo "${{secrets.SSH_PRIVATE_KEY}}" > key.pem
           
       - name: chmod ssh private key
         run: |
