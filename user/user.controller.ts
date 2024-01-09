@@ -1,5 +1,5 @@
-import { Router } from "express";
+// import { Router } from "express";
 
-export class UserController{
-    public router = Router()
-}
+// export class UserController{
+//     public router = Router()
+// }

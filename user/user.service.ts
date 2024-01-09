@@ -1,9 +1,9 @@
-export interface UserService {
-    login(input: {username: string ; password:string }): Promise <{id :number}>
+// export interface UserService {
+//     login(input: {username: string ; password:string }): Promise <{id :number}>
 
-    register(input:{
-        username: string
-        password:string
-        email: string
-    }):Promise<{ id : number}>
-}
+//     register(input:{
+//         username: string
+//         password:string
+//         email: string
+//     }):Promise<{ id : number}>
+// }
