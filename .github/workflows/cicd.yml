@@ -16,6 +16,7 @@ env:
   SERVER_DOMAIN: c29-bad-grp3.yodaandkeungjai.com
   SERVER_HOST: c29bad
   SERVER_DIR: ~/c29-bad-grp3
+  PM2_NAME: c29-bad-grp3
 
 jobs:
   testing:
@@ -100,3 +101,25 @@ jobs:
            dist \
            public \
            "${{env.SERVER_HOST}}:${{env.SERVER_DIR}}"
+      - name: insall dependenceies on server
+        run: |
+          ssh ${{env.SERVER_HOST}} "
+            source ~/.nvm/nvm.sh
+            cd ${{env.SERVER_DIR}}
+            npm install --omit=dev
+          "
+      - name: migrate database on server
+        run: |
+           ssh ${{env.SERVER_HOST}} "
+            source ~/.nvm/nvm.sh
+            cd ${{env.SERVER_DIR}}
+            cp .env dist/
+            cd dist
+            npx knex migrate:latese
+           "
+
+      - name: reloa pm2 process onserver
+        run: |
+          ssh ${{env.SERVER_HOST}} "
+           source ~/.nvm/nvm.sh
+            pm2 reload ${{env.PM2_NAME}}"
