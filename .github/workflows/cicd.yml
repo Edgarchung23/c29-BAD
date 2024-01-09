@@ -13,12 +13,10 @@ env:
   POSTGRES_PORT: 5432
   NODE_ENV: ci
   SERVER_USER: c29-bad-grp3
-  SERVER_DOMAIN: https://c29-bad-grp3.yodaandkeungjai.com
-  SERVER_HOST: c29bad
-  SERVER_DIR: ~/c29-bad-grp3
+  SERVER_HOST: c29-bad-grp3.yodaandkeungjai.com
 
 jobs:
-  test:
+  test: 
   deploy:
     if: github.ref_name == 'production'
     runs-on: ubuntu-latest
@@ -27,6 +25,9 @@ jobs:
       - name: check connection to server
         run: |
           mkdir -p ~/.ssh
-          ssh ${{env.SERVER_HOST}} >> ~/.ssh/known_hosts
-          ssh ${{env.SERVER_HOST}}
+          cd ~/.ssh
+          ssh keyscan ${{env.SERVER_HOST}} >> ~/.ssh/known_hosts
+          echo ${{secrets.SSH_PRIVATE_KEY}} > key.pem
+          chmod 400 key.pem
+          ssh -i key.pem ${{env.SERVER_USER}}@${{env.SERVER_HOST}}
           
