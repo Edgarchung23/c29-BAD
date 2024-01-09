@@ -52,15 +52,15 @@ jobs:
           npm run
       - name: prepare archive built files
         run: |
-          mkdir -release
+          mkdir -p release
           mv package.json dist public release
           mv dist release
 
-      - name: archive built files
+      - name: upload release archive
         uses: actions/upload-artifact@v4
         with:
-          name: deploy-files
-          path: /c29-bad-grp3
+          name: release-archive
+          path: c29-bad-grp3/release
   deploy:
     if: github.ref_name == 'production'
     needs: build
@@ -92,12 +92,18 @@ jobs:
       - name: check connection to sever
         run: |
           ssh ${{env.SERVER_HOST}}
-      - uses: actions/checkout@v3
+
+      - name: download release archive
+        uses: actions/download-artifact@v4
+        with: 
+          name: release-archive
+          path: c29-bad-grp3/release
+      
       - name: upload to server
         run: |
+         ls -l
          scp -r \
            package.json \
            dist \
            public \
            "${{env.SERVER_HOST}}:${{env.SERVER_DIR}}"
-          ./scripts/deploy.sh
