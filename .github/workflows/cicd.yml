@@ -41,7 +41,7 @@ jobs:
         run: |
           mkdir -p ~/.ssh
           cd ~/.ssh
-          ssh-keyscan ${{env.SERVER_HOST}} >> known_hosts
+          ssh-keyscan ${{env.SERVER_DOMAIN}} >> known_hosts
 
       - name: save ssh private key
         run: |
