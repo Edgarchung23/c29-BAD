@@ -48,7 +48,7 @@ jobs:
           
       - name: chmod ssh private key
         run: |
-          chmode 400 key.pem
+          chmod 400 key.pem
 
       - name: check connection to sever
         run: |
