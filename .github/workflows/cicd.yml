@@ -13,7 +13,7 @@ env:
   POSTGRES_PORT: 5432
   NODE_ENV: ci
   SERVER_USER: c29-bad-grp3
-  SERVER_HOST: c29-bad-grp3.yodaandkeungjai.com
+  SERVER_HOST: https://c29-bad-grp3.yodaandkeungjai.com/
 
 jobs:
   testing:
