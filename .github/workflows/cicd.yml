@@ -46,21 +46,19 @@ jobs:
       - uses: actions/checkout@v3
       - name: install dependencies
         run: |
-         npm install
+          npm install
       - name: build typescript project
         run: |
-          npm run
+         npm run build
       - name: prepare archive built files
         run: |
           mkdir -p release
           mv package.json dist public release
-          mv dist release
-
       - name: upload release archive
         uses: actions/upload-artifact@v4
         with:
           name: release-archive
-          path: release
+          path: /release
   deploy:
     if: github.ref_name == 'production'
     needs: build
