@@ -16,7 +16,21 @@ env:
   SERVER_HOST: c29-bad-grp3.yodaandkeungjai.com
 
 jobs:
-  test: 
+  testing:
+    runs-on: ubuntu-latest
+    container: node:latest
+    services:
+      postgres:
+        image: postgres
+        env:
+          POSTGRES_DB: ${{env.POSTGRES_DB}}
+          POSTGRES_PASSWORD: ${{env.POSTGRES_PASSWORD}}
+        ports:
+          - 5432:5432
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+          yarn install 
   deploy:
     if: github.ref_name == 'production'
     runs-on: ubuntu-latest
@@ -26,8 +40,14 @@ jobs:
         run: |
           mkdir -p ~/.ssh
           cd ~/.ssh
-          ssh keyscan ${{env.SERVER_HOST}} >> ~/.ssh/known_hosts
-          echo ${{secrets.SSH_PRIVATE_KEY}} > key.pem
-          chmod 400 key.pem
-          ssh -i key.pem ${{env.SERVER_USER}}@${{env.SERVER_HOST}}
+          ssh keyscan ${{env.SERVER_HOST}} >> known_hosts
           
+      - name: setup ssh private key
+        run: |
+          cd ~/.ssh
+          echo ${{secrets.SSH_PRIVATE_KEY}} > key.pem
+          chmode 400 key.pem
+          
+      - name: check connection to sever
+        run: |
+          ssh -i key.pem ${{env.SERVER_USER}}@${{env.SERVER_HOST}}
