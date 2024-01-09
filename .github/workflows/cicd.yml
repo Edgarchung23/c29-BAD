@@ -15,28 +15,58 @@ env:
   SERVER_USER: c29-bad-grp3
   SERVER_DOMAIN: c29-bad-grp3.yodaandkeungjai.com
   SERVER_HOST: c29bad
+  SERVER_DIR: ~/c29-bad-grp3
 
 jobs:
   testing:
-    runs-on: ubuntu-latest
-    container: node:latest
-    services:
-      postgres:
-        image: postgres
-        env:
-          POSTGRES_DB: ${{env.POSTGRES_DB}}
-          POSTGRES_PASSWORD: ${{env.POSTGRES_PASSWORD}}
-        ports:
+     runs-on: ubuntu-latest
+     container: node:20.10.0-slim
+     services:
+       db_server:
+         image: postgres:14.10-alpine3.19
+         env:
+           POSTGRES_DB: ${{env.POSTGRES_DB}}
+           POSTGRES_USER: ${{env.POSTGRES_USER}}
+           POSTGRES_PASSWORD: ${{env.POSTGRES_PASSWORD}}
+           POSTGRES_PORT: ${{env.POSTGRES_PORT}}
+         ports:
           - 5432:5432
+     steps:
+        - uses: actions/checkout@v3
+        - name: install dependencies
+          run: |
+            npm install
+        - name: run test case
+          run: | 
+            npm test
+  build: 
+    runs-on: ubuntu-latest
+    container: node 20.10.0-slim
     steps:
       - uses: actions/checkout@v3
-      - run: |
-          yarn install 
+      - name: install dependencies
+        run: |
+         npm install
+      - name: build typescript project
+        run: |
+          npm run
+      - name: prepare archive built files
+        run: |
+          mkdir -release
+          mv package.json dist public release
+          mv dist release
+
+      - name: archive built files
+        uses: actions/upload-artifact@v4
+        with:
+          name: deploy-files
+          path: /c29-bad-grp3
   deploy:
     if: github.ref_name == 'production'
-    # needs: testing
+    needs: build
     runs-on: ubuntu-latest
     steps:
+       
       - name: add server fingerprint
         run: |
           mkdir -p ~/.ssh
@@ -63,6 +93,11 @@ jobs:
         run: |
           ssh ${{env.SERVER_HOST}}
       - uses: actions/checkout@v3
-      - name: build deploy to server
-        run: 
+      - name: upload to server
+        run: |
+         scp -r \
+           package.json \
+           dist \
+           public \
+           "${{env.SERVER_HOST}}:${{env.SERVER_DIR}}"
           ./scripts/deploy.sh
