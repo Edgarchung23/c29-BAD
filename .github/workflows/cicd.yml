@@ -43,7 +43,6 @@ jobs:
   build: 
     runs-on: ubuntu-latest
     container: node:20.10.0-slim
-    needs: testing
     steps:
       - uses: actions/checkout@v3
       - name: install dependencies
@@ -63,8 +62,7 @@ jobs:
           path: ./release
   deploy:
     if: github.ref_name == 'production'
-
-    needs: build
+    needs: [testing, build]
     runs-on: ubuntu-latest
     steps:
        
@@ -117,7 +115,7 @@ jobs:
             cd ${{env.SERVER_DIR}}
             cp .env dist/
             cd dist
-            npx knex migrate:latese
+            npx knex migrate:latest
            "
 
       - name: reloa pm2 process onserver
