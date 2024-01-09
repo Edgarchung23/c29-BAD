@@ -1,5 +1,5 @@
 import { Knex } from 'knex'
-import { createKnex } from './db'
+// import { createKnex } from './db'
 
 let knex: Knex
 
