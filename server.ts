@@ -1,4 +1,3 @@
-
 // import express, { ErrorRequestHandler } from 'express'
 import { print } from "listening-on";
 import { createKnex } from "./db";
@@ -41,6 +40,11 @@ app.use(authRouter);
 
 
 
+
+app.use(express.static("public/html/"));
+app.use(express.static("public"));
+app.use(express.static("public/images"));
+
 app.use((req, res, next) => {
   console.log(req.method, req.url);
   let row: RequestLog = {
@@ -76,9 +80,9 @@ app.listen(port, async () => {
   //   // Get the total length of sections in the EPUB
   //   const totalLength = await getEpubLength(inputFilePath);
     
-  //   // Loop through each section
-  //   for (let i = 0; i < totalLength; i++) {
-  //     // console.log(`Processing section ${i}`);
+    // Loop through each section
+    // for (let i = 0; i < totalLength; i++) {
+      // console.log(`Processing section ${i}`);
       
   //     // Extract HTML content for the current section
   //     const sectionHtml = await epubToText(inputFilePath, i);
@@ -170,3 +174,6 @@ async function epubToText(
 //   }
 
 // }
+
+// import { router } from "./router";
+// app.use(router);
