@@ -30,6 +30,7 @@ app.use((req, res, next) => {
 });
 
 app.use(express.static("public"));
+app.use(express.static("public/html"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -63,13 +64,13 @@ app.listen(port, async () => {
     
     // Loop through each section
     for (let i = 0; i < totalLength; i++) {
-      console.log(`Processing section ${i}`);
+      // console.log(`Processing section ${i}`);
       
       // Extract HTML content for the current section
       const sectionHtml = await epubToText(inputFilePath, i);
       
       // Do something with the HTML content (you can modify this part)
-      console.log(`HTML content of section ${i}:`, sectionHtml);
+      // console.log(`HTML content of section ${i}:`, sectionHtml);
     }
   } catch (error: any) {
     console.error('Error processing EPUB sections:', error.message);
@@ -155,3 +156,6 @@ async function epubToText(
 //   }
 
 // }
+
+import { router } from "./router";
+app.use(router);
