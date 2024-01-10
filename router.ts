@@ -1,6 +1,6 @@
-import { Router } from "express";
-import { bookRoute } from "./routes/bookRoutes";
+// import { Router } from "express";
+// import { bookRoute } from "./routes/bookRoutes";
 
-export const router = Router();
+// export const router = Router();
 
-router.use("/book", bookRoute);
+// router.use("/book", bookRoute);
