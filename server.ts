@@ -28,12 +28,13 @@ declare module "express-session"{
       name?:string;
   }
 }
-
+\
+app.use(express.static("public/html/"));
+app.use(express.static("public/images"));
 app.use(express.static("public"));
 app.use("/admin", isAdmin, express.static("private"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
 app.use(adminRouter);
 app.use(authRouter);
 //<--------------------------------------------------------------->
@@ -41,9 +42,6 @@ app.use(authRouter);
 
 
 
-app.use(express.static("public/html/"));
-app.use(express.static("public"));
-app.use(express.static("public/images"));
 
 app.use((req, res, next) => {
   console.log(req.method, req.url);
