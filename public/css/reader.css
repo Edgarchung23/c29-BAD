@@ -1,0 +1,22 @@
+.textContaniner{
+    width: 1100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.textTitle{
+    width:1100px;
+    height: 100px;
+    display: flex;
+justify-content: center;
+}
+
+.bookText{
+width: 1100px;
+font-size: 25px;
+}
+
+h1 {
+    font-weight: bold;
+}

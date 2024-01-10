@@ -1,155 +1,91 @@
-.container {
-  max-width: 700px;
-  width: 100%;
-  background-color: #fff;
-  padding: 25px 30px;
-  border-radius: 5px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-}
-
-.container .title::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 3px;
-  width: 30px;
-  border-radius: 5px;
-}
-.content form .user-details {
+body{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 20px 0 12px 0;
-}
-form .user-details .input-box {
-  margin-bottom: 15px;
-  width: calc(100% / 2 - 20px);
-}
-form .input-box span.details {
-  display: block;
-  font-weight: 500;
-  margin-bottom: 5px;
-}
-.user-details .input-box input {
-  height: 45px;
-  width: 100%;
-  outline: none;
-  font-size: 16px;
-  border-radius: 5px;
-  padding-left: 15px;
-  border: 1px solid #ccc;
-  border-bottom-width: 2px;
-  transition: all 0.3s ease;
-}
-.user-details .input-box input:focus,
-.user-details .input-box input:valid {
-  border-color: #c0604f;
-}
-form .gender-details .gender-title {
-  font-size: 20px;
-  font-weight: 00;
-}
-form .category {
-  display: flex;
-  width: 80%;
-  margin: 14px 0;
-  justify-content: space-between;
-}
-form .category label {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-form .category label .dot {
-  height: 18px;
-  width: 18px;
-  border-radius: 50%;
-  margin-right: 10px;
-  background: #d9d9d9;
-  border: 5px solid transparent;
-  transition: all 0.3s ease;
-}
-#dot-1:checked ~ .category label .one,
-#dot-2:checked ~ .category label .two,
-#dot-3:checked ~ .category label .three {
-  background:black;;
-  border-color: #d9d9d9;
-}
-form input[type="radio"] {
-  display: none;
-}
-form .button {
-  height: 45px;
-  margin: 35px 0;
-}
-form .button input {
-  height: 100%;
-  width: 100%;
-  border-radius: 5px;
-  border: none;
-  color: #000000;
-  font-size: 18px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-form .button input:hover {
-  /* transform: scale(0.99); */
-  background: linear-gradient(-135deg, #67bfdc, #ffffff);
-}
-@media (max-width: 584px) {
-  .container {
-    max-width: 100%;
-  }
-  form .user-details .input-box {
-    margin-bottom: 15px;
-    width: 100%;
-  }
-  form .category {
-    width: 100%;
-  }
-  .content form .user-details {
-    max-height: 300px;
-    overflow-y: scroll;
-  }
-  .user-details::-webkit-scrollbar {
-    width: 5px;
-  }
-}
-@media (max-width: 459px) {
-  .container .content .category {
-    flex-direction: column;
-  }
+  justify-content: center;
 }
 
-.content {
-  padding-top: 100px;
-  padding-bottom: 20px;
-  width: 800px;
-}
-.secondContent{
-  padding-top: 40px;
-}
-
-#registerbutton {
+a {
   color: black;
-  background-color: #e8e8e8;
-  width: 800px;
 }
 
-.register {
+a:hover {
+  color: #fa2500;
+}
+.big_container{
   display: flex;
   justify-content: center;
-  margin-top: 30px;
+  padding-top: 50px;
+  }
+
+#mySidebar{
+  width:200px
 }
 
-#user-loginedlogo {
-  width: 28px;
-  height: 28px;
+.sideBarContainer{
+  padding: 0.01em 16px;
+  padding-top: 16px!important;
+  padding-bottom: 16px!important;
 }
 
-h1 {
-  font-weight: bold;
+.sideBarText {
+  font-size: 18px;
+  color:#757575;
+  padding-top: 64px;
+  padding-bottom: 64px;
 }
+
+.sideBarFooter {
+
+}
+
+.sideBarBtn {
+  text-decoration: none;
+  color: inherit;
+
+}
+.sideBarBtn:hover{
+  color: rgb(255, 2, 2);
+}
+
+#sideBarFooter{
+  padding: 8px 16px
+}
+/* ---------logIn&register----------------------------------------------------------------------------- */
+
+.Title {
+  display: flex;
+  justify-content: flex-end;
+  width: 1150px;
+  height: 50px;
+}
+
+#loginBtn {
+  width: 60px;
+  height: 60px;
+}
+
+/* ---------photosBox----------------------------------------------------------------------------- */
+
+.photosBox_container{
+  padding-top: ;
+width: 1100px;
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+}
+
+.photoBox {
+  width: 1100px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.card{
+padding: 20px;
+}
+
+#bookPh{
+  width: 200px;
+  height: 250px;
+}
+
