@@ -4,15 +4,15 @@ function register(){
         e.preventDefault();
         console.log("login submit trigged");
 
-        const res = await fetch("action_register", {
+        const res = await fetch("/action_register", {
             method:"POST",
             headers:{
-                "Content-Type": "application/octet-stream",
+                "Content-Type": "application/json",
             },
             body: JSON.stringify({
                 username: target.username.value,
-                password: target.password.value,
-                email: target.password.value,
+                password: target.psw.value,
+                email: target.email.value,
 
             })
         });
@@ -22,9 +22,10 @@ function register(){
 
             window.location.href = "/";
         }
-
-
     })
+}
+register()
 
-    
+function clientLogin(){
+    let target = document.querySelector('')
 }
