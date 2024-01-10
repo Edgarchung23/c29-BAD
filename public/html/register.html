@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/register.css">
     <title>Register</title>
 </head>
+
 <body>
-   
+
 </body>
+
 </html>
 
 <!doctype html>
@@ -32,24 +35,11 @@
 
 <body>
     <div id="mobile-bar">
-        <!--------------------------------- login & logout ---------------------------------->
-        <div class="Title">
-            <div id="username-display">
-                <a href="./login.html"><img src="../image/icon/login.png" ; id="loginButton"></a></p>
-            </div>
-
-            <div id="logout-area"></div>
-
-            <div id="cart-display">
-                <a href="./shopping_cart.html"><img src="../image/icon/shopping-cart.png" id="shoppingCart" ;></a></p>
-            </div>
-        </div>
-
         <!--------------------------------- register form ---------------------------------->
         <div class="content">
             <div class="title;">
-                <h1>Registration</h1>
-                <div class="content">
+                <h1>Register</h1>
+                <div class="secondContent">
                     <form action="register" id="register-form" method="post">
                         <div class="user-details">
                             <div class="input-box">
@@ -108,50 +98,7 @@
                 </div>
             </div>
         </div>
-
-
-        <!----------------------------------------------------------------------------->
-        <div class="row" data-gutter="60">
-            <div class="col-sm-3 footer-col">
-                <h3 class="footer-main-standard-title text-uppercase">其他資訊</h3>
-                <ul class="footer-main-standard-links">
-                    <li><a href="./about_us.html">關於我們</a></li>
-                    <li><a href="./404.html">付款方式</a></li>
-                    <li><a href="./contact.html">聯絡我們</a></li>
-                </ul>
-            </div>
-            <div class="col-sm-3 footer-col">
-                <h3 class="footer-main-standard-title text-uppercase">條款政策</h3>
-                <ul class="footer-main-standard-links">
-                    <li><a href="./404.html">運送政策</a></li>
-                    <li><a href="./404.html">退款政策</a></li>
-                    <li><a href="./404.html">隱私政策</a></li>
-                    <li><a href="./404.html">服務條款</a></li>
-                </ul>
-            </div>
-            <div class="col-sm-3 footer-col">
-                <h3 class="footer-main-standard-title text-uppercase">追蹤我們</h3>
-                <p>使用FACEBOOK或INSTAGRAM追蹤我們，可隨時獲取更多優惠及最新消息。</p>
-            </div>
-
-
-
-            <!--------------------------------- payMent Logo area ---------------------------------->
-            
     </div><!--------------------------mobile bar------------------------------------>
-
-
-    <!--------------------------------chatBox---------------------------------------->
-    <button class="open-button" onclick="openForm()"><img src="../image/icon/chat (1).png" id="chatLogo"></button>
-    <div class="chat-popup" id="myForm">
-        <form action="" class="form-container">
-            <h6>請留下訊息，客服將會盡快回覆</h6>
-            <label for="msg"><b>Message</b></label>
-            <textarea placeholder="Type message.." name="msg" required></textarea>
-            <button type="submit" class="btn">Send</button>
-            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-        </form>
-    </div>
     <script src="../js/register.js"></script>
 </body>
 

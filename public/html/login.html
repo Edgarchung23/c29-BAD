@@ -1,37 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/login.css">
-    <title>Login</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../css/login.css" />
+  <link rel="stylesheet" href="../css/index.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css"
+    integrity="sha512-siarrzI1u3pCqFG2LEzi87McrBmq6Tp7juVsdmGY1Dr8Saw+ZBAzDzrGwX3vgxX1NkioYNCFOVC0GpDPss10zQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
+
 <body>
-    <div class="loginBox">
-        <form class="loginFrom"  method="post">
-          <div class="imgcontainer">
-            <img src="../assets/batman.jpeg" alt="Avatar" class="avatar">
-          </div>
-    
-          <div class="container">
-            <label for="uname"><b>Username</b></label>
-            <input value="batman" type="text" placeholder="Enter Username" name="uname" required>
-    
-            <label for="psw"><b>Password</b></label>
-            <input value="123" type="password" placeholder="Enter Password" name="psw" required>
-    
-            <button type="submit">Login</button>
-            <label>
-              <input type="checkbox" checked="checked" name="remember"> Remember me
-            </label>
-          </div>
-    
-          <div class="container" style="background-color:#f1f1f1">
-            <button type="button" class="cancelbtn">Cancel</button>
-            <span class="psw">Forgot <a href="#">password?</a></span>
-          </div>
-        </form>
-      </div>
-    <script src="../js/auth.js"></script>
+  <div class="login-form">
+    <div class="card-body p-4 p-lg-5 text-black">
+      <form id="login-form">
+        <div class="d-flex align-items-center mb-3 pb-1">
+          <span class="h1 fw-bold mb-0"></span>
+        </div>
+
+        <h5 class="form-name">
+          Sign into your account
+        </h5>
+
+        <div class=" form-outline mb-4" style="margin-top:70px;">
+          <input type="email" id="form2Example17" class="form-control form-control-lg" name="email"
+            placeholder="Enter your email" />
+          <label class="form-label" for="form2Example17">Email</label>
+        </div>
+
+        <div class="form-outline mb-4">
+          <input type="password" id="form2Example27" class="form-control form-control-lg" name="password"
+            placeholder="Enter your password" />
+          <label class="form-label" for="form2Example27">Password</label>
+        </div>
+
+        <div class="pt-1 mb-4">
+          <button class="btn btn-dark btn-block" type="submit" id="loginbutton"
+            style="font-size: 15px;font-weight: bold;">
+            Login
+          </button>
+        </div>
+
+        <a class="forgotPassword" href="./404.html">Forgot password?</a>
+        <p class="dontHaveAccount" style="color:rgb(151	202	224	); margin-top:15px;">
+          Don't have an account?
+          <a id="loginRegisterbutton" href="./register.html">Register here</a>
+        </p>
+      </form>
+    </div>
+  </div>
+  <script src="../js/auth.js"></script>
 </body>
+
 </html>
