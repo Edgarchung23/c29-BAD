@@ -10,9 +10,35 @@ import cheerio from "cheerio";
 // import * as EPub from 'epub';
 import { parseEpub, parseHTML } from "@gxl/epub-parser";
 import { Section } from "@gxl/epub-parser/lib/parseSection";
+import { isAdmin } from "./middelware";
+import { adminRouter } from "./router/is_adminRouter";
+import { authRouter } from "./router/authRouter";
+// import { adminRouter } from "./router/is_adminRouter";
+// import { isAdmin } from "./middelware";
 
-let knex = createKnex();
-let app = express();
+export const knex = createKnex()
+const app = express();
+
+
+//<--------------------------March's need------------------------------------>
+declare module "express-session"{
+  interface SessionData {
+      email?: string;
+      isAdmin?: boolean;
+      name?:string;
+  }
+}
+
+app.use(express.static("public"));
+app.use("/admin", isAdmin, express.static("private"));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.use(adminRouter);
+app.use(authRouter);
+//<--------------------------------------------------------------->
+
+
 
 
 app.use(express.static("public/html/"));
@@ -34,20 +60,9 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
 
-app.get("/logs", async (req, res, next) => {
-  try {
-    let requests = await knex("request_log")
-      .select("id", "method", "url", "user_agent")
-      .orderBy("id", "desc")
-      .limit(25);
-    res.json({ requests });
-  } catch (error) {
-    next(error);
-  }
-});
+
+
 
 app.use((req, res, next) =>
   next(
@@ -61,23 +76,23 @@ app.use((req, res, next) =>
 let port = env.PORT;
 app.listen(port, async () => {
   print(port);
-  try {
-    // Get the total length of sections in the EPUB
-    const totalLength = await getEpubLength(inputFilePath);
+  // try {
+  //   // Get the total length of sections in the EPUB
+  //   const totalLength = await getEpubLength(inputFilePath);
     
     // Loop through each section
-    for (let i = 0; i < totalLength; i++) {
+    // for (let i = 0; i < totalLength; i++) {
       // console.log(`Processing section ${i}`);
       
-      // Extract HTML content for the current section
-      const sectionHtml = await epubToText(inputFilePath, i);
+  //     // Extract HTML content for the current section
+  //     const sectionHtml = await epubToText(inputFilePath, i);
       
-      // Do something with the HTML content (you can modify this part)
-      // console.log(`HTML content of section ${i}:`, sectionHtml);
-    }
-  } catch (error: any) {
-    console.error('Error processing EPUB sections:', error.message);
-  }
+  //     // Do something with the HTML content (you can modify this part)
+  //     // console.log(`HTML content of section ${i}:`, sectionHtml);
+  //   }
+  // } catch (error: any) {
+  //   console.error('Error processing EPUB sections:', error.message);
+  // }
 })
 
 
@@ -98,8 +113,8 @@ async function scrapeHaodoo() {
     });
 
     // Display the extracted data
-    console.log("Book Titles:");
-    console.log(bookTitles);
+    // console.log("Book Titles:");
+    // console.log(bookTitles);
   } catch (error) {
     console.error("Error!!!");
   }

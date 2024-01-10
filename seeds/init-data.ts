@@ -15,4 +15,6 @@ export async function seed(knex: Knex): Promise<void> {
           status: "true",
         },
       ])
+
+    
 };

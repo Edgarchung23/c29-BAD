@@ -1,33 +1,31 @@
-import express from "express";
-import { isAdmin } from "./middelware";
-import { createKnex } from "./db"; 
-import { adminRouter } from "./router/is_adminRouter";
-
-export const knex = createKnex()
-const app = express();
-const port = 7777;
-
-declare module "express-session"{
-    interface SessionData {
-        email?: string;
-        grant?: any;
-        isAdmin?: boolean;
-        name?:string;
-    }
-}
+// import express from "express";
+// import { isAdmin } from "./middelware";
+// import { adminRouter } from "./router/is_adminRouter";
+// import { createKnex } from "./db";
+// import { authRouter } from "./router/authRouter";
 
 
 
-app.use(express.urlencoded({ extended:true }));
-app.use(express.json());
+// export const knex = createKnex()
+// const app = express();
 
-app.use(express.static("public"));
-app.use("/admin", isAdmin, express.static("private"));
 
-app.use(adminRouter)
+// declare module "express-session"{
+//     interface SessionData {
+//         email?: string;
+//         isAdmin?: boolean;
+//         name?:string;
+//     }
+// }
 
-app.listen(port, async()=>{
-    console.log(`App running at http://localhost:${port}`);
-    const data = await knex.raw(`Select * from users;`)
-    console.log(data.rows)
-})
+// app.use(express.static("public"));
+// app.use("/admin", isAdmin, express.static("private"));
+// app.use(express.urlencoded({ extended:true }));
+// app.use(express.json());
+
+
+
+// app.use(adminRouter);
+// app.use(authRouter);
+
+

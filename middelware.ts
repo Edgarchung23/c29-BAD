@@ -10,6 +10,8 @@ export function isLoggedIn (req:Request, res:Response, next:NextFunction){
 
 export function isAdmin(req: Request, res: Response, next: NextFunction){
     if (req.session.email){
+        let result = req.body.email
+        console.log("result:",result)
         if (req.session.isAdmin){
             next();
         }else {
