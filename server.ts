@@ -28,7 +28,7 @@ declare module "express-session"{
       name?:string;
   }
 }
-\
+
 app.use(express.static("public/html/"));
 app.use(express.static("public/images"));
 app.use(express.static("public"));
