@@ -29,6 +29,7 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use(express.static("public"));
 app.use(express.static("public/html"));
 app.use(express.static("public/images"));
 app.use(express.json());
