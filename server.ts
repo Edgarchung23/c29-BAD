@@ -30,6 +30,7 @@ app.use((req, res, next) => {
 });
 
 app.use(express.static("public/html"));
+app.use(express.static("public/images"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
