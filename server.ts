@@ -14,6 +14,11 @@ import { Section } from "@gxl/epub-parser/lib/parseSection";
 let knex = createKnex();
 let app = express();
 
+
+app.use(express.static("public/html/"));
+app.use(express.static("public"));
+app.use(express.static("public/images"));
+
 app.use((req, res, next) => {
   console.log(req.method, req.url);
   let row: RequestLog = {
@@ -29,9 +34,6 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(express.static("public"));
-app.use(express.static("public/images"));
-app.use(express.static("public/css"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
