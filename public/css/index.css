@@ -248,6 +248,8 @@ p {
   border-radius: 20px;
   width: 240px;
   margin: 10px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .card-body {
