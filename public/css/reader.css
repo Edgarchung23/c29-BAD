@@ -1,3 +1,4 @@
+
 .textContaniner{
     width: 1100px;
     display: flex;
@@ -9,7 +10,8 @@
     width:1100px;
     height: 100px;
     display: flex;
-justify-content: center;
+    justify-content: center;
+    color: black;
 }
 
 .bookText{
@@ -29,3 +31,30 @@ h1 {
 display: flex;
 justify-content: flex-end;
 }
+
+#reader {
+    background-color: aliceblue;
+    height: 900px;
+    width: 1100px;
+    overflow: hidden !important;
+    display: flex;
+    align-items: center;
+    margin-top: 110px;
+  }
+
+  .arrow {
+    position:absolute;
+    font-size: 64px;
+    color: #063c87;
+    font-family: arial, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    text-decoration: none;
+  }
+
+  #next {
+    right: 0;
+  }
