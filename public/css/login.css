@@ -12,7 +12,7 @@
     color: black;
   }
   a:hover {
-    color: #959595;
+    color: #d5d5d5;
   }
   
   /* STRUCTURE */
@@ -40,13 +40,13 @@
     position: relative;
     padding: 0px;
     -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
-    box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 30px 60px 0 rgba(255, 255, 255, 0.3);
     text-align: center;
   }
   
   #formFooter {
     background-color: #000000;
-    border-top: 1px solid #c4c4c4;
+    border-top: 1px solid #dcdcdc;
     padding: 25px;
     text-align: center;
     -webkit-border-radius: 0 0 10px 10px;
@@ -219,7 +219,7 @@
     font-size: 30px;
     display: flex;
     margin-top: 20px;
-    color: rgb(0, 0, 0);
+    color: rgb(147, 147, 147);
     width: 200px;
     height: 40px;
     align-items: center;
@@ -227,15 +227,15 @@
   }
   
   #loginRegisterbutton:hover {
-    color: #bcbcbc;
+    color: #b7b7b7;
   }
   .btn-dark {
-    --bs-btn-color: #010101;
-    --bs-btn-bg: #ffffff;
-    --bs-btn-hover-color: #000000;
+    --bs-btn-color: #000000;
+    --bs-btn-bg: #fbfbfb;
+    --bs-btn-hover-color: #ffffff;
   }
   .btn-dark:hover {
-    background-color: #e2e2e2 !important;
+    background-color: #fcfcfc !important;
 
   }
   
