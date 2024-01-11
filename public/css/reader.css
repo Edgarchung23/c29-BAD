@@ -23,10 +23,6 @@ h1 {
     font-weight: bold;
 }
 
-.Title{
- 
-}
-
 #username-display {
 display: flex;
 justify-content: flex-end;
@@ -39,15 +35,13 @@ justify-content: flex-end;
     overflow: hidden !important;
     display: flex;
     align-items: center;
-    margin-top: 110px;
+    margin-top: 10px;
   }
 
   .arrow {
-    position:absolute;
     font-size: 64px;
     color: #000000;
     font-family: arial, sans-serif;
-    font-weight: bold;
     cursor: pointer;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -56,5 +50,6 @@ justify-content: flex-end;
   }
 
   #next {
-    right: 0;
+margin-left: 850px;
+position: relative;
   }
