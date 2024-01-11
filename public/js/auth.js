@@ -38,11 +38,11 @@ function register(){
 }
 register()
 
-function clientLogin(){
-    let target = document.querySelector('#login-form');
-    target.addEventListener("submit", async (e)=>{
-        e.preventDefault();
-        console.log("login submit trigged")
-    })
-}
-clientLogin()
+// function clientLogin(){
+//     let target = document.querySelector('#login-form');
+//     target.addEventListener("submit", async (e)=>{
+//         e.preventDefault();
+//         console.log("login submit trigged")
+//     })
+// }
+// clientLogin()
