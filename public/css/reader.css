@@ -29,13 +29,14 @@ justify-content: flex-end;
 }
 
 #reader {
-    background-color: aliceblue;
+    background-color: rgb(237, 237, 237);
     height: 1000px;
     width: 900px;
     overflow: hidden !important;
     display: flex;
     align-items: center;
     margin-top: 10px;
+    border: solid 1px; 
   }
 
   .arrow {
