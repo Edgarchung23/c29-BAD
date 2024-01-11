@@ -22,3 +22,13 @@ export function comparePassword (options:{
     return compare(options.password, options.password_hash)
 }
 
+export async function checkPassword(options:{
+    plainPassword: string;
+    hashedPassword: string;
+}){
+    const isMatched:boolean = await bcrypt.compare(
+        options.plainPassword,
+        options.hashedPassword
+    );
+    return isMatched;
+}

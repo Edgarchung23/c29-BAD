@@ -2,7 +2,7 @@ function register(){
     let target = document.querySelector("#register_form");
     target.addEventListener("submit", async (e)=>{
         e.preventDefault();
-        console.log("login submit trigged");
+        // console.log("login submit trigged");
 
         const res = await fetch("/action_register", {
             method:"POST",
@@ -27,5 +27,10 @@ function register(){
 register()
 
 function clientLogin(){
-    let target = document.querySelector('')
+    let target = document.querySelector('#loginFrom');
+    target.addEventListener("submit", async (e)=>{
+        e.preventDefault();
+        console.log("login submit trigged")
+    })
 }
+clientLogin()
