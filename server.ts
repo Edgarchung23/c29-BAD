@@ -18,6 +18,7 @@ import { authRouter } from "./router/authRouter";
 
 export const knex = createKnex()
 const app = express();
+import { router } from "./routes/routes"; 
 
 
 //<--------------------------March's need------------------------------------>
@@ -30,6 +31,9 @@ declare module "express-session"{
 }
 
 app.use(express.static("public/html/"));
+app.use(express.static("public"));
+app.use(express.static("books"));
+
 app.use(express.static("public/images"));
 app.use(express.static("public"));
 app.use("/admin", isAdmin, express.static("private"));
@@ -58,9 +62,20 @@ app.use((req, res, next) => {
   next();
 });
 
-
-
-
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(router);
+app.get("/logs", async (req, res, next) => {
+  try {
+    let requests = await knex("request_log")
+      .select("id", "method", "url", "user_agent")
+      .orderBy("id", "desc")
+      .limit(25);
+    res.json({ requests });
+  } catch (error) {
+    next(error);
+  }
+});
 
 app.use((req, res, next) =>
   next(
@@ -71,6 +86,8 @@ app.use((req, res, next) =>
   )
 );
 
+
+
 let port = env.PORT;
 app.listen(port, async () => {
   print(port);
@@ -78,9 +95,9 @@ app.listen(port, async () => {
   //   // Get the total length of sections in the EPUB
   //   const totalLength = await getEpubLength(inputFilePath);
     
-    // Loop through each section
-    // for (let i = 0; i < totalLength; i++) {
-      // console.log(`Processing section ${i}`);
+  //   // Loop through each section
+  //   for (let i = 0; i < totalLength; i++) {
+  //     // console.log(`Processing section ${i}`);
       
   //     // Extract HTML content for the current section
   //     const sectionHtml = await epubToText(inputFilePath, i);
@@ -118,45 +135,45 @@ async function scrapeHaodoo() {
   }
 }
 
-const inputFilePath = "./private/book.epub";
-const outputFilePath = "./private/output.txt";
+// const inputFilePath = "./private/book.epub";
+// const outputFilePath = "./private/output.txt";
 
-async function getEpubLength(inputFilePath: string): Promise<number> {
-  const epubObj = await parseEpub(inputFilePath, {
-    type: "path",
-  });
+// async function getEpubLength(inputFilePath: string): Promise<number> {
+//   const epubObj = await parseEpub(inputFilePath, {
+//     type: "path",
+//   });
 
-  if (epubObj?.sections?.length) {
-    // console.log("Number of sections:", epubObj.sections.length);
-    return epubObj.sections.length
-  }
-  return 0
-}
+//   if (epubObj?.sections?.length) {
+//     // console.log("Number of sections:", epubObj.sections.length);
+//     return epubObj.sections.length
+//   }
+//   return 0
+// }
 
-async function epubToText(
-  inputFilePath: string,
-  targetSectionIndex: number
-): Promise<string> {
-  try {
-    const epubObj = await parseEpub(inputFilePath, {
-      type: "path",
-    });
+// async function epubToText(
+//   inputFilePath: string,
+//   targetSectionIndex: number
+// ): Promise<string> {
+//   try {
+//     const epubObj = await parseEpub(inputFilePath, {
+//       type: "path",
+//     });
 
-    if (epubObj?.sections?.length) {
-      // console.log("Number of sections:", epubObj.sections.length);
+//     if (epubObj?.sections?.length) {
+//       // console.log("Number of sections:", epubObj.sections.length);
       
-      if (!epubObj.sections[targetSectionIndex]) {
-        throw new Error(`Section at index ${targetSectionIndex} not found.`);
-      }
-      const targetSection: Section = epubObj.sections[targetSectionIndex];
-      return targetSection.htmlString;
-    } 
-    throw new Error("No sections found in the EPUB.");
-  } catch (error: any) {
-    console.error("Error parsing EPUB:", error.message);
-    throw error
-  }
-}
+//       if (!epubObj.sections[targetSectionIndex]) {
+//         throw new Error(`Section at index ${targetSectionIndex} not found.`);
+//       }
+//       const targetSection: Section = epubObj.sections[targetSectionIndex];
+//       return targetSection.htmlString;
+//     } 
+//     throw new Error("No sections found in the EPUB.");
+//   } catch (error: any) {
+//     console.error("Error parsing EPUB:", error.message);
+//     throw error
+//   }
+// }
 
 // console.log(epubToText)
 // async function epubToText(inputFilePath: string) {
@@ -173,5 +190,5 @@ async function epubToText(
 
 // }
 
-// import { router } from "./router";
-// app.use(router);
+
+

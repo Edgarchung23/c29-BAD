@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.5/jszip.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/epubjs/dist/epub.min.js"></script>
+    <style>
+      body {
+        margin: 0;
+      }
+
+      #reader {
+        height: 400px;
+        width: 400px;
+        overflow: hidden !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div
+      id="reader"
+      style="background-color: antiquewhite; width: 900; height: 600px"
+    ></div>
+	<a id="prev" href="#prev" class="arrow" style="visibility: visible;">‹</a>
+	<a id="next" href="#next" class="arrow" style="visibility: visible;">›</a>
+  </body>
+  <script>
+    try {
+      //let bookUrl = 'https://filesamples.com/samples/ebook/epub/Sway.epub'
+      let bookUrl = "http://localhost:8100/原子習慣.epub";
+      let epubReader = ePub(bookUrl);
+	  var rendition = epubReader.renderTo("reader", { flow: "paginated", width: "900", height: "600", allowScriptedContent: true })
+      var displayed = rendition.display();
+
+	  var prev = document.getElementById("prev");
+      prev.addEventListener("click", function(e){
+        epubReader.package.metadata.direction === "rtl" ? rendition.prev() : rendition.next();
+        e.preventDefault();
+      }, false);
+
+	  var next = document.getElementById("next");
+
+      next.addEventListener("click", function(e){
+		console.log(epubReader.package.metadata.direction)
+		console.log(rendition)
+        epubReader.package.metadata.direction === "rtl" ? rendition.next() : rendition.prev();
+        e.preventDefault();
+		console.log("123")
+      }, false);
+
+    } catch (e) {
+      alert("error 1" + e);
+    }
+  </script>
+</html>
