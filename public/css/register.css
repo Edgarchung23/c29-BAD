@@ -150,3 +150,16 @@ form .button input:hover {
 .secondContent{
 margin-top: 80px;
 }
+
+#homeBtn{
+  margin-top: 25px;
+    width: 35px;
+    height: 35px;
+  }
+  
+  #firstBar {
+    width: 870px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  

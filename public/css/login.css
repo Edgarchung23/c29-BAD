@@ -249,11 +249,25 @@
   }
   
 .login-form{
-  width: 800px;
+  width: 900px;
+
 }
 
 .form-name {
   font-size: 2.5rem;
   font-weight: bold;
   margin-top: 90px;
+}
+
+
+#homeBtn{
+margin-top: 25px;
+  width: 35px;
+  height: 35px;
+}
+
+#firstBar {
+  width: 870px;
+  display: flex;
+  justify-content: flex-end;
 }
