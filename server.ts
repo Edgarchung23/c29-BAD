@@ -10,7 +10,7 @@ import cheerio from "cheerio";
 // import * as EPub from 'epub';
 import { parseEpub, parseHTML } from "@gxl/epub-parser";
 import { Section } from "@gxl/epub-parser/lib/parseSection";
-import { isAdmin } from "./middelware";
+import { is_admin } from "./middelware";
 import { adminRouter } from "./router/is_adminRouter";
 import { authRouter } from "./router/authRouter";
 // import { adminRouter } from "./router/is_adminRouter";
@@ -25,8 +25,8 @@ import { router } from "./routes/routes";
 declare module "express-session"{
   interface SessionData {
       email?: string;
-      isAdmin?: boolean;
-      name?:string;
+      is_admin?: boolean;
+      username?:string;
   }
 }
 
@@ -36,7 +36,7 @@ app.use(express.static("books"));
 
 app.use(express.static("public/images"));
 app.use(express.static("public"));
-app.use("/admin", isAdmin, express.static("private"));
+app.use("/admin", is_admin, express.static("private"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(adminRouter);
