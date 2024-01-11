@@ -37,6 +37,7 @@
     "node-fetch": "^3.3.2",
     "pg": "^8.11.3",
     "populate-env": "^2.0.0",
+    "request": "^2.88.2",
     "sqlite3": "^5.1.7",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
