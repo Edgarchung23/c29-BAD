@@ -18,6 +18,7 @@ import { authRouter } from "./router/authRouter";
 
 export const knex = createKnex()
 const app = express();
+import { router } from "./routes/routes"; 
 
 
 //<--------------------------March's need------------------------------------>
@@ -30,6 +31,9 @@ declare module "express-session"{
 }
 
 app.use(express.static("public/html/"));
+app.use(express.static("public"));
+app.use(express.static("books"));
+
 app.use(express.static("public/images"));
 app.use(express.static("public"));
 app.use("/admin", isAdmin, express.static("private"));
@@ -58,9 +62,20 @@ app.use((req, res, next) => {
   next();
 });
 
-
-
-
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(router);
+app.get("/logs", async (req, res, next) => {
+  try {
+    let requests = await knex("request_log")
+      .select("id", "method", "url", "user_agent")
+      .orderBy("id", "desc")
+      .limit(25);
+    res.json({ requests });
+  } catch (error) {
+    next(error);
+  }
+});
 
 app.use((req, res, next) =>
   next(
@@ -70,6 +85,8 @@ app.use((req, res, next) =>
     )
   )
 );
+
+
 
 let port = env.PORT;
 app.listen(port, async () => {
@@ -173,11 +190,5 @@ async function scrapeHaodoo() {
 
 // }
 
-import { BookService } from "./services/BookService";
-import { BookController } from "./controllers/BookController";
 
-const bookService = new BookService(knex);
-export const bookController = new BookController(bookService);
 
-import { router } from "./router";
-app.use(router);

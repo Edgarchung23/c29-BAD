@@ -1,17 +1,19 @@
 import { parseEpub, parseHTML } from "@gxl/epub-parser";
 import { Section } from "@gxl/epub-parser/lib/parseSection";
+import { Knex } from "knex";
 
-const inputFilePath = "./private/book.epub";
+const inputFilePath = "./private/原子習慣.epub";
 const outputFilePath = "./private/output.txt";
 
 export class BookService {
-    constructor(){}
+    constructor(private knex: Knex){}
 
     async getEpubLength(inputFilePath: string): Promise<number> {
     const epubObj = await parseEpub(inputFilePath, {
+      
     type: "path",
   });
-
+console.log("input:",inputFilePath)
   if (epubObj?.sections?.length) {
     // console.log("Number of sections:", epubObj.sections.length);
     return epubObj.sections.length
@@ -34,7 +36,10 @@ export class BookService {
       if (!epubObj.sections[targetSectionIndex]) {
         throw new Error(`Section at index ${targetSectionIndex} not found.`);
       }
-      const targetSection: Section = epubObj.sections[targetSectionIndex];
+      // console.log(epubObj.sections)
+      const targetSection: Section = epubObj.sections[15];
+      console.log(targetSection.htmlString)
+
       return targetSection.htmlString;
     } 
     throw new Error("No sections found in the EPUB.");
