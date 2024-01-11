@@ -20,3 +20,12 @@ font-size: 25px;
 h1 {
     font-weight: bold;
 }
+
+.Title{
+ 
+}
+
+#username-display {
+display: flex;
+justify-content: flex-end;
+}
