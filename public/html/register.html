@@ -40,38 +40,38 @@
             <div class="title;">
                 <h1>Register</h1>
                 <div class="secondContent">
-                    <form action="register" id="register-form" method="post">
+                    <form id="register_form" >
                         <div class="user-details">
-                            <div class="input-box">
+                            <!-- <div class="input-box">
                                 <span class="details">Full Name*</span>
-                                <input type="fullname" name="fullname" placeholder="Enter your name" required>
-                            </div>
+                                <input type="fullname" name="fullname" placeholder="Enter your name" value="james" required>
+                            </div> -->
                             <div class="input-box">
                                 <span class="details">Username*</span>
-                                <input type="username" name="username" placeholder="Enter your username" required>
+                                <input type="username" name="username" placeholder="Enter your username" value="james" required>
                             </div>
                             <div class="input-box">
                                 <span class="details">Email*</span>
-                                <input type="email" placeholder="Enter your uemail" name="email"
+                                <input type="email" placeholder="Enter your uemail" name="email" value="james@tecky.io"
                                     placeholder="Enter your email" required>
                             </div>
-                            <div class="input-box">
+                            <!-- <div class="input-box">
                                 <span class="details">Phone Number*</span>
-                                <input type="phonenumber" placeholder="Enter your phonenumber" name="phonenumber"
+                                <input type="phonenumber" placeholder="Enter your phonenumber" name="phonenumber" value="12345678"
                                     placeholder="Enter your number" required>
-                            </div>
+                            </div> -->
                             <div class="input-box">
                                 <span class="details">Password*</span>
-                                <input type="passwordInput1" placeholder="Enter your password" name="passwordInput1"
+                                <input type="passwordInput1" placeholder="Enter your password" name="passwordInput1" value="123"
                                     placeholder="Enter your password" required>
                             </div>
                             <div class="input-box">
                                 <span class="details">Confirm Password*</span>
-                                <input type="passwordInput2" placeholder="Confirm password" name="passwordInput2"
+                                <input type="passwordInput2" placeholder="Confirm password" name="passwordInput2" value="123"
                                     placeholder="Confirm your password" required>
                             </div>
                         </div>
-                        <div class="gender-details">
+                        <!-- <div class="gender-details">
                             <input type="radio" name="gender" id="dot-1">
                             <input type="radio" name="gender" id="dot-2">
                             <input type="radio" name="gender" id="dot-3">
@@ -90,7 +90,7 @@
                                     <span class="gender">Prefer not to say</span>
                                 </label>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="button">
                             <input id="registerbutton" type="submit" value="Register">
                         </div>
@@ -99,7 +99,7 @@
             </div>
         </div>
     </div><!--------------------------mobile bar------------------------------------>
-    <script src="../js/register.js"></script>
+    <script src="../js/auth.js"></script>
 </body>
 
 </html>

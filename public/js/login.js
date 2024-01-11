@@ -1,5 +1,5 @@
 function clientLogin(){
-    let target = document.querySelector('#loginFrom');
+    let target = document.querySelector('#login-form');
     target.addEventListener("submit", async (e)=>{
         e.preventDefault();
         console.log("login submit trigged")
@@ -10,19 +10,22 @@ function clientLogin(){
                 "Content-Type":"application/json",
             },
             body:JSON.stringify({
-                username:target.uname.value,
-                password:target.psw.value,
+                email:e.target.email.value,
+                password:e.target.password.value,
             }),
         });
-        if(res.status == 200){
-            const result= await res.json();
-            
+        const result= await res.json();
+
+        if(res.status == 200){            
             if (result.isAdmin){
                 window.location.href = "private/dashboard.html";
             } else {
                 window.location.href = "/";
             }
+            return
         }
+
+        alert(result.message)
     })
 }
 clientLogin()

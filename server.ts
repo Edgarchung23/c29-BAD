@@ -15,6 +15,7 @@ import { adminRouter } from "./router/is_adminRouter";
 import { authRouter } from "./router/authRouter";
 // import { adminRouter } from "./router/is_adminRouter";
 // import { isAdmin } from "./middelware";
+import expressSession from "express-session";
 
 export const knex = createKnex()
 const app = express();
@@ -22,6 +23,14 @@ import { router } from "./routes/routes";
 
 
 //<--------------------------March's need------------------------------------>
+app.use(
+  expressSession({
+    secret: "gyukj%^&*(*UYTGYHUJYT&*YHIUGYGYI",
+    resave: true,
+    saveUninitialized: true,
+  })
+);
+
 declare module "express-session"{
   interface SessionData {
       email?: string;
