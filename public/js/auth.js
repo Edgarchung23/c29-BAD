@@ -39,7 +39,7 @@ function register(){
 register()
 
 function clientLogin(){
-    let target = document.querySelector('#loginFrom');
+    let target = document.querySelector('#login-form');
     target.addEventListener("submit", async (e)=>{
         e.preventDefault();
         console.log("login submit trigged")
