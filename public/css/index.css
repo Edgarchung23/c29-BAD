@@ -9,6 +9,7 @@ width: 1050px;
 display: flex;
 flex-wrap: wrap;
 justify-content: flex-end;
+/* justify-content: center; */
 }
 a {
   color: black;
