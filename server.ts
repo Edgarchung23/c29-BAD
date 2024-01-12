@@ -109,6 +109,10 @@ app.use(
 //<--------------------------------------------------------------->
 app.use(router);
 
+
+
+
+
 app.use((req, res, next) => {
   console.log(req.method, req.url);
   let row: RequestLog = {
@@ -124,20 +128,26 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(router);
-// app.get("/logs", async (req, res, next) => {
-//   try {
-//     let requests = await knex("request_log")
-//       .select("id", "method", "url", "user_agent")
-//       .orderBy("id", "desc")
-//       .limit(25);
-//     res.json({ requests });
-//   } catch (error) {
-//     next(error);
-//   }
-// });
+app.get("/logs", async (req, res, next) => {
+  try {
+    let requests = await knex("request_log")
+      .select("id", "method", "url", "user_agent")
+      .orderBy("id", "desc")
+      .limit(25);
+    res.json({ requests });
+  } catch (error) {
+    next(error);
+  }
+});
+
+app.use((req, res, next) =>
+  next(
+    new HttpError(
+      404,
+      `route not found, method: ${req.method}, url: ${req.url}`
+    )
+  )
+);
 
 
 // app.use((req, res, next) =>
