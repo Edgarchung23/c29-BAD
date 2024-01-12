@@ -84,6 +84,7 @@ app.use(authRouter);
 // });
 
 //<--------------------------------------------------------------->
+app.use(router);
 
 app.use((req, res, next) => {
   console.log(req.method, req.url);
@@ -100,9 +101,6 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(router);
 app.get("/logs", async (req, res, next) => {
   try {
     let requests = await knex("request_log")

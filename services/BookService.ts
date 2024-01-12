@@ -1,12 +1,33 @@
 import { parseEpub, parseHTML } from "@gxl/epub-parser";
 import { Section } from "@gxl/epub-parser/lib/parseSection";
 import { Knex } from "knex";
-
-const inputFilePath = "./private/原子習慣.epub";
-const outputFilePath = "./private/output.txt";
+import { Book } from "../models/book";
 
 export class BookService {
     constructor(private knex: Knex){}
+
+    async getAllBook(): Promise<Book[]> {
+      try {
+        // Execute a raw SQL query to get information about all books
+        const queryResult = await this.knex.raw(
+          `SELECT id, book_cover, content_url from books`
+        );
+        // Extract the rows from the query result
+        const books: Book[] = queryResult.rows;
+  
+        // Log the retrieved books (optional)
+        console.log("Array of book", books);
+  
+        // Return the array of books
+        return books;
+      } catch (error: any) {
+        // Handle any errors that occur during the process
+        console.error('Error in getAllBook:', error.message);
+        throw error; // Optionally rethrow the error for higher-level error handling
+      }
+    }
+
+
 
     async getEpubLength(inputFilePath: string): Promise<number> {
     const epubObj = await parseEpub(inputFilePath, {

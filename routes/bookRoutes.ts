@@ -11,4 +11,5 @@ export const bookController = new BookController(bookService);
 
 bookRoute.get("/content", bookController.getContent);
 
+bookRoute.get("/reader", bookController.getReader);
 

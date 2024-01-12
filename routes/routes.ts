@@ -4,3 +4,4 @@ import { bookRoute } from "./bookRoutes";
 export const router = Router();
 
 router.use("/book", bookRoute);
+router.use("/chapter", bookRoute);
