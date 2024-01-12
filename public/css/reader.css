@@ -54,3 +54,14 @@ justify-content: flex-end;
 margin-left: 850px;
 position: relative;
   }
+
+.voiceContaniner {
+  width: 1100px;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+#voiceControls {
+  width: 800px;
+}
