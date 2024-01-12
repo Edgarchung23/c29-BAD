@@ -18,7 +18,7 @@ async function synthesizeSpeech() {
   };
 
   const [response] = await client.synthesizeSpeech(request);
-  const writeFile = fs.createWriteStream('output.mp3');
+  const writeFile = fs.createWriteStream('/voice/output.mp3');
   writeFile.write(response.audioContent, 'binary');
   writeFile.end();
 }

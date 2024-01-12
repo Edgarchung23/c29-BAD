@@ -52,6 +52,8 @@ app.use(express.static("public"));
 app.use(express.static("books"));
 app.use(express.static("public/images"));
 app.use(express.static("public"));
+app.use(express.static("voice"));
+
 app.use("/admin", is_admin, express.static("private"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
