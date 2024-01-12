@@ -80,10 +80,8 @@ app.use(authRouter);
 //     res.status(500).send('Error synthesizing speech');
 //   }
 // });
+
 //<--------------------------------------------------------------->
-
-
-
 
 app.use((req, res, next) => {
   console.log(req.method, req.url);
@@ -123,8 +121,6 @@ app.use((req, res, next) =>
     )
   )
 );
-
-
 
 let port = env.PORT;
 app.listen(port, async () => {
