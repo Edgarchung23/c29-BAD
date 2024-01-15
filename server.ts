@@ -160,7 +160,7 @@ app.get('/textToSpeech', async (req, res) => {
     const audioContent = response.audioContent;
 
     res.set('Content-Type', 'audio/mpeg');
-    res.set('Content-Disposition', 'attachment; filename="textToSpeech.mp3"');
+    res.set('Content-Disposition', 'inline')
     res.send(audioContent);
   } catch (error) {
     console.error('Error synthesizing speech:', error);
