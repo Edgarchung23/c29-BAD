@@ -8,23 +8,12 @@ import express, {NextFunction} from "express";
 import axios from "axios";
 import cheerio from "cheerio";
 // import * as EPub from 'epub';
-import { parseEpub, parseHTML } from "@gxl/epub-parser";
-import { Section } from "@gxl/epub-parser/lib/parseSection";
 import { is_admin } from "./middelware";
-import { adminRouter } from "./router/is_adminRouter";
-import { authRouter } from "./router/authRouter";
-// import { adminRouter } from "./router/is_adminRouter";
-// import { isAdmin } from "./middelware";
 import expressSession from "express-session";
-import { router } from "./routes/routes"; 
-import { Knex } from "knex";
-// import { userRoutes } from "./routes/user.routes";
 import { UserController } from "./controllers/user.controller";
-// import { FormidableParser } from "./multipartFormParser";
 import { UserServiceImpl } from "./services/user.service.impl";
-
-
 export const knex = createKnex()
+import { router } from "./routes/routes"; 
 const app = express();
 
 
@@ -94,8 +83,6 @@ app.get('/textToSpeech', async (req, res) => {
 app.use("/admin", is_admin, express.static("private"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(adminRouter);
-app.use(authRouter);
 app.use(
   new UserController(
     userService
