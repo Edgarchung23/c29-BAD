@@ -16,7 +16,7 @@ a {
 }
 
 a:hover {
-  color: #fa2500;
+  color: white;
 }
 .big_container{ 
   display: flex;
@@ -49,7 +49,7 @@ a:hover {
 
 }
 .sideBarBtn:hover{
-  color: rgb(255, 2, 2);
+  color: rgb(224, 185, 54);
 }
 
 #sideBarFooter{
