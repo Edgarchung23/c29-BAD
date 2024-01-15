@@ -66,10 +66,10 @@
       </div>
     </div>
     <!----------------------------------------------------------------------------->
-    </div><!--------------------------mobile bar------------------------------------>
-    
-    <!--------------------------------chatBox---------------------------------------->
-<script>
+  </div><!--------------------------mobile bar------------------------------------>
+
+  <!--------------------------------chatBox---------------------------------------->
+  <script>
     try {
 
       const queryString = window.location.search;
@@ -77,30 +77,30 @@
       const urlParams = new URLSearchParams(queryString);
       const book = urlParams.get('book')
       console.log(book);
-// shirt
+      // shirt
       // const url = new URL('https://localhost:8100/test.html?param=http://localhost:8100/原子習慣.epub');
       // console.log(url.searchParams.get('book')); 
 
       //let bookUrl = 'https://filesamples.com/samples/ebook/epub/Sway.epub'
       let bookUrl = `http://localhost:8100/${book}.epub`;
       let epubReader = ePub(bookUrl);
-	  var rendition = epubReader.renderTo("reader", { flow: "paginated", width: "900", height: "820", allowScriptedContent: true })
+      var rendition = epubReader.renderTo("reader", { flow: "paginated", width: "900", height: "820", allowScriptedContent: true })
       var displayed = rendition.display();
 
-	  var prev = document.getElementById("prev");
-      prev.addEventListener("click", function(e){
+      var prev = document.getElementById("prev");
+      prev.addEventListener("click", function (e) {
         rendition.prev()
         e.preventDefault();
       }, false);
 
-	  var next = document.getElementById("next");
+      var next = document.getElementById("next");
 
-      next.addEventListener("click", function(e){
-		console.log(epubReader.package.metadata.direction)
-		console.log(rendition)
-      rendition.next()
+      next.addEventListener("click", function (e) {
+        console.log(epubReader.package.metadata.direction)
+        console.log(rendition)
+        rendition.next()
         e.preventDefault();
-		console.log("123")
+        console.log("123")
       }, false);
 
     } catch (e) {
@@ -108,7 +108,7 @@
     }
 
   </script>
-    
+
 </body>
 
 
