@@ -95,3 +95,7 @@ height: 100%;
 #voiceControls {
 width: 80%;
 }
+
+.epub-container {
+max-width: 700px;
+}
