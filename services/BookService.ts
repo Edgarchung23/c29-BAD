@@ -3,12 +3,15 @@ import { Section } from "@gxl/epub-parser/lib/parseSection";
 import { Knex } from "knex";
 import { Book } from "../models/book";
 
+
 export class BookService {
     constructor(private knex: Knex){}
 
     async getAllBook(): Promise<Book[]> {
       try {
         // Execute a raw SQL query to get information about all books
+
+        console.log(this.knex)
         const queryResult = await this.knex.raw(
           `SELECT id, name, book_cover, content_url from books`
         );
