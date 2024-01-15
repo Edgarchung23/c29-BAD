@@ -18,7 +18,7 @@ async function getUsername() {
   }
 
   if(typeof getUsernameResult.data !== 'undefined'){
-    document.querySelector('.guestName').innerHTML = getUsernameResult.data;
+    document.querySelector('.guestName').innerHTML = "Hello, "+ getUsernameResult.data;
   }
 
   const loginButton = document.querySelector('.loginButton')
