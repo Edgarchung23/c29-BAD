@@ -24,37 +24,37 @@ export async function seed(knex: Knex): Promise<void> {
         user_id: id,
         name: "原子習慣",
         book_cover: "./原子習慣.jpg",
-        content_url: "./books/原子習慣.html",
+        content_url: "./books/原子習慣.epub",
        },
        {
         user_id: id,
         name: "蘇菲的世界",
         book_cover: "./蘇菲的世界.jpg",
-        content_url: "./books/蘇菲的世界.html",
+        content_url: "./books/蘇菲的世界.epub",
        },
        {
         user_id: id,
         name: "富爸爸窮爸爸",
         book_cover: "./富爸爸窮爸爸.jpeg",
-        content_url: "./books/富爸爸窮爸爸.html",
+        content_url: "./books/富爸爸窮爸爸.epub",
        },
        {
         user_id: id,
         name: "哈利波特5鳳凰會的密令",
         book_cover: "./哈利波特5鳳凰會的密令.jpg",
-        content_url: "./books/哈利波特5鳳凰會的密令.html",
+        content_url: "./books/哈利波特5鳳凰會的密令.epub",
        },
        {
         user_id: id,
         name: "哈利波特6混血王子的背叛",
         book_cover: "./哈利波特6混血王子的背叛.jpg",
-        content_url: "./books/哈利波特6混血王子的背叛.html",
+        content_url: "./books/哈利波特6混血王子的背叛.epub",
        },
        {
         user_id: id,
         name: "哈利波特7死神的聖物",
         book_cover: "./哈利波特7死神的聖物.jpg",
-        content_url: "./books/哈利波特7死神的聖物.html",
+        content_url: "./books/哈利波特7死神的聖物.epub",
        },
     ])
     .into("books");

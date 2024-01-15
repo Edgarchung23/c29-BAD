@@ -129,22 +129,9 @@
       }
     }
 
-    async function init() {
-      try {
-        const data = await fetchData();
-        console.log("data:", data)
-        console.log("dataName:", data.name)
-
-        // Check if data and data.name exist
-        if (data && data.name) {
-          console.log("data:", data)
-          console.log("dataName:", data.name)
-          // Update the title element with the book name
-          let bookName = `<h1>${data.name}</h1>`;
-          document.querySelector(".textTitle").innerHTML = bookName;
-        } else {
-          console.log("fail!!!!!!!!!!")
-        }
+async function init() {
+  try {
+    const data = await fetchData();
 
         const queryString = window.location.search;
         console.log(queryString);
