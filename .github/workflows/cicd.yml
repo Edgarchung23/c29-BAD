@@ -101,7 +101,6 @@ jobs:
            dist \
            public \
            books \
-           voice \ 
            "${{env.SERVER_HOST}}:${{env.SERVER_DIR}}"
       - name: insall dependenceies on server
         run: |
