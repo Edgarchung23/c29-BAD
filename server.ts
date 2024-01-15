@@ -48,12 +48,19 @@ app.use(
   //<-----------APP.USE---------------------------------------------->
   
 app.use(router);
+app.use(
+  new UserController(
+    userService
+  ).router,
+)
+
 app.use(express.static("public/html/"));
 app.use(express.static("public"));
 app.use(express.static("books"));
 app.use(express.static("public/images"));
 app.use(express.static("public"));
 app.use(express.static("voice"));
+app.use("/admin", is_admin, express.static("private"));
 
 //<--------------------------------------------------------------->
 
@@ -78,21 +85,6 @@ app.get('/textToSpeech', async (req, res) => {
     res.status(500).send('Error synthesizing speech');
   }
 });
-
-//<--------------------------------------------------------------->
-
-
-app.use("/admin", is_admin, express.static("private"));
-app.use(
-  new UserController(
-    userService
-  ).router,
-)
-
-//<--------------------------------------------------------------->
-
-
-
 
 
 app.use((req, res, next) => {

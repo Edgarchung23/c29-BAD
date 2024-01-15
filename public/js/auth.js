@@ -12,7 +12,7 @@ function register(){
             return 
         }
 
-        const res = await fetch("/action_register", {
+        const res = await fetch("/auth/register", {
             method:"POST",
             headers:{
                 "Content-Type": "application/json",

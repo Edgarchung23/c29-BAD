@@ -1,4 +1,4 @@
-export async function fetchBooks() {
+async function fetchBooks() {
     try {
         let res = await fetch("/chapter/reader", {
             method: "GET"

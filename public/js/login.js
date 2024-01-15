@@ -10,7 +10,7 @@ function clientLogin(){
         e.preventDefault();
         console.log("login submit trigged")
 
-        const res = await fetch("/login",{
+        const res = await fetch("/auth/login",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json",

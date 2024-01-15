@@ -41,7 +41,7 @@ async function logout_account(){
   // let target = document.querySelector("logout-button");
   // target.addEventListener("")
 
-  await fetch("/logout");
+  await fetch("/auth/logout");
 
   window.location.reload();
 }
