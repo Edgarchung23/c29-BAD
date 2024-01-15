@@ -1,59 +1,71 @@
-
-.textContaniner{
-    width: 1100px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.textContaniner {
+  width: 1100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.textTitle{
-    width:1100px;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    color: black;
+.textTitle {
+  width: 1100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  color: black;
 }
 
-.bookText{
-width: 1100px;
-font-size: 25px;
+.bookText {
+  width: 1100px;
+  font-size: 25px;
 }
 
 h1 {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 #username-display {
-display: flex;
-justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
+}
+.book-container {
+  position: relative;
+}
+#reader {
+  background-color: rgb(237, 237, 237);
+  /* height: 1000px;
+  width: 2500px; */
+  overflow: hidden !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  border: solid 1px;
+  position: relative;
 }
 
-#reader {
-    background-color: rgb(237, 237, 237);
-    height: 1000px;
-    width: 900px;
-    overflow: hidden !important;
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-    border: solid 1px; 
-  }
+.arrow {
+  top: 0px;
+  font-size: 64px;
+  color: #000000;
+  font-family: arial, sans-serif;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  text-decoration: none;
+  position: absolute;
+  top: 45%;
+}
 
-  .arrow {
-    font-size: 64px;
-    color: #000000;
-    font-family: arial, sans-serif;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-    text-decoration: none;
-  }
+#prev {
+  margin-left: 100px;
+  /* position: relative; */
+}
 
-  #next {
-margin-left: 850px;
-position: relative;
-  }
+
+#next {
+  margin-left: 900px;
+  /* position: relative; */
+}
 
 .voiceContaniner {
   width: 1100px;
