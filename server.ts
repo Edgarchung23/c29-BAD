@@ -15,7 +15,8 @@ import { UserServiceImpl } from "./services/user.service.impl";
 export const knex = createKnex()
 import { router } from "./routes/routes"; 
 const app = express();
-
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 const textToSpeech = require('@google-cloud/text-to-speech');
 const fs = require('fs');
@@ -35,17 +36,18 @@ app.use(
     resave: true,
     saveUninitialized: true,
   })
-);
-
-declare module "express-session"{
-  interface SessionData {
+  );
+  
+  declare module "express-session"{
+    interface SessionData {
       email?: string;
       is_admin?: boolean;
       username?:string;
+    }
   }
-}
-//<-----------APP.USE---------------------------------------------->
-
+  //<-----------APP.USE---------------------------------------------->
+  
+app.use(router);
 app.use(express.static("public/html/"));
 app.use(express.static("public"));
 app.use(express.static("books"));
@@ -81,8 +83,6 @@ app.get('/textToSpeech', async (req, res) => {
 
 
 app.use("/admin", is_admin, express.static("private"));
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 app.use(
   new UserController(
     userService
@@ -90,7 +90,6 @@ app.use(
 )
 
 //<--------------------------------------------------------------->
-app.use(router);
 
 
 

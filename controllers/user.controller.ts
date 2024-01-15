@@ -34,7 +34,6 @@ export class UserController {
     }
 
     async getUsername( req:Request ,res: Response){
-        console.log(req.session)
         try{
             if(req.session.email){
                 res.json({message: "login success",  data: req.session.username})
@@ -46,5 +45,6 @@ export class UserController {
             res.status(400).json({message: error.message})
         }
     }
+    
     
 }
