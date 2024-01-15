@@ -60,6 +60,9 @@ height: 100%;
   border: solid 1px;
   min-width: 700px;
   height: 100%;
+  background-image: url(https://pic1.zhimg.com/80/v2-b5c7d79a42ab42136abc2a5f5f449ab8_720w.webp);
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 .arrow {
