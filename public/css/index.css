@@ -45,7 +45,9 @@ a:hover {
 .sideBarFooter {
 
 }
-
+.hidden{
+  display: none;
+}
 .sideBarBtn {
   text-decoration: none;
   color: inherit;
