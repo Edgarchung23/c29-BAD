@@ -62,9 +62,6 @@ app.use(express.static("public"));
 app.use(express.static("books"));
 app.use(express.static("public/images"));
 app.use(express.static("public"));
-<<<<<<< HEAD
-// app.use(is_admin, express.static("private"));
-=======
 app.use(express.static("voice"));
 // Convert tp mp3 , save = http://localhost:8080/
 app.get('/textToSpeech', async (req, res) => {
@@ -89,12 +86,10 @@ app.get('/textToSpeech', async (req, res) => {
 });
 
 app.use("/admin", is_admin, express.static("private"));
->>>>>>> c1a7cfcefd460ee0d6732cbc836336bc8d59bd20
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(adminRouter);
 app.use(authRouter);
-<<<<<<< HEAD
 app.use(
   new UserController(
     userService
@@ -103,8 +98,6 @@ app.use(
 
 // app.use(userRoutes);
 
-=======
->>>>>>> c1a7cfcefd460ee0d6732cbc836336bc8d59bd20
 
 //<--------------------------------------------------------------->
 app.use(router);
@@ -124,7 +117,6 @@ app.use((req, res, next) => {
   next();
 });
 
-<<<<<<< HEAD
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(router);
@@ -139,19 +131,6 @@ app.use(router);
 //     next(error);
 //   }
 // });
-=======
-app.get("/logs", async (req, res, next) => {
-  try {
-    let requests = await knex("request_log")
-      .select("id", "method", "url", "user_agent")
-      .orderBy("id", "desc")
-      .limit(25);
-    res.json({ requests });
-  } catch (error) {
-    next(error);
-  }
-});
->>>>>>> c1a7cfcefd460ee0d6732cbc836336bc8d59bd20
 
 // app.use((req, res, next) =>
 //   next(
