@@ -20,6 +20,8 @@ async function getUsername() {
   // 2. if success => get response data 
   // 3. print the username into html   
 }
+
+
 async function getRole() {
   let res = await fetch("/user/session");
   if (res.status == 401) {
