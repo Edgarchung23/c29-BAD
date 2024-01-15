@@ -2,11 +2,10 @@ body{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: auto;
 }
 
 .secondBody {
-/* width: 1200px; */
+width: 1200px;
 display: flex;
 flex-wrap: wrap;
 justify-content: flex-end;
@@ -26,7 +25,7 @@ a:hover {
   }
 
 #mySidebar{
-  /* width:200px; */
+  width:200px;
   padding-top: 50px;
 }
 
@@ -66,41 +65,35 @@ a:hover {
 .Title {
   display: flex;
   justify-content:flex-end;
-  /* width: 1100px; */
+  width: 1100px;
   height: 50px;
   padding-right: 90px;
-  margin-top: 30px;
 }
 
-.loginButton {
-  width: 60px;
-  height: 60px;
-  margin-top:10px;
-}
 #loginBtn {
   width: 60px;
   height: 60px;
-  /* margin-top:10px; */
+  margin-top:10px;
 }
 
 #logoutBtn {
   width: 40px;
   height: 40px;
-  margin-top:15px;
+  margin-top:30px;
 }
 
 /* ---------photosBox----------------------------------------------------------------------------- */
 
 .photosBox_container{
 padding-top: 50px;
-/* width: 1100px; */
+width: 1100px;
 display: flex;
 justify-content: center;
 flex-wrap: wrap;
 }
 
 .photoBox {
-  /* width: 1100px; */
+  width: 1100px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -115,14 +108,8 @@ padding: 20px;
 }
 
 .books-container {
-  /* width: 1200px; */
+  width: 1200px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-}
-
-/* ---------bar----------------------------------------------------------------------------- */
-
-.guestName {
-  font-weight: bold;
 }
