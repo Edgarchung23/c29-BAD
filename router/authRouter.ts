@@ -1,9 +1,7 @@
 
-import { email } from "cast.ts";
-import { Router, Request, Response} from "express";
+import { Request, Response, Router } from "express";
+import { checkPassword, hashedPassword } from "../hash";
 import { knex } from "../server";
-import { checkPassword } from "../hash";
-import { is_admin } from "../middelware";
 
 
 export const authRouter = Router();
@@ -11,12 +9,17 @@ export const authRouter = Router();
 authRouter.post("/login",login);
 
 async function login(req: Request, res: Response){
-    const {email, password} = req.body
+    try{
+          const {email, password} = req.body
     let queryResult = await knex.raw(`SELECT * FROM users where email = ?`, [email]);
-    const userData = queryResult.rows[0]
-    console.log(userData)
+    
+    const userCount = queryResult.rowCount
 
-    if (queryResult.rowCount != 0){
+    if (userCount != 0){
+        const userData = queryResult.rows[0]
+
+        console.log(password)
+        console.log(hashedPassword)
         let compareResult = await checkPassword ({
             plainPassword: password,
             hashedPassword: userData.password,
@@ -25,21 +28,22 @@ async function login(req: Request, res: Response){
             res.status(400).json({ message: "password is incorrect" });
             return
         }
-        console.log(req.session)
         req.session.email = userData.email;
-        // if(queryResult.rows[0].is_admin){
-        //     req.session.is_admin = true;
-        //     res.json({message:"login success", is_admin:queryResult.rows[0].is_admi})
-        //     return
-        // }else {
-        //     res.json({ message: "login success",is_admin: false});   
-        //     return
-        // } 
-        const isAdmin = queryResult.rows[0].is_admin
+        const isAdmin = userData.is_admin
         req.session.is_admin = isAdmin;
+        req.session.username = userData.username;
+
+        console.log("Login email: ", req.session.email)
+        console.log("Login is_admin: ", req.session.is_admin)
+
         res.json({message:"login success", is_admin:isAdmin})
         return
      } else{
-        res.status(400).json({ message: "email_address is incorrect" });
+        const username = req.body.username
+        res.status(400).json({ message: `email_address is incorrect ${username}` });
         }
+    }catch(error:any){
+        res.status(400).json({ massage: error.message})
+    }
+  
     }

@@ -1,3 +1,9 @@
+  
+  function openModal() {
+    document.querySelector(".custom-modal").style.display = "block";
+  }
+  
+
 function clientLogin(){
     let target = document.querySelector('#login-form');
     target.addEventListener("submit", async (e)=>{
@@ -18,9 +24,10 @@ function clientLogin(){
 
         if(res.status == 200){            
             if (result.isAdmin){
-                window.location.href = "private/dashboard.html";
+                window.location.href = "localhost:8100/html/";
             } else {
                 window.location.href = "/";
+                
             }
             return
         }
@@ -29,3 +36,4 @@ function clientLogin(){
     })
 }
 clientLogin()
+

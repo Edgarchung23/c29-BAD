@@ -4,7 +4,7 @@ import { createKnex } from "./db";
 import { RequestLog } from "./types";
 import { HttpError } from "./http.error";
 import { env } from "./env";
-import express from "express";
+import express, {NextFunction} from "express";
 import axios from "axios";
 import cheerio from "cheerio";
 // import * as EPub from 'epub';
@@ -16,13 +16,21 @@ import { authRouter } from "./router/authRouter";
 // import { adminRouter } from "./router/is_adminRouter";
 // import { isAdmin } from "./middelware";
 import expressSession from "express-session";
+import { router } from "./routes/routes"; 
+import { Knex } from "knex";
+// import { userRoutes } from "./routes/user.routes";
+import { UserController } from "./controllers/user.controller";
+// import { FormidableParser } from "./multipartFormParser";
+import { UserServiceImpl } from "./services/user.service.impl";
+
 
 export const knex = createKnex()
 const app = express();
-import { router } from "./routes/routes"; 
-
 
 //<--------------------------March's need------------------------------------>
+let userService = new UserServiceImpl(knex)
+
+
 app.use(
   expressSession({
     secret: "gyukj%^&*(*UYTGYHUJYT&*YHIUGYGYI",
@@ -45,11 +53,20 @@ app.use(express.static("books"));
 
 app.use(express.static("public/images"));
 app.use(express.static("public"));
-app.use("/admin", is_admin, express.static("private"));
+// app.use(is_admin, express.static("private"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(adminRouter);
 app.use(authRouter);
+app.use(
+  new UserController(
+    userService
+  ).router,
+)
+
+// app.use(userRoutes);
+
+
 //<--------------------------------------------------------------->
 
 
@@ -74,26 +91,26 @@ app.use((req, res, next) => {
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(router);
-app.get("/logs", async (req, res, next) => {
-  try {
-    let requests = await knex("request_log")
-      .select("id", "method", "url", "user_agent")
-      .orderBy("id", "desc")
-      .limit(25);
-    res.json({ requests });
-  } catch (error) {
-    next(error);
-  }
-});
+// app.get("/logs", async (req, res, next) => {
+//   try {
+//     let requests = await knex("request_log")
+//       .select("id", "method", "url", "user_agent")
+//       .orderBy("id", "desc")
+//       .limit(25);
+//     res.json({ requests });
+//   } catch (error) {
+//     next(error);
+//   }
+// });
 
-app.use((req, res, next) =>
-  next(
-    new HttpError(
-      404,
-      `route not found, method: ${req.method}, url: ${req.url}`
-    )
-  )
-);
+// app.use((req, res, next) =>
+//   next(
+//     new HttpError(
+//       404,
+//       `route not found, method: ${req.method}, url: ${req.url}`
+//     )
+//   )
+// );
 
 
 

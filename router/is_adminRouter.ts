@@ -17,9 +17,6 @@ async function register(req: Request, res: Response) {
   }
 
   let queryResult = await knex.raw(`SELECT email FROM users WHERE email = ? `, [req.body.email]);
-  // console.log("queryResult_2:", queryResult_2.rows);
-
-  // let queryResult = await knex.raw(`SELECT * FROM users WHERE true `);
   console.log("result:", queryResult);
   if (queryResult.rowCount > 0) {
     return res.status(400).json({ message: "Account exists" });
@@ -39,15 +36,6 @@ async function register(req: Request, res: Response) {
       is_admin: false
     })
     .into("users");
-
-  // await knex.raw(
-  //   ` insert into "users" ("email", "password", "username",is_admin,status) values ($1, $2, $3,$4,$5)  `,
-  //   [req.body.email, req.body.username, hashed, true, true]
-  // );
-
   res.json({ message: "register success" });
-
-  // Insert a record into database
-
-  // if (result)
 }
+
