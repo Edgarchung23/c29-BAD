@@ -16,6 +16,7 @@ async function getUsername() {
     getUsernameResult = await getUsernameRes.json();
     console.log("ioioioioio:",getUsernameResult)
   }
+  document.querySelector('.guestName').innerHTML = getUsernameResult.data
   // 2. if success => get response data 
   // 3. print the username into html   
 }
