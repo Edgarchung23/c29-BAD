@@ -1,5 +1,5 @@
 
-import { Request, Response, Router } from "express";
+import { NextFunction, Request, Response, Router } from "express";
 import { checkPassword, hashedPassword } from "../hash";
 import { knex } from "../server";
 
@@ -7,6 +7,7 @@ import { knex } from "../server";
 export const authRouter = Router();
 
 authRouter.post("/login",login);
+authRouter.get("/logout",logout)
 
 async function login(req: Request, res: Response){
     try{
@@ -45,5 +46,18 @@ async function login(req: Request, res: Response){
     }catch(error:any){
         res.status(400).json({ massage: error.message})
     }
-  
-    }
+}
+
+async function logout(req:Request,res:Response){
+    if (!req.session.email) {
+        res.status(401).json({ message: "your are not logged in" });
+      } else {
+        req.session.destroy((error) => {
+          if (error) {
+            res.status(500).json({ message: "logout failed" });
+          } else {
+            res.json({ message: "logout success" });
+          }
+        });
+      }
+}
