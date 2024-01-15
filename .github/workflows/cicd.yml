@@ -100,7 +100,7 @@ jobs:
            package.json \
            dist \
            public \
-           books \
+           books\
            "${{env.SERVER_HOST}}:${{env.SERVER_DIR}}"
       - name: insall dependenceies on server
         run: |
