@@ -142,6 +142,9 @@ app.listen(port, async () => {
   //   console.error('Error processing EPUB sections:', error.message);
   // }
 })
+
+//<--------------------------------------------------------------->
+
 // Convert tp mp3 , save = http://localhost:8080/
 app.get('/textToSpeech', async (req, res) => {
   const text = '聽君一席話如聽一席話';
@@ -165,11 +168,6 @@ app.get('/textToSpeech', async (req, res) => {
   }
 });
 
-// app.listen(8080, () => {
-//   console.log('Server is running on port 8080');
-// });
-
-
 // Convert to mp3 , save = Vscode
 async function synthesizeSpeech() {
   const request = {
@@ -186,6 +184,7 @@ async function synthesizeSpeech() {
 
 synthesizeSpeech();
 
+//<--------------------------------------------------------------->
 
 // Scraping
 async function scrapeHaodoo() {
