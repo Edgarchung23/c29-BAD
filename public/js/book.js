@@ -5,13 +5,14 @@ async function fetchBooks() {
         });
 
         let result = await res.json();
+        let data = result.data;
 
-        console.log("fetch result:", result.data);
+        console.log("fetch result:", data);
 
 
         let homeHTML = "";
 
-        for (let book of result.data) {
+        for (let book of data) {
             console.log(book.book_cover)
             homeHTML += `
             <div class="card"> 

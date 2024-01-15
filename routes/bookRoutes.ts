@@ -7,7 +7,6 @@ import { knex } from "../server";
 
 export const bookRoute = Router();
 
-console.log("knex: ", knex)
 const bookService = new BookService(knex);
 export const bookController = new BookController(bookService);
 

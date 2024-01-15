@@ -38,6 +38,24 @@ export async function seed(knex: Knex): Promise<void> {
         book_cover: "./富爸爸窮爸爸.jpeg",
         content_url: "./books/富爸爸窮爸爸.html",
        },
+       {
+        user_id: id,
+        name: "哈利波特5鳳凰會的密令",
+        book_cover: "./哈利波特5鳳凰會的密令.jpg",
+        content_url: "./books/哈利波特5鳳凰會的密令.html",
+       },
+       {
+        user_id: id,
+        name: "哈利波特6混血王子的背叛",
+        book_cover: "./哈利波特6混血王子的背叛.jpg",
+        content_url: "./books/哈利波特6混血王子的背叛.html",
+       },
+       {
+        user_id: id,
+        name: "哈利波特7死神的聖物",
+        book_cover: "./哈利波特7死神的聖物.jpg",
+        content_url: "./books/哈利波特7死神的聖物.html",
+       },
     ])
     .into("books");
 }
