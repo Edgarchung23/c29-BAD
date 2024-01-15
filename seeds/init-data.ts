@@ -23,20 +23,20 @@ export async function seed(knex: Knex): Promise<void> {
        {
         user_id: id,
         name: "原子習慣",
-        book_cover: "./private/原子習慣.jpg",
-        content_url: "./private/原子習慣.epub",
+        book_cover: "./books/原子習慣.jpg",
+        content_url: "./books/原子習慣.html",
        },
        {
         user_id: id,
         name: "蘇菲的世界",
-        book_cover: "./private/蘇菲的世界.jpg",
-        content_url: "./private/蘇菲的世界.epub",
+        book_cover: "./books/蘇菲的世界.jpg",
+        content_url: "./books/蘇菲的世界.html",
        },
        {
         user_id: id,
         name: "富爸爸窮爸爸",
-        book_cover: "./private/富爸爸窮爸爸.jpg",
-        content_url: "./private/富爸爸窮爸爸.epub",
+        book_cover: "./books/富爸爸窮爸爸.jpg",
+        content_url: "./books/富爸爸窮爸爸.html",
        },
     ])
     .into("books");

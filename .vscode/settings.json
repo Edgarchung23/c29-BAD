@@ -2,5 +2,6 @@
     "cSpell.words": [
         "knexfile",
         "middelware"
-    ]
+    ],
+    "liveServer.settings.port": 5501
 }

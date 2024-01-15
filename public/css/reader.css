@@ -1,3 +1,4 @@
+
 .textContaniner{
     width: 1100px;
     display: flex;
@@ -9,7 +10,8 @@
     width:1100px;
     height: 100px;
     display: flex;
-justify-content: center;
+    justify-content: center;
+    color: black;
 }
 
 .bookText{
@@ -21,11 +23,45 @@ h1 {
     font-weight: bold;
 }
 
-.Title{
- 
-}
-
 #username-display {
 display: flex;
 justify-content: flex-end;
+}
+
+#reader {
+    background-color: rgb(237, 237, 237);
+    height: 1000px;
+    width: 900px;
+    overflow: hidden !important;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    border: solid 1px; 
+  }
+
+  .arrow {
+    font-size: 64px;
+    color: #000000;
+    font-family: arial, sans-serif;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    text-decoration: none;
+  }
+
+  #next {
+margin-left: 850px;
+position: relative;
+  }
+
+.voiceContaniner {
+  width: 1100px;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+#voiceControls {
+  width: 800px;
 }

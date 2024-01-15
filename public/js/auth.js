@@ -37,3 +37,15 @@ function register(){
     })
 }
 register()
+<<<<<<< HEAD
+=======
+
+// function clientLogin(){
+//     let target = document.querySelector('#login-form');
+//     target.addEventListener("submit", async (e)=>{
+//         e.preventDefault();
+//         console.log("login submit trigged")
+//     })
+// }
+// clientLogin()
+>>>>>>> c1a7cfcefd460ee0d6732cbc836336bc8d59bd20

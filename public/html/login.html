@@ -18,45 +18,48 @@
 </head>
 
 <body>
-  <div class="login-form">
-    <div class="card-body p-4 p-lg-5 text-black">
-      <form id="login-form">
-        <div class="d-flex align-items-center mb-3 pb-1">
-          <span class="h1 fw-bold mb-0"></span>
-        </div>
+  <div class="login_container">
+    <a href="./index.html" id="firstBar"><img src="../assets/home.png" id="homeBtn"></a>
 
-        <h5 class="form-name">
-          Sign into your account
-        </h5>
+    <div class="login-form">
+      <div class="card-body p-4 p-lg-5 text-black">
+        <form id="login-form">
+          <div class="d-flex align-items-center mb-3 pb-1">
+            <span class="h1 fw-bold mb-0"></span>
+          </div>
 
-        <div class=" form-outline mb-4" style="margin-top:70px;">
-          <input type="email" id="form2Example17" class="form-control form-control-lg" name="email"
-            placeholder="Enter your email" value="james@tecky.io"/>
-          <label class="form-label" for="form2Example17">Email</label>
-        </div>
+          <h5 class="form-name">
+            Sign into your account
+          </h5>
 
-        <div class="form-outline mb-4">
-          <input type="password" id="form2Example27" class="form-control form-control-lg" name="password"
-            placeholder="Enter your password" value="123" />
-          <label class="form-label" for="form2Example27">Password</label>
-        </div>
+          <div class=" form-outline mb-4" style="margin-top:0px;">
+            <input type="email" id="form2Example17" class="form-control form-control-lg" name="email"
+              placeholder="Enter your email" value="james@tecky.io" />
+            <label class="form-label" for="form2Example17">Email</label>
+          </div>
 
-        <div class="pt-1 mb-4">
-          <button class="btn btn-dark btn-block" type="submit" id="loginbutton"
-            style="font-size: 15px;font-weight: bold;">
-            Login
-          </button>
-        </div>
+          <div class="form-outline mb-4">
+            <input type="password" id="form2Example27" class="form-control form-control-lg" name="password"
+              placeholder="Enter your password" value="123" />
+            <label class="form-label" for="form2Example27">Password</label>
+          </div>
 
-        <a class="forgotPassword" href="./404.html">Forgot password?</a>
-        <p class="dontHaveAccount" style="color:rgb(151	202	224	); margin-top:15px;">
-          Don't have an account?
-          <a id="loginRegisterbutton" href="./register.html">Register here</a>
-        </p>
-      </form>
+          <div class="pt-1 mb-4">
+            <button class="btn btn-dark btn-block" type="submit" id="loginbutton"
+              style="font-size: 15px;font-weight: bold;">
+              Login
+            </button>
+          </div>
+
+          <a class="forgotPassword" href="./404.html">Forgot password?</a>
+          <p class="dontHaveAccount" style="color:rgb(0, 0, 0); margin-top:15px;">
+            Don't have an account?
+            <a id="loginRegisterbutton" href="./register.html">Register here</a>
+          </p>
+        </form>
+      </div>
     </div>
-  </div>
-  <script src="../js/login.js"></script>
+    <script src="../js/login.js"></script>
 </body>
 
 </html>

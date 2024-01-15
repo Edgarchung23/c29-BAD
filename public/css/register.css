@@ -44,7 +44,7 @@ form .input-box span.details {
 }
 .user-details .input-box input:focus,
 .user-details .input-box input:valid {
-  border-color: #c0604f;
+  border-color: #d5d5d5;
 }
 form .gender-details .gender-title {
   font-size: 20px;
@@ -150,3 +150,16 @@ form .button input:hover {
 .secondContent{
 margin-top: 80px;
 }
+
+#homeBtn{
+  margin-top: 25px;
+    width: 35px;
+    height: 35px;
+  }
+  
+  #firstBar {
+    width: 840px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  

@@ -32,5 +32,14 @@ export class BookController {
     console.error('Error processing EPUB sections:', error.message);
   }
 }
-
+ 
+  getReader = async(req: Request, res: Response) => {
+  
+  try {
+    let result = await this.bookService.getAllBook();
+    res.json({msg: "success", data: result })
+  
+} catch (error) {
+  res.status(500).json({ msg: "internal server error" });
 }
+}}
