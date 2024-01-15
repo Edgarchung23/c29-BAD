@@ -154,8 +154,9 @@
         document.querySelector(".textTitle").innerHTML = book;
 
 
-        https://c29-bad-grp3.yodaandkeungjai.com/html/
+
         let bookUrl = `https://c29-bad-grp3.yodaandkeungjai.com/${book}.epub`;
+        // let bookUrl = `http://localhost:8100/${book}.epub`;
         let epubReader = ePub(bookUrl);
         var rendition = epubReader.renderTo("reader", { flow: "paginated", width: "700", height: "700", allowScriptedContent: true });
         var displayed = rendition.display();
