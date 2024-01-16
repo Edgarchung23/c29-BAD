@@ -27,4 +27,4 @@ async function collectBtn (){
     }
 
 
-collectBtn();
+// collectBtn();

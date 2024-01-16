@@ -37,6 +37,7 @@ export class UserController {
         try{
             if(req.session.email){
                 res.json({message: "login success",  data: req.session.username})
+                
             }else{
                 res.status(400).json({message:"you are not login"})
             }

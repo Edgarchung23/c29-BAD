@@ -24,13 +24,16 @@
       <div id="username-display" class="loginButton hidden">
         <a href="./login.html"><img src="../assets/login.png" id="loginBtn"></a></p>
       </div>
-      <div id="logout-area" >
-        <button class="logout-button hidden" onclick="logout_account()">logout</button>
-    </div>
-
+      <div class="banner">
+      </div>
+      <div class="logout-button hidden">
+        <a href="./index.html" onclick="logout_account()" id="logout_area"><img src=" ../assets/logout.png"
+            id="logoutBtn"></a>
+        </p>
+      </div>
       <!-- <div id="register-display">
-            <a href="./register.html">Register<img src="" id="registerBtn"></a>
-        </div> -->
+      <a href="./register.html">Register<img src="" id="registerBtn"></a>
+      </div> -->
 
     </div>
     <div class="big_container">
@@ -39,6 +42,8 @@
       <nav class="w3-bar-block" id="mySidebar">
         <div class="sideBarContainer">
           <h3 class="shopName"><b>講書台</b></h3>
+          <div class="guestName"></div>
+
         </div>
         <div class="sideBarText">
 
@@ -57,9 +62,9 @@
         <div class="textTitle">
           <h1>Book Name & Chapter</h1>
         </div>
-        <div class="collect_box" id="c_b">
+        <!-- <div class="collect_box" id="c_b">
           <button class="collect_button" onclick="collectBtn()">collect</button>
-        </div>
+        </div> -->
         <!-- <div> -->
         <div class="book-container">
           <div id="reader" style="background-color: rgb(249, 240, 227);"></div>
@@ -87,7 +92,9 @@
 
   <!--------------------------------chatBox---------------------------------------->
   <script src="../js/collect_btn.js"></script>
+  <script src="../js/reader.js"></script>
   <script src="../js/index.js"></script>
+  <!-- <script src="../js/book.js"></script> -->
   <script>
     async function fetchData() {
       try {
@@ -154,4 +161,5 @@
   </script>
 
 </body>
+
 </html>

@@ -13,9 +13,11 @@ export class CollectServiceImpl implements CollectService {
     
     return bookNames.id
   }
-  saveBook(input: { book_id: number }): Promise<void> {
+  async saveBook(input: { book_id: number }): Promise<void> {
 
-    
+    await this.knex('collections').insert({
+      
+    })
     throw new Error("Method not implemented.");
   }
   getCollectedBookByUserId(user_id: number): Promise<any[]> {
