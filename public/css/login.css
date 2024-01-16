@@ -5,12 +5,13 @@
   }
   
   .login_container {
-  max-width: 1200px;
+  max-width: 1500px !important;
   }
 
   #login-form {
-    min-width: 500px;
+width: 100%;
   }
+
   
   a {
     color: black;
@@ -220,7 +221,6 @@
     display: flex;
     margin-top: 20px;
     color: rgb(147, 147, 147);
-    /* width: 200px; */
     height: 40px;
     align-items: center;
     font-weight: bold
@@ -244,7 +244,6 @@
   }
   
   #user-loginedlogo {
-    /* width: 28px; */
     height: 28px;
   }
 
@@ -257,7 +256,6 @@
 
 #homeBtn{
 margin-top: 25px;
-  /* width: 35px; */
   height: 35px;
 }
 
