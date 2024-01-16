@@ -72,9 +72,11 @@ async function login(req: Request, res: Response) {
       req.session.is_admin = isAdmin;
       req.session.username = userData.username;
 
+      
+
       console.log("Login email: ", req.session.email);
       console.log("Login is_admin: ", req.session.is_admin);
-
+      
       res.json({ message: "login success", is_admin: isAdmin });
       return;
     } else {
@@ -82,6 +84,7 @@ async function login(req: Request, res: Response) {
       res
         .status(400)
         .json({ message: `email_address is incorrect ${username}` });
+      return
     }
   } catch (error: any) {
     res.status(400).json({ massage: error.message });

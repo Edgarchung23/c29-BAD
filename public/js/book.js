@@ -1,20 +1,19 @@
 async function fetchBooks() {
-    try {
-        let res = await fetch("/chapter/reader", {
-            method: "GET"
-        });
+  try {
+    let res = await fetch("/chapter/reader", {
+      method: "GET",
+    });
 
-        let result = await res.json();
-        let data = result.data;
+    let result = await res.json();
+    let data = result.data;
 
-        console.log("fetch result:", data);
+    console.log("fetch result:", data);
 
+    let homeHTML = "";
 
-        let homeHTML = "";
-
-        for (let book of data) {
-            console.log(book.book_cover)
-            homeHTML += `
+    for (let book of data) {
+      console.log(book.book_cover);
+      homeHTML += `
             <div class="card"> 
            <a href="../html/reader.html?book=${book.name}"><img src="${book.book_cover}" id="bookPh" /></a>
         </div>
@@ -35,4 +34,18 @@ async function fetchBooks() {
 fetchBooks();
 
 
+// async function renderBook(id) {
+//     let data = await getBook(id);
+//     let allBook = "";
+//     for (let entry of data) {
+//       allProduct += `
+{/* <audio controls id="voiceControls">
+            <source src="../voice/output1.mp3" type="audio/mpeg">
+          </audio>
+    //   </div> */}
+//       </div>
+//       `;
+//     }
+//     document.querySelector(".voiceContaniner").innerHTML = allBook;
+//   }
 
