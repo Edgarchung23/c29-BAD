@@ -43,9 +43,9 @@
             <a href="../html/novel.html" class="w3-bar-item sideBarBtn">小說</a>
             <a href="../html/literature.html" class="w3-bar-item sideBarBtn">文學</a>
             <a href="../html/psychology.html" class="w3-bar-item sideBarBtn ">心理學</a>
-        </div>
-        <a href="#sideBarFooter" class="sideBarBtn w3-padding">聯絡我們</a>
-        <a href="#sideBarFooter" class="w3-bar-item sideBarBtn">Test</a>
+          </div>
+          <a href="#sideBarFooter" class="sideBarBtn w3-padding">聯絡我們</a>
+          <a href="#sideBarFooter" class="w3-bar-item sideBarBtn">Test</a>
       </nav>
       <!--------------------------------- photosBox ---------------------------------->
       <!-- <div> -->
@@ -80,42 +80,6 @@
 
   <!--------------------------------chatBox---------------------------------------->
   <script>
-
-
-    // try {
-
-    //   const queryString = window.location.search;
-    //   console.log(queryString);
-    //   const urlParams = new URLSearchParams(queryString);
-    //   const book = urlParams.get('book')
-    //   console.log(book);
-
-    //   let bookUrl = `http://localhost:8100/${book}.epub`;
-    //   let epubReader = ePub(bookUrl);
-    //   var rendition = epubReader.renderTo("reader", { flow: "paginated", width: "700", height: "700", allowScriptedContent: true })
-    //   var displayed = rendition.display();
-
-    //   var prev = document.getElementById("prev");
-    //   prev.addEventListener("click", function (e) {
-    //     rendition.prev()
-    //     e.preventDefault();
-    //   }, false);
-
-    //   var next = document.getElementById("next");
-
-    //   next.addEventListener("click", function (e) {
-    //     console.log(epubReader.package.metadata.direction)
-    //     console.log(rendition)
-    //     rendition.next()
-    //     e.preventDefault();
-    //     console.log("123")
-    //   }, false);
-
-    // } catch (e) {
-    //   alert("error 1" + e);
-    // }
-
-
     async function fetchData() {
       try {
         let res = await fetch("/chapter/reader", {
@@ -134,9 +98,9 @@
       }
     }
 
-async function init() {
-  try {
-    const data = await fetchData();
+    async function init() {
+      try {
+        const data = await fetchData();
 
         const queryString = window.location.search;
         console.log(queryString);
