@@ -71,6 +71,7 @@ async function login(req: Request, res: Response) {
       const isAdmin = userData.is_admin;
       req.session.is_admin = isAdmin;
       req.session.username = userData.username;
+      req.session.user_id = userData.id;
 
       
 
