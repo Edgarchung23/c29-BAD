@@ -104,6 +104,13 @@ export async function seed(knex: Knex): Promise<void> {
         book_cover: "/人性的弱點.jpg",
         content_url: "./books/人性的弱點.epub",
        },
+       {
+        user_id: id,
+        name: "大師的殘忍",
+        category: "文學",
+        book_cover: "/大師的殘忍.jpg",
+        content_url: "./books/大師的殘忍.epub",
+       },
     ])
     .into("books");
 }

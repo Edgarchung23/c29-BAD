@@ -6,7 +6,7 @@ async function logout_account(){
   window.location.reload();
 }
 
-
+getUsername()
 async function getUsername() {
   // 1. fetch call /user/session
   let getUsernameRes = await fetch("/user/session");
@@ -37,7 +37,7 @@ async function getUsername() {
   // 3. print the username into html   
 }
 
-getUsername()
+
 // // const express = require('express');
 // const textToSpeech = require('@google-cloud/text-to-speech');
 // const fs = require('fs');
