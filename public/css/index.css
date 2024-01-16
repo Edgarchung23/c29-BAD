@@ -5,7 +5,7 @@ body{
 }
 
 .secondBody {
-width: 1200px;
+max-width: 1000px;
 display: flex;
 flex-wrap: wrap;
 justify-content: flex-end;
@@ -16,16 +16,15 @@ a {
 }
 
 a:hover {
-  color: #fa2500;
+  color: white;
 }
-.big_container{
+.big_container{ 
   display: flex;
   justify-content: center;
-  /* padding-top: 50px; */
+  padding-top: 50px;
   }
 
-#mySidebar{
-  width:200px;
+#mySidebar{ 
   padding-top: 50px;
 }
 
@@ -37,14 +36,10 @@ a:hover {
 
 .sideBarText {
   font-size: 18px;
-  color:#757575;
   padding-top: 64px;
   padding-bottom: 64px;
 }
 
-.sideBarFooter {
-
-}
 .hidden{
   display: none;
 }
@@ -76,9 +71,21 @@ a:hover {
   margin-top:10px;
 }
 
+
+#logoutBtn {
+  width: 40px;
+  height: 40px;
+  margin-top:30px;
+}
+
+#logout_area {
+}
+
 /* ---------photosBox----------------------------------------------------------------------------- */
 
 .photosBox_container{
+max-width: 750px;
+padding-top:150px;
 padding-top: 50px;
 width: 1100px;
 display: flex;
@@ -101,3 +108,13 @@ padding: 20px;
   height: 250px;
 }
 
+.books-container {
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.guestName {
+  font-weight: bold;
+}

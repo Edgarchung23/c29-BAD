@@ -55,18 +55,23 @@
         </div>
         <!-- <div> -->
         <div class="book-container">
-          <div id="reader" style="background-color: antiquewhite; width: 1000px; height: 1000px;"></div>
-          <a id="prev" href="#prev" class="arrow" style="visibility: visible;">‹</a>
+          <div id="reader" style="background-color: rgb(249, 240, 227);"></div>
+          <a id="prev" href="#prev" class="arrow" style="visibility: visible;  ;">‹</a>
           <a id="next" href="#next" class="arrow" style="visibility: visible;">›</a>
-
         </div>
         <!-- </div> -->
 
         <div class="voiceContaniner">
           <audio controls id="voiceControls">
-            <source src="../voice/output.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
+            <source src="../voice/output1.mp3" type="audio/mpeg">
           </audio>
+          <audio controls id="voiceControls">
+            <source src="../voice/output2.mp3" type="audio/mpeg">
+          </audio>
+          <audio controls id="voiceControls">
+            <source src="../voice/output3.mp3" type="audio/mpeg">
+          </audio>
+
         </div>
       </div>
     </div>
@@ -140,7 +145,10 @@ async function init() {
         console.log(book);
         document.querySelector(".textTitle").innerHTML = book;
 
-        let bookUrl = `http://localhost:8100/${book}.epub`;
+
+
+        let bookUrl = `https://c29-bad-grp3.yodaandkeungjai.com/${book}.epub`;
+        // let bookUrl = `http://localhost:8100/${book}.epub`;
         let epubReader = ePub(bookUrl);
         var rendition = epubReader.renderTo("reader", { flow: "paginated", width: "700", height: "700", allowScriptedContent: true });
         var displayed = rendition.display();
