@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Register</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css"
+        integrity="sha512-siarrzI1u3pCqFG2LEzi87McrBmq6Tp7juVsdmGY1Dr8Saw+ZBAzDzrGwX3vgxX1NkioYNCFOVC0GpDPss10zQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/register.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <div id="mobile-bar">
+        <div class="login_container">
+            <a href="./index.html" id="firstBar"><img src="../assets/home.png" id="homeBtn"></a>
+            <!--------------------------------- register form ---------------------------------->
+            <div class="content">
+                <div class="title;">
+                    <h1>Register</h1>
+                    <div class="secondContent">
+                        <form id="register_form">
+                            <div class="user-details">
+                                <!-- <div class="input-box">
+                                <span class="details">Full Name*</span>
+                                <input type="fullname" name="fullname" placeholder="Enter your name" value="james" required>
+                            </div> -->
+                            <div class="input-box">
+                                <span class="details">Username*</span>
+                                <input type="username" name="username" placeholder="Enter your username" value="james" required>
+                            </div>
+                            <div class="input-box">
+                                <span class="details">Email*</span>
+                                <input type="email" placeholder="Enter your email" name="email" value="james@tecky.io"
+                                    placeholder="Enter your email" required>
+                            </div>
+                            <!-- <div class="input-box">
+                                <span class="details">Phone Number*</span>
+                                <input type="phonenumber" placeholder="Enter your phonenumber" name="phonenumber" value="12345678"
+                                    placeholder="Enter your number" required>
+                            </div> -->
+                                <div class="input-box">
+                                    <span class="details">Password*</span>
+                                    <input type="passwordInput1" placeholder="Enter your password" name="passwordInput1"
+                                        value="123" placeholder="Enter your password" required>
+                                </div>
+                                <div class="input-box">
+                                    <span class="details">Confirm Password*</span>
+                                    <input type="passwordInput2" placeholder="Confirm password" name="passwordInput2"
+                                        value="123" placeholder="Confirm your password" required>
+                                </div>
+                            </div>
+                            <!-- <div class="gender-details">
+                            <input type="radio" name="gender" id="dot-1">
+                            <input type="radio" name="gender" id="dot-2">
+                            <input type="radio" name="gender" id="dot-3">
+                            <span class="gender-title">Gender</span>
+                            <div class="category">
+                                <label for="dot-1">
+                                    <span class="dot one"></span>
+                                    <span class="gender">Male</span>
+                                </label>
+                                <label for="dot-2">
+                                    <span class="dot two"></span>
+                                    <span class="gender">Female</span>
+                                </label>
+                                <label for="dot-3">
+                                    <span class="dot three"></span>
+                                    <span class="gender">Prefer not to say</span>
+                                </label>
+                            </div>
+                        </div> -->
+                            <div class="button">
+                                <input id="registerbutton" type="submit" value="Register">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div><!--------------------------mobile bar------------------------------------>
+        <script src="../js/auth.js"></script>
+</body>
+
+</html>

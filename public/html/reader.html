@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Reader</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"> -->
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat"> -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+  <link rel="stylesheet" href="../css/index.css" />
+  <link rel="stylesheet" href="../css/reader.css" />
+
+  <!-- Testing -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.5/jszip.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/epubjs/dist/epub.min.js"></script>
+</head>
+
+<body>
+  <div class="secondBody">
+    <div class="Title">
+      <div id="username-display">
+        <a href="./login.html"><img src="../assets/login.png" id="loginBtn"></a></p>
+      </div>
+      <div id="logout-area"></div>
+      <!-- <div id="register-display">
+            <a href="./register.html">Register<img src="" id="registerBtn"></a>
+        </div> -->
+
+    </div>
+    <div class="big_container">
+      <!-- /* ---------sideBar--------------------------------------------------------------------------- */ -->
+
+      <nav class="w3-bar-block" id="mySidebar">
+        <div class="sideBarContainer">
+          <h3 class="shopName"><b>講書台</b></h3>
+        </div>
+        <div class="sideBarText">
+
+          <div class="sideBarText">
+            <a href="../html/index.html" class="w3-bar-item sideBarBtn">最新上架</a>
+            <a href="../html/novel.html" class="w3-bar-item sideBarBtn">小說</a>
+            <a href="../html/literature.html" class="w3-bar-item sideBarBtn">文學</a>
+            <a href="../html/psychology.html" class="w3-bar-item sideBarBtn ">心理學</a>
+        </div>
+        <a href="#sideBarFooter" class="sideBarBtn w3-padding">聯絡我們</a>
+        <a href="#sideBarFooter" class="w3-bar-item sideBarBtn">Test</a>
+      </nav>
+      <!--------------------------------- photosBox ---------------------------------->
+      <!-- <div> -->
+      <div class="textContaniner">
+        <div class="textTitle">
+          <h1>Book Name & Chapter</h1>
+        </div>
+        <!-- <div> -->
+        <div class="book-container">
+          <div id="reader" style="background-color: antiquewhite; width: 1000px; height: 1000px;"></div>
+          <a id="prev" href="#prev" class="arrow" style="visibility: visible;">‹</a>
+          <a id="next" href="#next" class="arrow" style="visibility: visible;">›</a>
+
+        </div>
+        <!-- </div> -->
+
+        <div class="voiceContaniner">
+          <audio controls id="voiceControls">
+            <source src="../voice/output.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      </div>
+    </div>
+    <!----------------------------------------------------------------------------->
+  </div><!--------------------------mobile bar------------------------------------>
+
+  <!--------------------------------chatBox---------------------------------------->
+  <script>
+
+
+    // try {
+
+    //   const queryString = window.location.search;
+    //   console.log(queryString);
+    //   const urlParams = new URLSearchParams(queryString);
+    //   const book = urlParams.get('book')
+    //   console.log(book);
+
+    //   let bookUrl = `http://localhost:8100/${book}.epub`;
+    //   let epubReader = ePub(bookUrl);
+    //   var rendition = epubReader.renderTo("reader", { flow: "paginated", width: "700", height: "700", allowScriptedContent: true })
+    //   var displayed = rendition.display();
+
+    //   var prev = document.getElementById("prev");
+    //   prev.addEventListener("click", function (e) {
+    //     rendition.prev()
+    //     e.preventDefault();
+    //   }, false);
+
+    //   var next = document.getElementById("next");
+
+    //   next.addEventListener("click", function (e) {
+    //     console.log(epubReader.package.metadata.direction)
+    //     console.log(rendition)
+    //     rendition.next()
+    //     e.preventDefault();
+    //     console.log("123")
+    //   }, false);
+
+    // } catch (e) {
+    //   alert("error 1" + e);
+    // }
+
+
+    async function fetchData() {
+      try {
+        let res = await fetch("/chapter/reader", {
+          method: "GET"
+        });
+
+        let result = await res.json();
+
+        console.log("fetch data:", result.data);
+
+        // Return the result.data, not the entire result
+        return result.data;
+      } catch (error) {
+        console.error("Error fetching data:", error.message);
+        throw error; // Re-throw the error to handle it at a higher level
+      }
+    }
+
+async function init() {
+  try {
+    const data = await fetchData();
+
+        const queryString = window.location.search;
+        console.log(queryString);
+        const urlParams = new URLSearchParams(queryString);
+        const book = urlParams.get('book');
+        console.log(book);
+        document.querySelector(".textTitle").innerHTML = book;
+
+        let bookUrl = `http://localhost:8100/${book}.epub`;
+        let epubReader = ePub(bookUrl);
+        var rendition = epubReader.renderTo("reader", { flow: "paginated", width: "700", height: "700", allowScriptedContent: true });
+        var displayed = rendition.display();
+
+        var prev = document.getElementById("prev");
+        prev.addEventListener("click", function (e) {
+          rendition.prev()
+          e.preventDefault();
+        }, false);
+
+        var next = document.getElementById("next");
+
+        next.addEventListener("click", function (e) {
+          console.log(epubReader.package.metadata.direction)
+          console.log(rendition)
+          rendition.next()
+          e.preventDefault();
+          console.log("123")
+        }, false);
+
+      } catch (e) {
+        alert("error 1" + e);
+      }
+    }
+
+    // Call the async function to start the execution
+    init();
+
+
+  </script>
+
+</body>
+
+
+</html>

@@ -1,0 +1,103 @@
+body{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.secondBody {
+width: 1200px;
+display: flex;
+flex-wrap: wrap;
+justify-content: flex-end;
+/* justify-content: center; */
+}
+a {
+  color: black;
+}
+
+a:hover {
+  color: #fa2500;
+}
+.big_container{
+  display: flex;
+  justify-content: center;
+  /* padding-top: 50px; */
+  }
+
+#mySidebar{
+  width:200px;
+  padding-top: 50px;
+}
+
+.sideBarContainer{
+  padding: 0.01em 16px;
+  padding-top: 16px!important;
+  padding-bottom: 16px!important;
+}
+
+.sideBarText {
+  font-size: 18px;
+  color:#757575;
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.sideBarFooter {
+
+}
+.hidden{
+  display: none;
+}
+.sideBarBtn {
+  text-decoration: none;
+  color: inherit;
+
+}
+.sideBarBtn:hover{
+  color: rgb(255, 2, 2);
+}
+
+#sideBarFooter{
+  padding: 8px 16px
+}
+/* ---------logIn&register----------------------------------------------------------------------------- */
+
+.Title {
+  display: flex;
+  justify-content:flex-end;
+  width: 1100px;
+  height: 50px;
+  padding-right: 90px;
+}
+
+#loginBtn {
+  width: 60px;
+  height: 60px;
+  margin-top:10px;
+}
+
+/* ---------photosBox----------------------------------------------------------------------------- */
+
+.photosBox_container{
+padding-top: 50px;
+width: 1100px;
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+}
+
+.photoBox {
+  width: 1100px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.card{
+padding: 20px;
+}
+
+#bookPh{
+  width: 200px;
+  height: 250px;
+}
+
