@@ -11,6 +11,7 @@
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
   <link rel="stylesheet" href="../css/index.css" />
   <link rel="stylesheet" href="../css/reader.css" />
+  <link rel="stylesheet" href="../css/collect_btn.css" />
 
   <!-- Testing -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.5/jszip.min.js"></script>
@@ -59,6 +60,9 @@
         <div class="textTitle">
           <h1>Book Name & Chapter</h1>
         </div>
+        <div class="collect_box" id="c_b">
+          <button class="collect_button" onclick="collectBtn()">collect</button>
+        </div>
         <!-- <div> -->
         <div class="book-container">
           <div id="reader" style="background-color: rgb(249, 240, 227);"></div>
@@ -85,6 +89,8 @@
   </div><!--------------------------mobile bar------------------------------------>
 
   <!--------------------------------chatBox---------------------------------------->
+  <script src="../js/collect_btn.js"></script>
+  <script src="../js/index.js"></script>
   <script>
     async function fetchData() {
       try {
@@ -151,6 +157,4 @@
   </script>
 
 </body>
-
-
 </html>

@@ -1,8 +1,4 @@
-  
-  function openModal() {
-    document.querySelector(".custom-modal").style.display = "block";
-  }
-  
+
 
 function clientLogin(){
     let target = document.querySelector('#login-form');
