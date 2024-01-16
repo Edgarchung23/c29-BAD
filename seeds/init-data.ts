@@ -111,6 +111,20 @@ export async function seed(knex: Knex): Promise<void> {
         book_cover: "/大師的殘忍.jpg",
         content_url: "./books/大師的殘忍.epub",
        },
+       {
+        user_id: id,
+        name: "睇色，戒",
+        category: "文學",
+        book_cover: "/睇色，戒.jpg",
+        content_url: "./books/睇色，戒.epub",
+       },
+       {
+        user_id: id,
+        name: "自卑與超越",
+        category: "心理學",
+        book_cover: "/自卑與超越.jpg",
+        content_url: "./books/自卑與超越.epub",
+       },
     ])
     .into("books");
 }
