@@ -1,8 +1,3 @@
-window.onload = async ()=>{
-  getUsername();
-  fetchBooks();
-}
-
 async function fetchBooks() {
   try {
     let res = await fetch("/chapter/reader", {
@@ -31,35 +26,26 @@ async function fetchBooks() {
     } catch (error) {
         console.error("Error fetching books:", error.message);
     }
+
+
+
 }
 // Call the fetchBooks function to initiate the fetch and update the HTML
+fetchBooks();
 
-async function getUsername() {
-  // 1. fetch call /user/session
-  let getUsernameRes = await fetch("/user/session");
 
-  let getUsernameResult;
-  
-  if (getUsernameRes.status != 200){
-    getUsernameResult = await getUsernameRes.json();
-    
-  }else {
-    getUsernameResult = await getUsernameRes.json();
-  }
+// async function renderBook(id) {
+//     let data = await getBook(id);
+//     let allBook = "";
+//     for (let entry of data) {
+//       allProduct += `
+{/* <audio controls id="voiceControls">
+            <source src="../voice/output1.mp3" type="audio/mpeg">
+          </audio>
+    //   </div> */}
+//       </div>
+//       `;
+//     }
+//     document.querySelector(".voiceContaniner").innerHTML = allBook;
+//   }
 
-  if(typeof getUsernameResult.data !== 'undefined'){
-    document.querySelector('.guestName').innerHTML = "Hello, "+ getUsernameResult.data;
-  }
-
-  const loginButton = document.querySelector('.loginButton')
-  const logoutButton = document.querySelector('.logout-button')
-  if(getUsernameResult.data){
-    logoutButton.classList.remove('hidden');
-    loginButton.classList.add('hidden')
-  } else {
-    logoutButton.classList.add('hidden');
-    loginButton.classList.remove('hidden')
-  }
-  // 2. if success => get response data 
-  // 3. print the username into html   
-}
