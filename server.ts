@@ -46,6 +46,7 @@ declare module "express-session" {
     email?: string;
     is_admin?: boolean;
     username?: string;
+    user_id: number
   }
 }
 //<-----------APP.USE---------------------------------------------->

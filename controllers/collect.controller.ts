@@ -1,5 +1,6 @@
 import { NextFunction, Router, Request, Response } from "express";
 import { CollectService } from "../services/collect.service";
+import { isLoggedIn } from "../middelware";
 
 export class CollectController {
   public router = Router();
@@ -18,21 +19,24 @@ export class CollectController {
     };
   }
   constructor(private collectService: CollectService) {
-    this.router.post("/user/collection", this.collectBook);
+    this.router.post("/user/collection", isLoggedIn, this.collectBook);
     // this.router.post("/user/collectBook",this.collectBook)
   }
 
   collectBook = async (req: Request, res: Response) => {
     try {
       let iAmBatMan = req.body;
-
+      let user_id = req.session.user_id!
       // let iAmBatMan =req.body.book_id
       console.log("I am Bat Man:",iAmBatMan.book_id);
       const book_id = await this.collectService.convertBookNameToId(iAmBatMan.book_id);
-      console.log("collectBook book_id: , book_id",)
-
+      if (book_id) {
+        await this.collectService.saveBook(parseInt(book_id), user_id)
+      }
+      console.log("collectBook book_id: , book_id")
+      const userBooks = await this.collectService.getCollectedBookByUserId(user_id);
       res.json({
-        book_id,
+        userBooks,
       });
     } catch (e) {
       console.error(e);
