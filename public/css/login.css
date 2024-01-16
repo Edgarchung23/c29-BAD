@@ -4,8 +4,12 @@
     justify-content: center;
   }
   
-  .loginForm {
-    margin: 50px;;
+  .login_container {
+  max-width: 1200px;
+  }
+
+  #login-form {
+    min-width: 500px;
   }
   
   a {
@@ -22,7 +26,6 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    width: 100%;
     min-height: 100%;
     padding: 20px;
   }
@@ -35,8 +38,6 @@
     border-radius: 10px 10px 10px 10px;
     background: #fff;
     padding: 30px;
-    width: 90%;
-    max-width: 450px;
     position: relative;
     padding: 0px;
     -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
@@ -64,7 +65,6 @@
     display: inline-block;
     font-size: 16px;
     margin: 5px;
-    width: 85%;
     border: 2px solid #f6f6f6;
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
@@ -212,7 +212,7 @@
   }
   
   #icon {
-    width: 60%;
+    /* width: 60%; */
   }
   
   #loginRegisterbutton {
@@ -220,7 +220,7 @@
     display: flex;
     margin-top: 20px;
     color: rgb(147, 147, 147);
-    width: 200px;
+    /* width: 200px; */
     height: 40px;
     align-items: center;
     font-weight: bold
@@ -244,14 +244,9 @@
   }
   
   #user-loginedlogo {
-    width: 28px;
+    /* width: 28px; */
     height: 28px;
   }
-  
-.login-form{
-  width: 900px;
-
-}
 
 .form-name {
   font-size: 2.5rem;
@@ -262,12 +257,11 @@
 
 #homeBtn{
 margin-top: 25px;
-  width: 35px;
+  /* width: 35px; */
   height: 35px;
 }
 
 #firstBar {
-  width: 870px;
   display: flex;
   justify-content: flex-end;
 }

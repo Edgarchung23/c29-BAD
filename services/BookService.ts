@@ -13,7 +13,7 @@ export class BookService {
 
         console.log(this.knex)
         const queryResult = await this.knex.raw(
-          `SELECT id, name, book_cover, content_url from books`
+          `SELECT id, name, book_cover, category from books`
         );
         // Extract the rows from the query result
         const books: Book[] = queryResult.rows;

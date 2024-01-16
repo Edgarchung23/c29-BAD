@@ -1,20 +1,38 @@
-.textContaniner {
-  width: 1100px;
+body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
+.big_container {
+height: 900px;
+  /* max-width: 900px; */
+}
 
-.textTitle {
-  width: 1100px;
-  height: 100px;
+.secondBody {
+  max-width:1000px;
   display: flex;
+}
+.textContaniner {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  color: black;
+  max-width: 770px;
+}
+
+.textContaniner >.textTitle{
+  margin-top: 80px;
+  width: 60%;
+  height:50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 700px;
+  color:black;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 .bookText {
-  width: 1100px;
   font-size: 25px;
 }
 
@@ -26,20 +44,25 @@ h1 {
   display: flex;
   justify-content: flex-end;
 }
+
 .book-container {
-  position: relative;
+height: 100%;
 }
+
 #reader {
   background-color: rgb(237, 237, 237);
-  /* height: 1000px;
-  width: 2500px; */
+  height: 100%;  
   overflow: hidden !important;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 10px;
   border: solid 1px;
-  position: relative;
+  min-width: 700px;
+  height: 100%;
+  background-image: url(https://pic1.zhimg.com/80/v2-b5c7d79a42ab42136abc2a5f5f449ab8_720w.webp);
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 .arrow {
@@ -53,27 +76,32 @@ h1 {
   user-select: none;
   text-decoration: none;
   position: absolute;
-  top: 45%;
+  top: 39%;
 }
 
 #prev {
-  margin-left: 100px;
+  vertical-align: middle;
   /* position: relative; */
 }
 
 
 #next {
-  margin-left: 900px;
-  /* position: relative; */
+  margin-left: 680px;
 }
 
 .voiceContaniner {
-  width: 1100px;
+  width: 500px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   padding-top: 20px;
 }
 
 #voiceControls {
-  width: 800px;
+width: 1200px;
+padding: 5px;
+}
+
+.epub-container {
+max-width: 690px;
 }

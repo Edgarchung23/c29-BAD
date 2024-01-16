@@ -38,18 +38,18 @@
 
       <nav class="w3-bar-block" id="mySidebar">
         <div class="sideBarContainer">
-          <h3 class="shopName"><b>NAME</b></h3>
+          <h3 class="shopName"><b>講書台</b></h3>
         </div>
         <div class="sideBarText">
 
-          <a href="https://c29-bad-grp3.yodaandkeungjai.com/" class="w3-bar-item sideBarBtn">Home</a>
-          <a href="#" class="w3-bar-item sideBarBtn">New</a>
-          <a href="#" class="w3-bar-item sideBarBtn">Test</a>
-          <a href="#" class="w3-bar-item sideBarBtn">Test</a>
-          <a href="#" class="w3-bar-item sideBarBtn ">Test</a>
-        </div>
-        <a href="#sideBarFooter" class="sideBarBtn w3-padding">Contact</a>
-        <a href="#sideBarFooter" class="w3-bar-item sideBarBtn">Test</a>
+          <div class="sideBarText">
+            <a href="../html/index.html" class="w3-bar-item sideBarBtn">最新上架</a>
+            <a href="../html/novel.html" class="w3-bar-item sideBarBtn">小說</a>
+            <a href="../html/literature.html" class="w3-bar-item sideBarBtn">文學</a>
+            <a href="../html/psychology.html" class="w3-bar-item sideBarBtn ">心理學</a>
+          </div>
+          <a href="#sideBarFooter" class="sideBarBtn w3-padding">聯絡我們</a>
+          <a href="#sideBarFooter" class="w3-bar-item sideBarBtn">Test</a>
       </nav>
       <!--------------------------------- photosBox ---------------------------------->
       <!-- <div> -->
@@ -62,18 +62,23 @@
         </div>
         <!-- <div> -->
         <div class="book-container">
-          <div id="reader" style="background-color: antiquewhite; width: 1000px; height: 1000px;"></div>
-          <a id="prev" href="#prev" class="arrow" style="visibility: visible;">‹</a>
+          <div id="reader" style="background-color: rgb(249, 240, 227);"></div>
+          <a id="prev" href="#prev" class="arrow" style="visibility: visible;  ;">‹</a>
           <a id="next" href="#next" class="arrow" style="visibility: visible;">›</a>
-
         </div>
         <!-- </div> -->
 
         <div class="voiceContaniner">
           <audio controls id="voiceControls">
-            <source src="../voice/output.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
+            <source src="../voice/output1.mp3" type="audio/mpeg">
           </audio>
+          <audio controls id="voiceControls">
+            <source src="../voice/output2.mp3" type="audio/mpeg">
+          </audio>
+          <audio controls id="voiceControls">
+            <source src="../voice/output3.mp3" type="audio/mpeg">
+          </audio>
+
         </div>
       </div>
     </div>
@@ -84,60 +89,29 @@
   <script src="../js/collect_btn.js"></script>
   <script src="../js/index.js"></script>
   <script>
-
-    
-    // try {
-
-    //   const queryString = window.location.search;
-    //   console.log(queryString);
-    //   const urlParams = new URLSearchParams(queryString);
-    //   const book = urlParams.get('book')
-    //   console.log(book);
-  
-    //   let bookUrl = `http://localhost:8100/${book}.epub`;
-    //   let epubReader = ePub(bookUrl);
-    //   var rendition = epubReader.renderTo("reader", { flow: "paginated", width: "700", height: "700", allowScriptedContent: true })
-    //   var displayed = rendition.display();
-
-    //   var prev = document.getElementById("prev");
-    //   prev.addEventListener("click", function (e) {
-    //     rendition.prev()
-    //     e.preventDefault();
-    //   }, false);
-
-    //   var next = document.getElementById("next");
-
-    //   next.addEventListener("click", function (e) {
-    //     console.log(epubReader.package.metadata.direction)
-    //     console.log(rendition)
-    //     rendition.next()
-    //     e.preventDefault();
-    //     console.log("123")
-    //   }, false);
-
-    // } catch (e) {
-    //   alert("error 1" + e);
-    // }
-
-
     async function fetchData() {
-  try {
-    let res = await fetch("/chapter/reader", {
-      method: "GET"
-    });
+      try {
+        let res = await fetch("/chapter/reader", {
+          method: "GET"
+        });
 
-    let result = await res.json();
+        let result = await res.json();
 
+<<<<<<< HEAD
     // console.log("fetch data:", result.data);
+=======
+        console.log("fetch data:", result.data);
+>>>>>>> b3a877591336a38502eabfc4a02bf93d6cc10050
 
-    // Return the result.data, not the entire result
-    return result.data;
-  } catch (error) {
-    console.error("Error fetching data:", error.message);
-    throw error; // Re-throw the error to handle it at a higher level
-  }
-}
+        // Return the result.data, not the entire result
+        return result.data;
+      } catch (error) {
+        console.error("Error fetching data:", error.message);
+        throw error; // Re-throw the error to handle it at a higher level
+      }
+    }
 
+<<<<<<< HEAD
 async function init() {
   try {
     const data = await fetchData();
@@ -161,20 +135,34 @@ async function init() {
     const book = urlParams.get('book');
     // console.log(book);
     document.querySelector(".textTitle").innerHTML = book;
+=======
+    async function init() {
+      try {
+        const data = await fetchData();
 
-    let bookUrl = `http://localhost:8100/${book}.epub`;
-    let epubReader = ePub(bookUrl);
-    var rendition = epubReader.renderTo("reader", { flow: "paginated", width: "700", height: "700", allowScriptedContent: true });
-    var displayed = rendition.display();
+        const queryString = window.location.search;
+        console.log(queryString);
+        const urlParams = new URLSearchParams(queryString);
+        const book = urlParams.get('book');
+        console.log(book);
+        document.querySelector(".textTitle").innerHTML = book;
 
-    var prev = document.getElementById("prev");
-    prev.addEventListener("click", function (e) {
-      rendition.prev()
-      e.preventDefault();
-    }, false);
+>>>>>>> b3a877591336a38502eabfc4a02bf93d6cc10050
 
-    var next = document.getElementById("next");
 
+        let bookUrl = `https://c29-bad-grp3.yodaandkeungjai.com/${book}.epub`;
+        // let bookUrl = `http://localhost:8100/${book}.epub`;
+        let epubReader = ePub(bookUrl);
+        var rendition = epubReader.renderTo("reader", { flow: "paginated", width: "700", height: "700", allowScriptedContent: true });
+        var displayed = rendition.display();
+
+        var prev = document.getElementById("prev");
+        prev.addEventListener("click", function (e) {
+          rendition.prev()
+          e.preventDefault();
+        }, false);
+
+<<<<<<< HEAD
     next.addEventListener("click", function (e) {
       // console.log(epubReader.package.metadata.direction)
       // console.log(rendition)
@@ -182,14 +170,25 @@ async function init() {
       e.preventDefault();
       console.log("123")
     }, false);
+=======
+        var next = document.getElementById("next");
+>>>>>>> b3a877591336a38502eabfc4a02bf93d6cc10050
 
-  } catch (e) {
-    alert("error 1" + e);
-  }
-}
+        next.addEventListener("click", function (e) {
+          console.log(epubReader.package.metadata.direction)
+          console.log(rendition)
+          rendition.next()
+          e.preventDefault();
+          console.log("123")
+        }, false);
 
-// Call the async function to start the execution
-init();
+      } catch (e) {
+        alert("error 1" + e);
+      }
+    }
+
+    // Call the async function to start the execution
+    init();
 
 
   </script>

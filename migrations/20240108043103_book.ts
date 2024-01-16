@@ -6,6 +6,7 @@ export async function up(knex: Knex): Promise<void> {
         table.increments().primary();
         table.integer('user_id')
         table.string('name')
+        table.string('category')
         table.text('book_cover')
         table.string('content_url')
         table.string('bookmark')
