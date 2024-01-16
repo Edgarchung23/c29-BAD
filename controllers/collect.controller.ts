@@ -29,7 +29,7 @@ export class CollectController {
       // let iAmBatMan =req.body.book_id
       console.log("I am Bat Man:",iAmBatMan.book_id);
       const book_id = await this.collectService.convertBookNameToId(iAmBatMan.book_id);
-      // console.log("collectBook book_id: , book_id",)
+      console.log("collectBook book_id: , book_id",)
 
       res.json({
         book_id,
