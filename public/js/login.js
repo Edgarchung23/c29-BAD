@@ -20,7 +20,7 @@ function clientLogin(){
 
         if(res.status == 200){            
             if (result.isAdmin){
-                window.location.href = "localhost:8100/html/";
+                window.location.href = "https://c29-bad-grp3.yodaandkeungjai.com/";
             } else {
                 window.location.href = "/";
                 
