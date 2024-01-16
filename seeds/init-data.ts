@@ -43,6 +43,34 @@ export async function seed(knex: Knex): Promise<void> {
        },
        {
         user_id: id,
+        name: "哈利波特1神秘的魔法石",
+        category: "小說",
+        book_cover: "/哈利波特1神秘的魔法石.jpg",
+        content_url: "./books/哈利波特1神秘的魔法石.epub",
+       },
+       {
+        user_id: id,
+        name: "哈利波特2消失的密室",
+        category: "小說",
+        book_cover: "/哈利波特2消失的密室.jpg",
+        content_url: "./books/哈利波特2消失的密室.epub",
+       },
+       {
+        user_id: id,
+        name: "哈利波特3阿茲卡班的逃犯",
+        category: "小說",
+        book_cover: "/哈利波特3阿茲卡班的逃犯.jpg",
+        content_url: "./books/哈利波特3阿茲卡班的逃犯.epub",
+       },
+       {
+        user_id: id,
+        name: "哈利波特4火盃的考驗",
+        category: "小說",
+        book_cover: "/哈利波特4火盃的考驗.jpg",
+        content_url: "./books/哈利波特4火盃的考驗.epub",
+       },
+       {
+        user_id: id,
         name: "哈利波特5鳳凰會的密令",
         category: "小說",
         book_cover: "/哈利波特5鳳凰會的密令.jpg",
@@ -61,6 +89,20 @@ export async function seed(knex: Knex): Promise<void> {
         category: "小說",
         book_cover: "/哈利波特7死神的聖物.jpg",
         content_url: "./books/哈利波特7死神的聖物.epub",
+       },
+       {
+        user_id: id,
+        name: "安妮日記",
+        category: "文學",
+        book_cover: "/安妮日記.jpg",
+        content_url: "./books/安妮日記.epub",
+       },
+       {
+        user_id: id,
+        name: "人性的弱點",
+        category: "心理學",
+        book_cover: "/人性的弱點.jpg",
+        content_url: "./books/人性的弱點.epub",
        },
     ])
     .into("books");
