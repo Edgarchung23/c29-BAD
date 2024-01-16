@@ -96,7 +96,7 @@ form .button input {
 }
 form .button input:hover {
   /* transform: scale(0.99); */
-  background: linear-gradient(-135deg, #8bd3ef, #ffffff);
+  background: linear-gradient(-135deg, rgb(242, 194, 83), #ffffff);
 }
 @media (max-width: 584px) {
   .container {
@@ -130,7 +130,8 @@ form .button input:hover {
 
 #registerbutton { 
   color: black;
-  background-color: #dfdfdf;
+  background-color: #ffffff;
+  border: solid 1px;
 }
 
 .register {

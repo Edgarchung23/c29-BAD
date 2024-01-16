@@ -61,7 +61,7 @@ a:hover {
   display: flex;
   justify-content:flex-end;
   height: 50px;
-  padding-right: 90px;
+  margin-left: 100%;
 }
 
 #loginBtn {
