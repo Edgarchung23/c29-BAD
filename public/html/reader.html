@@ -11,6 +11,7 @@
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
   <link rel="stylesheet" href="../css/index.css" />
   <link rel="stylesheet" href="../css/reader.css" />
+  <link rel="stylesheet" href="../css/collect_btn.css" />
 
   <!-- Testing -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.5/jszip.min.js"></script>
@@ -20,10 +21,13 @@
 <body>
   <div class="secondBody">
     <div class="Title">
-      <div id="username-display">
+      <div id="username-display" class="loginButton hidden">
         <a href="./login.html"><img src="../assets/login.png" id="loginBtn"></a></p>
       </div>
-      <div id="logout-area"></div>
+      <div id="logout-area" >
+        <button class="logout-button hidden" onclick="logout_account()">logout</button>
+    </div>
+
       <!-- <div id="register-display">
             <a href="./register.html">Register<img src="" id="registerBtn"></a>
         </div> -->
@@ -53,6 +57,9 @@
         <div class="textTitle">
           <h1>Book Name & Chapter</h1>
         </div>
+        <div class="collect_box" id="c_b">
+          <button class="collect_button" onclick="collectBtn()">collect</button>
+        </div>
         <!-- <div> -->
         <div class="book-container">
           <div id="reader" style="background-color: antiquewhite; width: 1000px; height: 1000px;"></div>
@@ -74,6 +81,8 @@
   </div><!--------------------------mobile bar------------------------------------>
 
   <!--------------------------------chatBox---------------------------------------->
+  <script src="../js/collect_btn.js"></script>
+  <script src="../js/index.js"></script>
   <script>
 
     
@@ -119,7 +128,7 @@
 
     let result = await res.json();
 
-    console.log("fetch data:", result.data);
+    // console.log("fetch data:", result.data);
 
     // Return the result.data, not the entire result
     return result.data;
@@ -132,8 +141,8 @@
 async function init() {
   try {
     const data = await fetchData();
-    console.log("data:", data)
-    console.log("dataName:", data.name)
+    // console.log("data:", data)
+    // console.log("dataName:", data.name)
 
      // Check if data and data.name exist
   if (data && data.name) {
@@ -143,14 +152,14 @@ async function init() {
     let bookName = `<h1>${data.name}</h1>`;
     document.querySelector(".textTitle").innerHTML = bookName;
   } else {
-    console.log("fail!!!!!!!!!!")
+    // console.log("fail!!!!!!!!!!")
   }
 
     const queryString = window.location.search;
-    console.log(queryString);
+    // console.log(queryString);
     const urlParams = new URLSearchParams(queryString);
     const book = urlParams.get('book');
-    console.log(book);
+    // console.log(book);
     document.querySelector(".textTitle").innerHTML = book;
 
     let bookUrl = `http://localhost:8100/${book}.epub`;
@@ -167,8 +176,8 @@ async function init() {
     var next = document.getElementById("next");
 
     next.addEventListener("click", function (e) {
-      console.log(epubReader.package.metadata.direction)
-      console.log(rendition)
+      // console.log(epubReader.package.metadata.direction)
+      // console.log(rendition)
       rendition.next()
       e.preventDefault();
       console.log("123")
@@ -186,6 +195,4 @@ init();
   </script>
 
 </body>
-
-
 </html>
