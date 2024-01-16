@@ -21,7 +21,7 @@
 <body>
   <div class="secondBody">
     <div class="Title">
-      <div id="username-display" class="loginButton ">
+      <div id="username-display" class="loginButton hidden">
         <a href="./login.html"><img src="../assets/login.png" id="loginBtn"></a></p>
       </div>
       <div class="banner">
@@ -52,9 +52,14 @@
             <a href="../html/novel.html" class="w3-bar-item sideBarBtn">小說</a>
             <a href="../html/literature.html" class="w3-bar-item sideBarBtn">文學</a>
             <a href="../html/psychology.html" class="w3-bar-item sideBarBtn ">心理學</a>
+            <!-- <div class="collect_box" id="c_b"> -->
+            <!-- <button class="collect_button" onclick="collectBtn()">collect</button> -->
+            <!-- </div> -->
+            <a class="collect_box" onclick="collectBtn()" id="">Collect</a>
+            <!-- </div> -->
+            <a href="#sideBarFooter" class="sideBarBtn w3-padding">聯絡我們</a>
+            <a href="#sideBarFooter" class="w3-bar-item sideBarBtn">Test</a>
           </div>
-          <a href="#sideBarFooter" class="sideBarBtn w3-padding">聯絡我們</a>
-          <a href="#sideBarFooter" class="w3-bar-item sideBarBtn">Test</a>
       </nav>
       <!--------------------------------- photosBox ---------------------------------->
       <!-- <div> -->
@@ -62,12 +67,10 @@
         <div class="textTitle">
           <h1>Book Name & Chapter</h1>
         </div>
-        <div class="collect_box" id="c_b">
-          <button class="collect_button" onclick="collectBtn()">collect</button>
-        </div>
+
         <!-- <div> -->
         <div class="book-container">
-          <div id="reader" style="background-color: rgb(249, 240, 227);"></div>
+          <div id="reader"></div>
           <a id="prev" href="#prev" class="arrow" style="visibility: visible;  ;">‹</a>
           <a id="next" href="#next" class="arrow" style="visibility: visible;">›</a>
         </div>
