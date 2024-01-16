@@ -14,6 +14,8 @@ export class CollectServiceImpl implements CollectService {
     return bookNames.id
   }
   saveBook(input: { book_id: number }): Promise<void> {
+
+    
     throw new Error("Method not implemented.");
   }
   getCollectedBookByUserId(user_id: number): Promise<any[]> {

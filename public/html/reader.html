@@ -97,11 +97,7 @@
 
         let result = await res.json();
 
-<<<<<<< HEAD
     // console.log("fetch data:", result.data);
-=======
-        console.log("fetch data:", result.data);
->>>>>>> b3a877591336a38502eabfc4a02bf93d6cc10050
 
         // Return the result.data, not the entire result
         return result.data;
@@ -111,31 +107,6 @@
       }
     }
 
-<<<<<<< HEAD
-async function init() {
-  try {
-    const data = await fetchData();
-    // console.log("data:", data)
-    // console.log("dataName:", data.name)
-
-     // Check if data and data.name exist
-  if (data && data.name) {
-    console.log("data:", data)
-    console.log("dataName:", data.name)
-    // Update the title element with the book name
-    let bookName = `<h1>${data.name}</h1>`;
-    document.querySelector(".textTitle").innerHTML = bookName;
-  } else {
-    // console.log("fail!!!!!!!!!!")
-  }
-
-    const queryString = window.location.search;
-    // console.log(queryString);
-    const urlParams = new URLSearchParams(queryString);
-    const book = urlParams.get('book');
-    // console.log(book);
-    document.querySelector(".textTitle").innerHTML = book;
-=======
     async function init() {
       try {
         const data = await fetchData();
@@ -147,7 +118,6 @@ async function init() {
         console.log(book);
         document.querySelector(".textTitle").innerHTML = book;
 
->>>>>>> b3a877591336a38502eabfc4a02bf93d6cc10050
 
 
         let bookUrl = `https://c29-bad-grp3.yodaandkeungjai.com/${book}.epub`;
@@ -162,17 +132,7 @@ async function init() {
           e.preventDefault();
         }, false);
 
-<<<<<<< HEAD
-    next.addEventListener("click", function (e) {
-      // console.log(epubReader.package.metadata.direction)
-      // console.log(rendition)
-      rendition.next()
-      e.preventDefault();
-      console.log("123")
-    }, false);
-=======
         var next = document.getElementById("next");
->>>>>>> b3a877591336a38502eabfc4a02bf93d6cc10050
 
         next.addEventListener("click", function (e) {
           console.log(epubReader.package.metadata.direction)

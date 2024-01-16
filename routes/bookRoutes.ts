@@ -11,7 +11,7 @@ export const bookRoute = Router();
 const bookService = new BookService(knex);
 export const bookController = new BookController(bookService);
 
-bookRoute.get("/content",isLoggedIn,bookController.getContent);
+bookRoute.get("/content",bookController.getContent);
 
-bookRoute.get("/reader",isLoggedIn,bookController.getReader);
+bookRoute.get("/reader",bookController.getReader);
 
