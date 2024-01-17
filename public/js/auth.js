@@ -1,3 +1,6 @@
+import swal from 'sweetalert';
+
+
 function register(){
     let target = document.querySelector("#register_form");
     target.addEventListener("submit", async (e)=>{
@@ -32,7 +35,7 @@ function register(){
             return
         } 
 
-        alert(result.message)
+        swal("Here's the title!", "...and here's the text!");
         
     })
 }
