@@ -21,9 +21,8 @@ a:hover {
 .big_container{
   display: flex;
   justify-content: center;
-	font-size: 1.2em;
-	background-image: url(../assets/);
   margin-top: 20px;
+  width: 100%;
   }
 
 #mySidebar{ 
@@ -62,7 +61,7 @@ a:hover {
 .Title {
   display: flex;
   justify-content:flex-end;
-  height: 200px;
+  height: 50px;
   margin-left: 100%;
 }
 
@@ -94,10 +93,10 @@ padding-top: 10px;
 /* ---------photosBox----------------------------------------------------------------------------- */
 
 .photosBox_container{
-max-width: 720px;
+max-width: 1000px;
+width: 100%;
 padding-top:150px;
 padding-top: 50px;
-display: flex;
 justify-content: center;
 flex-wrap: wrap;
 }
