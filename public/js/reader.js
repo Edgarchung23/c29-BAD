@@ -87,7 +87,156 @@ async function fetchData() {
           <audio controls id="voiceControls">
             <source src="../voice/蘇菲的世界Part3.mp3" type="audio/mpeg">
           </audio>`
+        } else if (bookName === '富爸爸窮爸爸') {
+          document.querySelector(".voiceContaniner").innerHTML += `
+          <audio controls id="voiceControls">
+            <source src="../voice/富爸爸窮爸爸part1.mp3" type="audio/mpeg">
+          </audio>
+          <audio controls id="voiceControls">
+            <source src="../voice/富爸爸窮爸爸part2.mp3" type="audio/mpeg">
+          </audio>
+          <audio controls id="voiceControls">
+            <source src="../voice/富爸爸窮爸爸part3.mp3" type="audio/mpeg">
+          </audio>`
+        }else if (bookName === '哈利波特1神秘的魔法石') {
+          document.querySelector(".voiceContaniner").innerHTML += `
+          <audio controls id="voiceControls">
+            <source src="../voice/哈利波特1神秘的魔法石part1.mp3" type="audio/mpeg">
+          </audio>
+          <audio controls id="voiceControls">
+            <source src="../voice/哈利波特1神秘的魔法石part2.mp3" type="audio/mpeg">
+          </audio>
+          <audio controls id="voiceControls">
+            <source src="../voice/哈利波特1神秘的魔法石part3.mp3" type="audio/mpeg">
+          </audio>`
+        }else if (bookName === '哈利波特2消失的密室') {
+          document.querySelector(".voiceContaniner").innerHTML += `
+          <audio controls id="voiceControls">
+            <source src="../voice/哈利波特2消失的密室Part1.mp3" type="audio/mpeg">
+          </audio>
+          <audio controls id="voiceControls">
+            <source src="../voice/哈利波特2消失的密室Part2.mp3" type="audio/mpeg">
+          </audio>
+          <audio controls id="voiceControls">
+            <source src="../voice/哈利波特2消失的密室Part3.mp3" type="audio/mpeg">
+          </audio>`
+        }else if (bookName === '哈利波特3阿茲卡班的逃犯') {
+          document.querySelector(".voiceContaniner").innerHTML += `
+          <audio controls id="voiceControls">
+            <source src="../voice/哈利波特3阿茲卡班的逃犯Part1.mp3" type="audio/mpeg">
+          </audio>
+          <audio controls id="voiceControls">
+            <source src="../voice/哈利波特3阿茲卡班的逃犯Part2.mp3" type="audio/mpeg">
+          </audio>
+          <audio controls id="voiceControls">
+            <source src="../voice/哈利波特3阿茲卡班的逃犯Part3.mp3" type="audio/mpeg">
+          </audio>`
+        }else if (bookName === '哈利波特4火盃的考驗') {
+          document.querySelector(".voiceContaniner").innerHTML += `
+          <audio controls id="voiceControls">
+            <source src="../voice/哈利波特4火盃的考驗Part1.mp3" type="audio/mpeg">
+          </audio>
+          <audio controls id="voiceControls">
+            <source src="../voice/哈利波特4火盃的考驗Part2.mp3" type="audio/mpeg">
+          </audio>
+          <audio controls id="voiceControls">
+            <source src="../voice/哈利波特4火盃的考驗Part3.mp3" type="audio/mpeg">
+          </audio>`
+        }else if (bookName === '哈利波特5鳳凰會的密令') {
+          document.querySelector(".voiceContaniner").innerHTML += `
+          <audio controls id="voiceControls">
+            <source src="../voice/哈利波特5鳳凰會的密令Part1.mp3" type="audio/mpeg">
+          </audio>
+          <audio controls id="voiceControls">
+            <source src="../voice/哈利波特5鳳凰會的密令Part2.mp3" type="audio/mpeg">
+          </audio>
+          <audio controls id="voiceControls">
+            <source src="../voice/哈利波特5鳳凰會的密令Part3.mp3" type="audio/mpeg">
+          </audio>`
+        }else if (bookName === '哈利波特6混血王子的背叛'){
+          document.querySelector(".voiceContaniner").innerHTML += `
+          <audio controls id="voiceControls">
+            <source src="../voice/哈利波特6混血王子的背叛Part1.mp3" type="audio/mpeg">
+          </audio>
+          <audio controls id="voiceControls">
+            <source src="../voice/哈利波特6混血王子的背叛Part2.mp3" type="audio/mpeg">
+          </audio>
+          <audio controls id="voiceControls">
+            <source src="../voice/哈利波特6混血王子的背叛Part3.mp3" type="audio/mpeg">
+          </audio>`
+        }else if (bookName === '哈利波特7死神的聖物'){
+          document.querySelector(".voiceContaniner").innerHTML += `
+          <audio controls id="voiceControls">
+            <source src="../voice/哈利波特7死神的聖物Part1.mp3" type="audio/mpeg">
+          </audio>
+          <audio controls id="voiceControls">
+            <source src="../voice/哈利波特7死神的聖物Part2.mp3" type="audio/mpeg">
+          </audio>
+          <audio controls id="voiceControls">
+            <source src="../voice/哈利波特7死神的聖物Part3.mp3" type="audio/mpeg">
+          </audio>`
+        }else if (bookName === '安妮日記'){
+          document.querySelector(".voiceContaniner").innerHTML += `
+          <audio controls id="voiceControls">
+            <source src="../voice/安妮日記Part1.mp3" type="audio/mpeg">
+          </audio>
+          <audio controls id="voiceControls">
+            <source src="../voice/安妮日記Part2.mp3" type="audio/mpeg">
+          </audio>
+          <audio controls id="voiceControls">
+            <source src="../voice/安妮日記Part3.mp3" type="audio/mpeg">
+          </audio>`
         }
-    }
+        else if (bookName === '人性的弱點'){
+          document.querySelector(".voiceContaniner").innerHTML += `
+          <audio controls id="voiceControls">
+            <source src="../voice/安妮日記Part1.mp3" type="audio/mpeg">
+          </audio>
+          <audio controls id="voiceControls">
+            <source src="../voice/安妮日記Part2.mp3" type="audio/mpeg">
+          </audio>
+          <audio controls id="voiceControls">
+            <source src="../voice/安妮日記Part3.mp3" type="audio/mpeg">
+          </audio>`
+        }
+        else if (bookName === '安妮日記'){
+          document.querySelector(".voiceContaniner").innerHTML += `
+          <audio controls id="voiceControls">
+            <source src="../voice/安妮日記Part1.mp3" type="audio/mpeg">
+          </audio>
+          <audio controls id="voiceControls">
+            <source src="../voice/安妮日記Part2.mp3" type="audio/mpeg">
+          </audio>
+          <audio controls id="voiceControls">
+            <source src="../voice/安妮日記Part3.mp3" type="audio/mpeg">
+          </audio>`
+        }
+        else if (bookName === '安妮日記'){
+          document.querySelector(".voiceContaniner").innerHTML += `
+          <audio controls id="voiceControls">
+            <source src="../voice/安妮日記Part1.mp3" type="audio/mpeg">
+          </audio>
+          <audio controls id="voiceControls">
+            <source src="../voice/安妮日記Part2.mp3" type="audio/mpeg">
+          </audio>
+          <audio controls id="voiceControls">
+            <source src="../voice/安妮日記Part3.mp3" type="audio/mpeg">
+          </audio>`
+        }
+      else if (bookName === '安妮日記'){
+          document.querySelector(".voiceContaniner").innerHTML += `
+          <audio controls id="voiceControls">
+            <source src="../voice/安妮日記Part1.mp3" type="audio/mpeg">
+          </audio>
+          <audio controls id="voiceControls">
+            <source src="../voice/安妮日記Part2.mp3" type="audio/mpeg">
+          </audio>
+          <audio controls id="voiceControls">
+            <source src="../voice/安妮日記Part3.mp3" type="audio/mpeg">
+          </audio>`
+        }
+      
+      
+      
 bookAudio();
    
