@@ -26,11 +26,11 @@ function clientLogin(){
                 window.location.href = "https://c29-bad-grp3.yodaandkeungjai.com/";
             } else {
                 window.location.href = "/";
-                swal.fire("Error... ", result.message);
+                swal.fire("Hello", result.message);
             }
             return
         }
-        swal.fire("Error...", result.message,"error");
+        swal.fire("Hello", result.message,"error");
 
     })
 }
