@@ -9,7 +9,7 @@ body{
 display: flex;
 flex-wrap: wrap;
 justify-content: flex-end;
-max-width: 1500px;
+max-width: 1000px;
 }
 a {
   color: black;
@@ -27,6 +27,7 @@ a:hover {
 
 #mySidebar{ 
   padding-top: 50px;
+  width: 20%;
 }
 
 .sideBarContainer{
