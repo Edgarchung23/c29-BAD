@@ -16,9 +16,13 @@ async function collectBtn (){
             })
         })
         const result = await res.json();
-        // console.log("answer:",result)
+        for(let ironMan of result){
+
+            console.log("answer:",ironMan)
+        }
+        
         if(res.status == 200){
-            // Swal.fire("收藏成功");
+            alert({massage:Collected})
             return
         }
 
