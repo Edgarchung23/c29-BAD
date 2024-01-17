@@ -24,7 +24,7 @@ async function getUsername() {
   }
 
   const loginButton = document.querySelector('.loginButton')
-  const logoutButton = document.querySelector('.logout-button')
+  const logoutButton = document.querySelector('#logout_area')
   const myCollection = document.querySelector('.abc')
   
   if(getUsernameResult.data){
