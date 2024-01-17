@@ -24,6 +24,7 @@
       <div class="banner">
       </div>
       <div class="logout-button hidden">
+        <div class="guestName"></div>
         <a href="./index.html" onclick="logout_account()" id="logout_area"><img src=" ../assets/logout.png"
             id="logoutBtn"></a>
         </p>
@@ -39,17 +40,15 @@
 
         </div>
         <div class="sideBarText">
+          <div class="abc"><a class="w3-bar-item sideBarBtn hidden" id="collectBtn"
+              href="../html/collection.html">我的收藏</a></div>
+          <a href="../html/index.html" class="w3-bar-item sideBarBtn">最新上架</a>
+          <a href="../html/novel.html" class="w3-bar-item sideBarBtn">小說</a>
+          <a href="../html/literature.html" class="w3-bar-item sideBarBtn">文學</a>
+          <a href="../html/psychology.html" class="w3-bar-item sideBarBtn ">心理學</a>
 
-          <div class="sideBarText">
-            <div class="abc"><a class="w3-bar-item sideBarBtn hidden" id="collectBtn"
-                href="../html/collection.html">我的收藏</a></div>
-            <a href="../html/index.html" class="w3-bar-item sideBarBtn">最新上架</a>
-            <a href="../html/novel.html" class="w3-bar-item sideBarBtn">小說</a>
-            <a href="../html/literature.html" class="w3-bar-item sideBarBtn">文學</a>
-            <a href="../html/psychology.html" class="w3-bar-item sideBarBtn ">心理學</a>
-
-          </div>
-          <a href="../html/contactUs.html" class="sideBarBtn w3-padding">聯絡我們</a>
+        </div>
+        <a href="../html/contactUs.html" class="sideBarBtn w3-padding">聯絡我們</a>
 
       </nav>
       <!--------------------------------- photosBox ---------------------------------->
@@ -59,8 +58,8 @@
         </div>
 
         <div class="book-container">
-          <div class="collect_box">
-            <a class="collect_button"><img src=" ../assets/star.png" id="collectBtnImg"
+          <div class="collect_box ">
+            <a class="collect_button hidden"><img src=" ../assets/star.png" id="collectBtnImg"
                 onclick="collectBtn() ,alert()"></a>
           </div>
           <div id="reader"></div>

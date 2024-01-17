@@ -26,15 +26,20 @@ async function getUsername() {
   const loginButton = document.querySelector('.loginButton')
   const logoutButton = document.querySelector('#logout_area')
   const myCollection = document.querySelector('.abc')
+  const collectBtn = document.querySelector('.collect_button')
   
   if(getUsernameResult.data){
     logoutButton.classList.remove('hidden');
     loginButton.classList.add('hidden')
     myCollection.classList.remove('hidden')
+    collectBtn.classList.remove('hidden')
+
   } else {
     logoutButton.classList.add('hidden');
     loginButton.classList.remove('hidden')
     myCollection.classList.add('hidden')
+    collectBtn.classList.add('hidden')
+
   }
   // 2. if success => get response data 
   // 3. print the username into html   
