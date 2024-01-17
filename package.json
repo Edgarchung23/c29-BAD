@@ -43,6 +43,7 @@
     "populate-env": "^2.0.0",
     "request": "^2.88.2",
     "sqlite3": "^5.1.7",
+    "sweetalert": "^2.1.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   },

@@ -4,6 +4,7 @@ async function collection() {
       method: "POST",
     });
     let result = await res.json();
+    
     let data = result.data;
 
     let collectionHtml = "";
@@ -17,8 +18,10 @@ async function collection() {
                 </div>`;
 
       console.log("u a not bat man:", collectionHtml);
+
     }
     document.querySelector(".books-container").innerHTML = collectionHtml;
+    
   } catch (error) {}
 }
 
@@ -30,6 +33,12 @@ async function cancelCollect (){
         let res = await fetch("/user/cancelCollect",{
             method:"DELETE",
         })
-
-    }catch(error){}
+        if(res.ok) {
+          Swal.fire("Success", "Book has been uncollected", "success");
+        } else {
+          Swal.fire("Error", "Failed to uncollect book", "error");
+        }
+    }catch(error){
+        console.error(error);
+    }
 }

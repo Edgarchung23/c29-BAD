@@ -14,19 +14,17 @@ async function collectBtn (){
             body: JSON.stringify({
                 book_id: book
             })
-        })
-        const result = await res.json();
-        // console.log("answer:",result)
-        if(res.status == 200){
-            // alert(result.message)
-            return
-        }
-
-        }catch(error){
             
         }
+        )
+        const result = await res.json();
 
+        if(res.status == 200){
+            return
+        
+        }
+
+        }catch(error){}
     }
-
 
 collectBtn();

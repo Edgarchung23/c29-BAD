@@ -1,5 +1,3 @@
-import swal from 'sweetalert';
-
 
 function register(){
     let target = document.querySelector("#register_form");
@@ -11,7 +9,7 @@ function register(){
         const passwordInput2 = target.passwordInput2.value
 
         if (passwordInput1 !== passwordInput2) {
-            alert("The password is not match")
+            swal.fire("Error... ", "The password is not match!");
             return 
         }
 
@@ -35,7 +33,8 @@ function register(){
             return
         } 
 
-        swal("Here's the title!", "...and here's the text!");
+
+        swal.fire("Error... ", "Account exists!");
         
     })
 }
