@@ -26,9 +26,13 @@ a:hover {
 
 #mySidebar{ 
   padding-top: 50px;
-  width: 17%;
 }
 
+#collectSidebar {
+  padding-top: 50px;
+
+
+}
 .sideBarContainer{
   padding: 0.01em 16px;
   padding-top: 16px!important;
