@@ -3,6 +3,7 @@ import { env } from './env'
 
 let pgConfig: Knex.Config = {
   client: 'pg',
+  debug: false,
   connection: {
     database: env.DB_NAME,
     user: env.DB_USERNAME,

@@ -7,7 +7,7 @@ async function fetchBooks() {
     let result = await res.json();
     let data = result.data;
 
-    console.log("fetch result:", data);
+    // console.log("fetch result:", data);
 
     let homeHTML = "";
 

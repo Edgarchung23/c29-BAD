@@ -19,7 +19,7 @@ export class BookService {
         const books: Book[] = queryResult.rows;
   
         // Log the retrieved books (optional)
-        console.log("Array of book", books);
+        // console.log("Array of book", books);
   
         // Return the array of books
         return books;

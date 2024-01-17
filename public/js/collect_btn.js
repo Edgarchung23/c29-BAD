@@ -16,7 +16,7 @@ async function collectBtn (){
             })
         })
         const result = await res.json();
-        console.log("answer:",result)
+        // console.log("answer:",result)
         if(res.status == 200){
             // alert(result.message)
             return
