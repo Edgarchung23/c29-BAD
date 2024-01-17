@@ -1,6 +1,7 @@
 // import express, { ErrorRequestHandler } from 'express'
 import { print } from "listening-on";
 import { createKnex } from "./db";
+export const knex = createKnex();
 import { RequestLog } from "./types";
 import { env } from "./env";
 import express, { NextFunction } from "express";
@@ -10,23 +11,27 @@ import { is_admin } from "./middelware";
 import expressSession from "express-session";
 import { UserController } from "./controllers/user.controller";
 import { UserServiceImpl } from "./services/user.service.impl";
-export const knex = createKnex();
 import { router } from "./routes/routes";
 import { CollectController } from "./controllers/collect.controller";
 import { CollectServiceImpl } from "./services/collect.service.impl";
 import cors from "cors";
 
-const app = express();
-app.use(cors())
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+//<-------------------------------------------------------------------->
 
+const app = express();
 const textToSpeech = require("@google-cloud/text-to-speech");
 const fs = require("fs");
 const keyFile = "c29-bad-grp3.json";
 const client = new textToSpeech.TextToSpeechClient({
   keyFilename: keyFile,
 });
+
+//<-------------------------------------------------------------------->
+
+app.use(cors())
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 
 //<--------------------------March's need------------------------------------>
 let userService = new UserServiceImpl(knex);
