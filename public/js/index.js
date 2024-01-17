@@ -25,15 +25,13 @@ async function getUsername() {
 
   const loginButton = document.querySelector('.loginButton')
   const logoutButton = document.querySelector('.logout-button')
-  const myCollection = document.querySelector('.w3-bar-item sideBarBtn')
-  
   if(getUsernameResult.data){
     logoutButton.classList.remove('hidden');
-    loginButton.classList.add('hidden');
+    loginButton.classList.add('hidden')
     myCollection.classList.add('hidden');
   } else {
     logoutButton.classList.add('hidden');
-    loginButton.classList.remove('hidden');
+    loginButton.classList.remove('hidden')
     myCollection.classList.remove('hidden');
   }
   // 2. if success => get response data 

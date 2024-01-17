@@ -6,7 +6,7 @@ async function fetchData() {
 
       let result = await res.json();
 
-      console.log("fetch data:", result.data);
+      // console.log("fetch data:", result.data);
 
       // Return the result.data, not the entire result
       return result.data;
