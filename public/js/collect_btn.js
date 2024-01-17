@@ -26,17 +26,16 @@ async function collectBtn (){
         //     console.log("1213")
             
         
-        // if(result. > 1){
-            //     alert({massage:Collected})
-            
-            // }
-            if(res.status == 200){
+        if(res.status == 200){
             return
         }
 
         }catch(error){}
-
     }
 
 
 collectBtn();
+
+function alert() {
+    swal.fire("Success", "Book has been collected", "success");
+}
