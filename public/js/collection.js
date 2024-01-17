@@ -14,7 +14,7 @@ async function collection() {
       collectionHtml += `
                 <div class="card">
                 <a href="../html/reader.html?book=${batman.name}"><img src="${batman.book_cover}" id="bookPh" /></a>
-                <div class="cancelCollect"><button>collect<button></div>
+                <a class="cancelCollect"><img src="../assets/multiply.png" id="cancelCollectBtn"></a>
                 </div>`;
 
       console.log("u a not bat man:", collectionHtml);
