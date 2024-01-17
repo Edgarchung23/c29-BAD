@@ -14,7 +14,7 @@ async function collection() {
       collectionHtml += `
                 <div class="card">
                 <a href="../html/reader.html?book=${batman.name}"><img src="${batman.book_cover}" id="bookPh" /></a>
-                <div id="cancelCollect" name="collectedBook" onclick="cancelCollect(${batman.book_id})"><button   type="submit">collect</button></div>
+                <a class="cancelCollect"><img src="../assets/multiply.png" id="cancelCollectBtn"></a>
                 </div>`;
     }
     document.querySelector(".books-container").innerHTML = collectionHtml;
