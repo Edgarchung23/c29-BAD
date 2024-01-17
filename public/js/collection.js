@@ -14,7 +14,7 @@ async function collection() {
       collectionHtml += `
                 <div class="card">
                 <a href="../html/reader.html?book=${batman.name}"><img src="${batman.book_cover}" id="bookPh" /></a>
-                <a class="cancelCollect"><img src="../assets/multiply.png" id="cancelCollectBtn"></a>
+                <a class="cancelCollect"><img src="../assets/multiply.png" id="cancelCollectBtn" onclick="cancelCollect(${batman.book_id})"></a>
                 </div>`;
     }
     document.querySelector(".books-container").innerHTML = collectionHtml;
@@ -25,7 +25,7 @@ async function collection() {
 collection();
 
 async function cancelCollect(value) {
-    console.log(JSON.stringify(value))
+    // console.log(JSON.stringify(value))
 //   try {
     // let target = document.querySelector("#cancelCollect");
     // target.addEventListener("click", async (e)=>{
@@ -45,10 +45,10 @@ async function cancelCollect(value) {
       }),
     });
     if (result.ok) {
-        console.log("123")
+        // console.log("123")
         collection()
     }
-    console.log(result);
+    // console.log(result);
 //   } catch (error) {}
 }
 
