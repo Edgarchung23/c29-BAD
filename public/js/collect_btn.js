@@ -16,13 +16,21 @@ async function collectBtn (){
             })
         })
         const result = await res.json();
-        for(let ironMan of result){
-
-            console.log("answer:",ironMan)
-        }
+        // for(let batman of result){
+        //     console.log("answer:",batman.id)
+        //     if(batman.id == batman.id){
+        //         alert("Collected")
+            
+        //         }
+        //     }
+        //     console.log("1213")
+            
         
-        if(res.status == 200){
-            alert({massage:Collected})
+        // if(result. > 1){
+            //     alert({massage:Collected})
+            
+            // }
+            if(res.status == 200){
             return
         }
 
