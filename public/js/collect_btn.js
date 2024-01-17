@@ -22,13 +22,15 @@ async function collectBtn (){
         }
         
         if(res.status == 200){
-            alert({massage:Collected})
             return
         }
 
         }catch(error){}
-
     }
 
 
 collectBtn();
+
+function alert() {
+    swal.fire("Success", "Book has been collected", "success");
+}
