@@ -10,15 +10,12 @@ async function collection() {
     let collectionHtml = "";
 
     for (let batman of data) {
-      console.log("i am goog people", batman);
+        console.log(batman)
       collectionHtml += `
                 <div class="card">
                 <a href="../html/reader.html?book=${batman.name}"><img src="${batman.book_cover}" id="bookPh" /></a>
                 <a class="cancelCollect"><img src="../assets/multiply.png" id="cancelCollectBtn"></a>
                 </div>`;
-
-      console.log("u a not bat man:", collectionHtml);
-
     }
     document.querySelector(".books-container").innerHTML = collectionHtml;
     
@@ -27,18 +24,32 @@ async function collection() {
 
 collection();
 
-async function cancelCollect (){
-    try{
-        
-        let res = await fetch("/user/cancelCollect",{
-            method:"DELETE",
-        })
-        if(res.ok) {
-          Swal.fire("Success", "Book has been uncollected", "success");
-        } else {
-          Swal.fire("Error", "Failed to uncollect book", "error");
-        }
-    }catch(error){
-        console.error(error);
+async function cancelCollect(value) {
+    console.log(JSON.stringify(value))
+//   try {
+    // let target = document.querySelector("#cancelCollect");
+    // target.addEventListener("click", async (e)=>{
+    //     e.preventDefault();
+    //     console.log("123")
+    //     console.log("Do you feel the button:",target)
+    // })
+    
+
+    let result = await fetch("/user/cancelCollect", {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        book_id: value,
+      }),
+    });
+    if (result.ok) {
+        console.log("123")
+        collection()
     }
+    console.log(result);
+//   } catch (error) {}
 }
+
+// cancelCollect();
