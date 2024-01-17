@@ -15,6 +15,7 @@ async function fetchData() {
       throw error; // Re-throw the error to handle it at a higher level
     }
   }
+// <--------------------------------------------------------------------------------->
 
   async function init() {
     try {
@@ -55,6 +56,28 @@ async function fetchData() {
       alert("error 1" + e);
     }
   }
-
-  // Call the async function to start the execution
   init();
+
+// <--------------------------------------------------------------------------------->
+
+    async function bookAudio() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const bookName = urlParams.get('book');
+    
+    
+        if (bookName === '原子習慣') {
+          document.querySelector(".voiceContaniner").innerHTML += `<audio controls id="voiceControls">
+          <source src="../voice/原子習慣Part1.mp3" type="audio/mpeg">
+        </audio><audio controls id="voiceControls">
+        <source src="../voice/原子習慣Part2.mp3" type="audio/mpeg">
+      </audio>
+      <audio controls id="voiceControls">
+          <source src="../voice/原子習慣Part3.mp3" type="audio/mpeg">
+        </audio>`
+          document.innerHTML = ('.voiceContaniner').src = "";
+        } else if (bookName === '') {
+          document.getElementById('.voiceContaniner').src =      ""
+        }
+    }
+bookAudio();
+   
