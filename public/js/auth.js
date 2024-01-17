@@ -12,7 +12,7 @@ function register(){
             swal.fire("Error... ", "The password is not match!");
             return 
         } else {
-                swal.fire("Success", "Registered success","success")
+            swal.fire("Success", "Registered success","success")
 
         }
 
