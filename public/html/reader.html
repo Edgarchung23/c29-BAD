@@ -69,16 +69,6 @@
         <!-- </div> -->
 
         <div class="voiceContaniner">
-          <audio controls id="voiceControls">
-            <source src="../voice/output1.mp3" type="audio/mpeg">
-          </audio>
-          <audio controls id="voiceControls">
-            <source src="../voice/output2.mp3" type="audio/mpeg">
-          </audio>
-          <audio controls id="voiceControls">
-            <source src="../voice/output3.mp3" type="audio/mpeg">
-          </audio>
-
         </div>
       </div>
     </div>
@@ -89,13 +79,10 @@
   <script src="../js/index.js"></script>
   <script src="../js/collect_btn.js"></script>
   <script src="../js/book.js"></script>
+  <script src="../js/reader.js"></script>
   <script>
-    async function fetchData() {
-      try {
-        let res = await fetch("/chapter/reader", {
-          method: "GET"
-        });
 
+<<<<<<< HEAD
         let result = await res.json();
 
         console.log("fetch data:", result.data);
@@ -156,6 +143,8 @@
 
 
     // document.querySelector("#username-display").innerHTML = "";
+=======
+>>>>>>> 41309f1ae48787d07e8c8713b45c9952e2fe411c
   </script>
 
 </body>
