@@ -158,5 +158,15 @@ margin-top: 80px;
   #firstBar {
     display: flex;
     justify-content: flex-end;
+    margin-top: 5px;
+    padding-left: 30px;
   }
   
+h1 {
+  font-weight: bold;
+}
+
+.login_container {
+  display: flex;
+  justify-content: flex-end;
+}

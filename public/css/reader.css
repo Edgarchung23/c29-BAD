@@ -5,7 +5,7 @@ body {
 }
 .big_container {
 height: 900px;
-  /* max-width: 900px; */
+  max-width: 900px;
 }
 
 .secondBody {
@@ -60,9 +60,7 @@ height: 100%;
   border: solid 1px;
   min-width: 700px;
   height: 100%;
-	background-image: url(../assets/254611e12dd12b611629360861.jpg );
-  background-repeat: no-repeat;
-  background-size: 100%;
+	background-image: url(../assets/photo-1615800098779-1be32e60cca3.avif);
 }
 
 .arrow {
@@ -125,4 +123,8 @@ font-size: 20px;}
 
 #sideBarFooter{
   padding: 8px 16px
+}
+
+#mySidebar {
+  size: 100%;
 }

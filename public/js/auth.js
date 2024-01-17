@@ -11,6 +11,9 @@ function register(){
         if (passwordInput1 !== passwordInput2) {
             swal.fire("Error... ", "The password is not match!");
             return 
+        } else {
+                swal.fire("Success", "Registered success","success")
+
         }
 
         const res = await fetch("/auth/register", {
@@ -31,6 +34,7 @@ function register(){
             console.log(result)
             window.location.href = "/";
             return
+
         } 
 
 
@@ -39,3 +43,7 @@ function register(){
     })
 }
 register()
+
+function alert() {
+    swal.fire("Success", "Book has been collected", "success");
+}

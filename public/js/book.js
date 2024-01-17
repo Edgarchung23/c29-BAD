@@ -30,23 +30,7 @@ async function fetchBooks() {
 
 
 }
-// Call the fetchBooks function to initiate the fetch and update the HTML
 fetchBooks();
 
 
-
-// async function renderBook(id) {
-//     let data = await getBook(id);
-//     let allBook = "";
-//     for (let entry of data) {
-//       allProduct += `
-{/* <audio controls id="voiceControls">
-            <source src="../voice/output1.mp3" type="audio/mpeg">
-          </audio>
-    //   </div> */}
-//       </div>
-//       `;
-//     }
-//     document.querySelector(".voiceContaniner").innerHTML = allBook;
-//   }
 
