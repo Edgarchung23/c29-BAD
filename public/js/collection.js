@@ -1,27 +1,35 @@
-async function collection(){
-    try {
-        let res = await fetch("/user/collected",{
-            method:"POST",
-        })
-        let result = await res.json();
-        let data = result.data
+async function collection() {
+  try {
+    let res = await fetch("/user/collected", {
+      method: "POST",
+    });
+    let result = await res.json();
+    let data = result.data;
 
-        let collectionHtml =  "";
+    let collectionHtml = "";
 
-        for (let batman of data){
-        console.log("i am goog people",batman)
-                collectionHtml += `
+    for (let batman of data) {
+      console.log("i am goog people", batman);
+      collectionHtml += `
                 <div class="collection_div">
-                    <div>${batman.name}</div>
-                </div>`
-            
-        console.log("u a not bat man:",collectionHtml)
-        }
-        document.querySelector("").innerHTML = collectionHtml;
+                <a href="../html/reader.html?book=${batman.name}"><img src="${batman.book_cover}" id="bookPh" /></a>
+                <div class="cancelCollect"><button>collect<button></div>
+                </div>`;
 
-    }catch(error){
-        
+      console.log("u a not bat man:", collectionHtml);
     }
+    document.querySelector(".books-container").innerHTML = collectionHtml;
+  } catch (error) {}
 }
 
-collection()
+collection();
+
+async function cancelCollect (){
+    try{
+        
+        let res = await fetch("/user/cancelCollect",{
+            method:"DELETE",
+        })
+
+    }catch(error){}
+}
