@@ -38,7 +38,7 @@ export async function seed(knex: Knex): Promise<void> {
         user_id: id,
         name: "富爸爸窮爸爸",
         category: "心理學",
-        book_cover: "/富爸爸窮爸爸.jpeg",
+        book_cover: "/富爸爸窮爸爸.jpg",
         content_url: "./books/富爸爸窮爸爸.epub",
        },
        {
