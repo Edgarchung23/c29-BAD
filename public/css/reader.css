@@ -94,7 +94,7 @@ height: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding-top: 20px;
+  padding-top: 70px;
 }
 
 #voiceControls {
@@ -109,3 +109,20 @@ max-width: 690px;
 #collectBtn {
   font-weight: bold;
 font-size: 20px;}
+
+#collectBtnImg {
+  width: 40px;
+  height: 40px;
+}
+#collectBtnImg:hover {
+  filter: brightness(120%);
+}
+
+.collect_box {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#sideBarFooter{
+  padding: 8px 16px
+}

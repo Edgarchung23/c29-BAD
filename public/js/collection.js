@@ -4,6 +4,7 @@ async function collection() {
       method: "POST",
     });
     let result = await res.json();
+    
     let data = result.data;
 
     let collectionHtml = "";
@@ -11,12 +12,13 @@ async function collection() {
     for (let batman of data) {
         console.log(batman)
       collectionHtml += `
-                <div class="collection_div">
+                <div class="card">
                 <a href="../html/reader.html?book=${batman.name}"><img src="${batman.book_cover}" id="bookPh" /></a>
                 <div id="cancelCollect" name="collectedBook" onclick="cancelCollect(${batman.book_id})"><button   type="submit">collect</button></div>
                 </div>`;
     }
     document.querySelector(".books-container").innerHTML = collectionHtml;
+    
   } catch (error) {}
 }
 

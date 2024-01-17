@@ -1,3 +1,4 @@
+
 function register(){
     let target = document.querySelector("#register_form");
     target.addEventListener("submit", async (e)=>{
@@ -8,7 +9,7 @@ function register(){
         const passwordInput2 = target.passwordInput2.value
 
         if (passwordInput1 !== passwordInput2) {
-            alert("The password is not match")
+            swal.fire("Error... ", "The password is not match!");
             return 
         }
 
@@ -32,7 +33,8 @@ function register(){
             return
         } 
 
-        alert(result.message)
+
+        swal.fire("Error... ", "Account exists!");
         
     })
 }
