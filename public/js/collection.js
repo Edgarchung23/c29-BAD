@@ -9,7 +9,7 @@ async function collection(){
         let collectionHtml =  "";
 
         for (let batman of data){
-        
+        console.log("i am goog people",batman)
                 collectionHtml += `
                 <div class="collection_div">
                     <div>${batman.name}</div>
@@ -17,7 +17,7 @@ async function collection(){
             
         console.log("u a not bat man:",collectionHtml)
         }
-        document.querySelector(".books-container").innerHTML = collectionHtml;
+        document.querySelector("").innerHTML = collectionHtml;
 
     }catch(error){
         

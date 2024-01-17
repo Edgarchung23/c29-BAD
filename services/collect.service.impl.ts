@@ -36,7 +36,7 @@ export class CollectServiceImpl implements CollectService {
   async getCollectedBookByUserId(user_id: number): Promise<any[]> {
     let result = await this.knex("collections")
     .join("books","collections.book_id", 'books.id')
-      .select("collections.book_id", "collections.user_id", "books.name")
+      .select("collections.book_id", "collections.user_id", "books.name","books.book_cover")
       .where("collections.user_id", user_id)
     // console.log("i also is superman:", result);
     return result
