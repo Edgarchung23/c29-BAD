@@ -16,15 +16,21 @@ async function collectBtn (){
             })
         })
         const result = await res.json();
-        // console.log("answer:",result)
+        for(let ironMan of result){
+
+            console.log("answer:",ironMan)
+        }
+        
         if(res.status == 200){
-            // Swal.fire("收藏成功");
             return
         }
 
         }catch(error){}
-
     }
 
 
 collectBtn();
+
+function alert() {
+    swal.fire("Success", "Book has been collected", "success");
+}

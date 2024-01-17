@@ -78,8 +78,15 @@ a:hover {
 }
 
 #cancelCollectBtn {
-  width: 40px;
-  height: 40px;
+  width: 20px;
+  height: 20px;
+}
+
+.cancelCollect {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+padding-top: 10px;
 }
 
 /* ---------photosBox----------------------------------------------------------------------------- */
@@ -122,3 +129,7 @@ padding: 20px;
 #collectBtn {
   font-weight: bold;
 font-size: 20px;}
+
+.contactBox {
+  padding: 100px;
+}

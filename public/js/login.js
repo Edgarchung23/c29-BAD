@@ -30,7 +30,7 @@ function clientLogin(){
             }
             return
         }
-        swal.fire("Error... ", result.message);
+        swal.fire("Hello", result.message);
 
     })
 }
