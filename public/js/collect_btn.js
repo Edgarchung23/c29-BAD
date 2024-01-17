@@ -22,7 +22,9 @@ async function collectBtn (){
             return
         }
 
-        }catch(error){}
+        }catch(error){
+            
+        }
 
     }
 
