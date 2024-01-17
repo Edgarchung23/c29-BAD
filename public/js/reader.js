@@ -223,7 +223,7 @@ async function fetchData() {
             <source src="../voice/睇色，戒Part3.mp3" type="audio/mpeg">
           </audio>`
         }
-      else if (bookName === '安妮日記'){
+      else if (bookName === '自卑與超越'){
           document.querySelector(".voiceContaniner").innerHTML += `
           <audio controls id="voiceControls">
             <source src="../voice/自卑與超越Part1.mp3" type="audio/mpeg">
