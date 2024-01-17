@@ -190,49 +190,49 @@ async function fetchData() {
         else if (bookName === '人性的弱點'){
           document.querySelector(".voiceContaniner").innerHTML += `
           <audio controls id="voiceControls">
-            <source src="../voice/安妮日記Part1.mp3" type="audio/mpeg">
+            <source src="../voice/人性的弱點Part1.mp3" type="audio/mpeg">
           </audio>
           <audio controls id="voiceControls">
-            <source src="../voice/安妮日記Part2.mp3" type="audio/mpeg">
+            <source src="../voice/人性的弱點Part2.mp3" type="audio/mpeg">
           </audio>
           <audio controls id="voiceControls">
-            <source src="../voice/安妮日記Part3.mp3" type="audio/mpeg">
+            <source src="../voice/人性的弱點Part3.mp3" type="audio/mpeg">
           </audio>`
         }
-        else if (bookName === '安妮日記'){
+        else if (bookName === '大師的殘忍'){
           document.querySelector(".voiceContaniner").innerHTML += `
           <audio controls id="voiceControls">
-            <source src="../voice/安妮日記Part1.mp3" type="audio/mpeg">
+            <source src="../voice/大師的殘忍Part1.mp3" type="audio/mpeg">
           </audio>
           <audio controls id="voiceControls">
-            <source src="../voice/安妮日記Part2.mp3" type="audio/mpeg">
+            <source src="../voice/大師的殘忍Part2.mp3" type="audio/mpeg">
           </audio>
           <audio controls id="voiceControls">
-            <source src="../voice/安妮日記Part3.mp3" type="audio/mpeg">
+            <source src="../voice/大師的殘忍Part3.mp3" type="audio/mpeg">
           </audio>`
         }
-        else if (bookName === '安妮日記'){
+        else if (bookName === '睇色，戒'){
           document.querySelector(".voiceContaniner").innerHTML += `
           <audio controls id="voiceControls">
-            <source src="../voice/安妮日記Part1.mp3" type="audio/mpeg">
+            <source src="../voice/睇色，戒Part1.mp3" type="audio/mpeg">
           </audio>
           <audio controls id="voiceControls">
-            <source src="../voice/安妮日記Part2.mp3" type="audio/mpeg">
+            <source src="../voice/睇色，戒Part2.mp3" type="audio/mpeg">
           </audio>
           <audio controls id="voiceControls">
-            <source src="../voice/安妮日記Part3.mp3" type="audio/mpeg">
+            <source src="../voice/睇色，戒Part3.mp3" type="audio/mpeg">
           </audio>`
         }
       else if (bookName === '安妮日記'){
           document.querySelector(".voiceContaniner").innerHTML += `
           <audio controls id="voiceControls">
-            <source src="../voice/安妮日記Part1.mp3" type="audio/mpeg">
+            <source src="../voice/自卑與超越Part1.mp3" type="audio/mpeg">
           </audio>
           <audio controls id="voiceControls">
-            <source src="../voice/安妮日記Part2.mp3" type="audio/mpeg">
+            <source src="../voice/自卑與超越Part2.mp3" type="audio/mpeg">
           </audio>
           <audio controls id="voiceControls">
-            <source src="../voice/安妮日記Part3.mp3" type="audio/mpeg">
+            <source src="../voice/自卑與超越Part3.mp3" type="audio/mpeg">
           </audio>`
         }
     }
