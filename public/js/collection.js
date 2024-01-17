@@ -34,7 +34,6 @@ async function cancelCollect(value) {
     //     console.log("Do you feel the button:",target)
     // })
     
-
     let result = await fetch("/user/cancelCollect", {
       method: "DELETE",
       headers: {
@@ -52,4 +51,4 @@ async function cancelCollect(value) {
 //   } catch (error) {}
 }
 
-// cancelCollect();
+cancelCollect();
