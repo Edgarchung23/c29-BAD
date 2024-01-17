@@ -66,17 +66,27 @@ async function fetchData() {
     
     
         if (bookName === '原子習慣') {
-          document.querySelector(".voiceContaniner").innerHTML += `<audio controls id="voiceControls">
+          document.querySelector(".voiceContaniner").innerHTML += `
+        <audio controls id="voiceControls">
           <source src="../voice/原子習慣Part1.mp3" type="audio/mpeg">
-        </audio><audio controls id="voiceControls">
-        <source src="../voice/原子習慣Part2.mp3" type="audio/mpeg">
-      </audio>
-      <audio controls id="voiceControls">
+        </audio>
+        <audio controls id="voiceControls">
+          <source src="../voice/原子習慣Part2.mp3" type="audio/mpeg">
+        </audio>
+        <audio controls id="voiceControls">
           <source src="../voice/原子習慣Part3.mp3" type="audio/mpeg">
         </audio>`
-          document.innerHTML = ('.voiceContaniner').src = "";
-        } else if (bookName === '') {
-          document.getElementById('.voiceContaniner').src =      ""
+        } else if (bookName === '蘇菲的世界') {
+          document.querySelector(".voiceContaniner").innerHTML += `
+          <audio controls id="voiceControls">
+            <source src="../voice/蘇菲的世界Part1.mp3" type="audio/mpeg">
+          </audio>
+          <audio controls id="voiceControls">
+            <source src="../voice/蘇菲的世界Part2.mp3" type="audio/mpeg">
+          </audio>
+          <audio controls id="voiceControls">
+            <source src="../voice/蘇菲的世界Part3.mp3" type="audio/mpeg">
+          </audio>`
         }
     }
 bookAudio();
