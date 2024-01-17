@@ -6,14 +6,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"> -->
-  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat"> -->
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
   <link rel="stylesheet" href="../css/index.css" />
   <link rel="stylesheet" href="../css/reader.css" />
   <link rel="stylesheet" href="../css/collect_btn.css" />
-
-  <!-- Testing -->
+  <!-- Epub -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.5/jszip.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/epubjs/dist/epub.min.js"></script>
 </head>
@@ -21,8 +17,8 @@
 <body>
   <div class="secondBody">
     <div class="Title">
-      <div id="username-display" class="loginButton" class="hidden">
-        <a href="./login.html"><img src="../assets/login.png" id="loginBtn"></a></p>
+      <div id="username-display">
+        <a href="./login.html"><img src="../assets/login.png" id="loginBtn" class="loginButton hidden"></a></p>
       </div>
       <div class="banner">
       </div>
@@ -31,14 +27,10 @@
             id="logoutBtn"></a>
         </p>
       </div>
-      <!-- <div id="register-display">
-      <a href="./register.html">Register<img src="" id="registerBtn"></a>
-      </div> -->
 
     </div>
     <div class="big_container">
       <!-- /* ---------sideBar--------------------------------------------------------------------------- */ -->
-
       <nav class="w3-bar-block" id="mySidebar">
         <div class="sideBarContainer">
           <h3 class="shopName"><b>講書台</b></h3>
@@ -48,6 +40,7 @@
         <div class="sideBarText">
 
           <div class="sideBarText">
+            <a class="w3-bar-item sideBarBtn" onclick="collectBtn()" id="collectBtn">我的收藏</a>
             <a href="../html/index.html" class="w3-bar-item sideBarBtn">最新上架</a>
             <a href="../html/novel.html" class="w3-bar-item sideBarBtn">小說</a>
             <a href="../html/literature.html" class="w3-bar-item sideBarBtn">文學</a>
@@ -55,7 +48,6 @@
             <!-- <div class="collect_box" id="c_b"> -->
             <!-- <button class="collect_button" onclick="collectBtn()">collect</button> -->
             <!-- </div> -->
-            <a class="collect_box" onclick="collectBtn()" id="">Collect</a>
             <!-- </div> -->
             <a href="#sideBarFooter" class="sideBarBtn w3-padding">聯絡我們</a>
             <a href="#sideBarFooter" class="w3-bar-item sideBarBtn">Test</a>
@@ -71,7 +63,7 @@
         <!-- <div> -->
         <div class="book-container">
           <div id="reader"></div>
-          <a id="prev" href="#prev" class="arrow" style="visibility: visible;  ;">‹</a>
+          <a id="prev" href="#prev" class="arrow" style="visibility: visible;">‹</a>
           <a id="next" href="#next" class="arrow" style="visibility: visible;">›</a>
         </div>
         <!-- </div> -->
@@ -96,6 +88,8 @@
   <!--------------------------------chatBox---------------------------------------->
   <script src="../js/index.js"></script>
   <script src="../js/collect_btn.js"></script>
+  <script src="../js/index.js"></script>
+  <script src="../js/book.js"></script>
   <script>
     async function fetchData() {
       try {
@@ -159,6 +153,10 @@
     init();
 
 
+
+
+
+    // document.querySelector("#username-display").innerHTML = "";
   </script>
 
 </body>
