@@ -1,27 +1,55 @@
-async function collection(){
-    try {
-        let res = await fetch("/user/collected",{
-            method:"POST",
-        })
-        let result = await res.json();
-        let data = result.data
+async function collection() {
+  try {
+    let res = await fetch("/user/collected", {
+      method: "POST",
+    });
+    let result = await res.json();
+    
+    let data = result.data;
 
-        let collectionHtml =  "";
+    let collectionHtml = "";
 
-        for (let batman of data){
-        
-                collectionHtml += `
-                <div class="collection_div">
-                    <div>${batman.name}</div>
-                </div>`
-            
-        console.log("u a not bat man:",collectionHtml)
-        }
-        document.querySelector(".books-container").innerHTML = collectionHtml;
-
-    }catch(error){
-        
+    for (let batman of data) {
+        console.log(batman)
+      collectionHtml += `
+                <div class="card">
+                <a href="../html/reader.html?book=${batman.name}"><img src="${batman.book_cover}" id="bookPh" /></a>
+                <div id="cancelCollect" name="collectedBook" onclick="cancelCollect(${batman.book_id})"><button   type="submit">collect</button></div>
+                </div>`;
     }
+    document.querySelector(".books-container").innerHTML = collectionHtml;
+    
+  } catch (error) {}
 }
 
-collection()
+collection();
+
+async function cancelCollect(value) {
+    console.log(JSON.stringify(value))
+//   try {
+    // let target = document.querySelector("#cancelCollect");
+    // target.addEventListener("click", async (e)=>{
+    //     e.preventDefault();
+    //     console.log("123")
+    //     console.log("Do you feel the button:",target)
+    // })
+    
+
+    let result = await fetch("/user/cancelCollect", {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        book_id: value,
+      }),
+    });
+    if (result.ok) {
+        console.log("123")
+        collection()
+    }
+    console.log(result);
+//   } catch (error) {}
+}
+
+// cancelCollect();

@@ -12,7 +12,7 @@ async function fetchBooks() {
     let homeHTML = "";
 
     for (let book of data) {
-      console.log(book.book_cover);
+      // console.log(book.book_cover);
       homeHTML += `
             <div class="card"> 
            <a href="../html/reader.html?book=${book.name}"><img src="${book.book_cover}" id="bookPh" /></a>

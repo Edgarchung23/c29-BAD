@@ -5,7 +5,7 @@ export interface CollectService {
 
   getCollectedBookByUserId(user_id: number): Promise<any[]>;
 
-  disCollection( book_id: number, user_id: number): Promise<void>;
+  disCollection( book_id: number, user_id: number): Promise<number>;
 
   isBookCollected(book_id: number, user_id: number): Promise<boolean>
 }

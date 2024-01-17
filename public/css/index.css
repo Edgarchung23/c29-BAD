@@ -114,4 +114,9 @@ padding: 20px;
 
 .guestName {
   font-weight: bold;
+  font-size: 20px;
 }
+
+#collectBtn {
+  font-weight: bold;
+font-size: 20px;}
