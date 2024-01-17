@@ -21,6 +21,8 @@ export class UserController {
         private userService: UserService,
         ){
             this.router.get('/user/session', isLoggedIn, this.getUsername)
+            this.router.get('/user/cancelCollect', isLoggedIn, this.getUsername)
+
         }
 
     async getSession(req:Request){

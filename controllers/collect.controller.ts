@@ -22,6 +22,7 @@ export class CollectController {
   constructor(private collectService: CollectService) {
     this.router.post("/user/collection", isLoggedIn, this.collectBook);
     this.router.post("/user/collected", isLoggedIn, this.collectedBook)
+    this.router.delete("/user/cancelCollect",isLoggedIn, this.cancelCollection)
     // this.router.post("/user/collectBook",this.collectBook)
   }
 
@@ -61,6 +62,23 @@ export class CollectController {
       res.status(400).json({
         message: e
       })
+    }
+  }
+
+  cancelCollection = async (req:Request,res:Response)=>{
+    try{
+      let book_id = req.body.book_id
+      let user_id = req.session.user_id
+      
+      
+      let result = await this.collectService.disCollection(book_id,user_id!)
+
+      res.status(200).json({
+        data:result
+      })
+    }catch(e){
+      res.status(400).json
+      message:e
     }
   }
 }
