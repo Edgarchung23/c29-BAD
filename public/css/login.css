@@ -5,11 +5,12 @@
   }
   
   .login_container {
-  max-width: 2500px;
+  max-width: 1200px;
   }
 
   #login-form {
-  width: 130%;
+  max-width: 1000px;
+  width: 100%;
   }
 
   
@@ -263,7 +264,7 @@ margin-top: 30px;
 #firstBar {
   display: flex;
   justify-content: flex-end;
-  width: 118%;
+  width: 92%;
   margin-top: 5px;
 }
 
