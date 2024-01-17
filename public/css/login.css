@@ -1,269 +1,270 @@
-  body {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .login_container {
-  max-width: 2500px;
-  }
+body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
-  #login-form {
-  width: 130%;
-  }
+.login_container {
+max-width: 1200px;
+}
 
-  
-  a {
-    color: black;
-  }
-  a:hover {
-    color: #ff0000;
-  }
-  
-  /* STRUCTURE */
-  
-  .wrapper {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 100%;
-    padding: 20px;
-  }
-  .form-label {
-    margin-top: 5px;
-    font-weight: bold;
-  }
-  #formContent {
-    -webkit-border-radius: 10px 10px 10px 10px;
-    border-radius: 10px 10px 10px 10px;
-    background: #fff;
-    padding: 30px;
-    position: relative;
-    padding: 0px;
-    -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
-    box-shadow: 0 30px 60px 0 rgba(255, 255, 255, 0.3);
-    text-align: center;
-  }
-  
-  #formFooter {
-    background-color: #000000;
-    border-top: 1px solid #dcdcdc;
-    padding: 25px;
-    text-align: center;
-    -webkit-border-radius: 0 0 10px 10px;
-    border-radius: 0 0 10px 10px;
-  }
-  /* FORM TYPOGRAPHY*/
-  
-  input[type="text"] {
-    background-color: #ffffff;
-    border: none;
-    color: #0d0d0d;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 5px;
-    border: 2px solid #f6f6f6;
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -ms-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-    -webkit-border-radius: 5px 5px 5px 5px;
-    border-radius: 5px 5px 5px 5px;
-  }
-  
-  input[type="text"]:focus {
-    background-color: #fff;
-    border-bottom: 2px solid #000000;
-  }
-  
-  input[type="text"]:placeholder {
-    color: #ffffff;
-  }
-  
-  /* Simple CSS3 Fade-in-down Animation */
-  .fadeInDown {
-    -webkit-animation-name: fadeInDown;
-    animation-name: fadeInDown;
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-  }
-  
-  @-webkit-keyframes fadeInDown {
-    0% {
-      opacity: 0;
-      -webkit-transform: translate3d(0, -100%, 0);
-      transform: translate3d(0, -100%, 0);
-    }
-    100% {
-      opacity: 1;
-      -webkit-transform: none;
-      transform: none;
-    }
-  }
-  
-  @keyframes fadeInDown {
-    0% {
-      opacity: 0;
-      -webkit-transform: translate3d(0, -100%, 0);
-      transform: translate3d(0, -100%, 0);
-    }
-    100% {
-      opacity: 1;
-      -webkit-transform: none;
-      transform: none;
-    }
-  }
-  
-  /* Simple CSS3 Fade-in Animation */
-  @-webkit-keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  @-moz-keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  .fadeIn {
+#login-form {
+max-width: 1000px;
+width: 100%;
+}
+
+
+a {
+  color: black;
+}
+a:hover {
+  color: #ff0000;
+}
+
+/* STRUCTURE */
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100%;
+  padding: 20px;
+}
+.form-label {
+  margin-top: 5px;
+  font-weight: bold;
+}
+#formContent {
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  background: #fff;
+  padding: 30px;
+  position: relative;
+  padding: 0px;
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 30px 60px 0 rgba(255, 255, 255, 0.3);
+  text-align: center;
+}
+
+#formFooter {
+  background-color: #000000;
+  border-top: 1px solid #dcdcdc;
+  padding: 25px;
+  text-align: center;
+  -webkit-border-radius: 0 0 10px 10px;
+  border-radius: 0 0 10px 10px;
+}
+/* FORM TYPOGRAPHY*/
+
+input[type="text"] {
+  background-color: #ffffff;
+  border: none;
+  color: #0d0d0d;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  border: 2px solid #f6f6f6;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+input[type="text"]:focus {
+  background-color: #fff;
+  border-bottom: 2px solid #000000;
+}
+
+input[type="text"]:placeholder {
+  color: #ffffff;
+}
+
+/* Simple CSS3 Fade-in-down Animation */
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInDown {
+  0% {
     opacity: 0;
-    -webkit-animation: fadeIn ease-in 1;
-    -moz-animation: fadeIn ease-in 1;
-    animation: fadeIn ease-in 1;
-  
-    -webkit-animation-fill-mode: forwards;
-    -moz-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-  
-    -webkit-animation-duration: 1s;
-    -moz-animation-duration: 1s;
-    animation-duration: 1s;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
   }
-  
-  .fadeIn.first {
-    -webkit-animation-delay: 0.4s;
-    -moz-animation-delay: 0.4s;
-    animation-delay: 0.4s;
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
   }
-  
-  .fadeIn.second {
-    -webkit-animation-delay: 0.6s;
-    -moz-animation-delay: 0.6s;
-    animation-delay: 0.6s;
-  }
-  
-  .fadeIn.third {
-    -webkit-animation-delay: 0.8s;
-    -moz-animation-delay: 0.8s;
-    animation-delay: 0.8s;
-  }
-  
-  .fadeIn.fourth {
-    -webkit-animation-delay: 1s;
-    -moz-animation-delay: 1s;
-    animation-delay: 1s;
-  }
-  
-  /* Simple CSS3 Fade-in Animation */
-  .underlineHover:after {
-    display: block;
-    left: 0;
-    bottom: -10px;
-    width: 0;
-    height: 2px;
-    background-color: #ffffff;
-    content: "";
-    transition: width 0.2s;
-  }
-  
-  .underlineHover:hover {
-    color: #0d0d0d;
-  }
-  
-  .underlineHover:hover:after {
-    width: 100%;
-  }
-  
-  /* OTHERS */
-  
-  *:focus {
-    outline: none;
-  }
-  
-  #icon {
-    /* width: 60%; */
-  }
-  
-  #loginRegisterbutton {
-    font-size: 30px;
-    display: flex;
-    margin-top: 20px;
-    color: rgb(0, 0, 0);
-    height: 40px;
-    align-items: center;
-    font-weight: bold
-  }
-  
-  #loginRegisterbutton:hover {
-    color: #b7b7b7;
-  }
-  .btn-dark {
-    --bs-btn-color: #000000;
-    --bs-btn-bg: #fbfbfb;
-    --bs-btn-hover-color: #000000;
-  }
-  .btn-dark:hover {
-    background-color: #fcfcfc !important;
+}
 
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
   }
-  
-  .btn-outline-secondary:hover {
-    background-color: white;
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
   }
-  
-  #user-loginedlogo {
-    height: 28px;
+}
+
+/* Simple CSS3 Fade-in Animation */
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
   }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  opacity: 0;
+  -webkit-animation: fadeIn ease-in 1;
+  -moz-animation: fadeIn ease-in 1;
+  animation: fadeIn ease-in 1;
+
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  animation-duration: 1s;
+}
+
+.fadeIn.first {
+  -webkit-animation-delay: 0.4s;
+  -moz-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+
+.fadeIn.second {
+  -webkit-animation-delay: 0.6s;
+  -moz-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+
+.fadeIn.third {
+  -webkit-animation-delay: 0.8s;
+  -moz-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+}
+
+.fadeIn.fourth {
+  -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+/* Simple CSS3 Fade-in Animation */
+.underlineHover:after {
+  display: block;
+  left: 0;
+  bottom: -10px;
+  width: 0;
+  height: 2px;
+  background-color: #ffffff;
+  content: "";
+  transition: width 0.2s;
+}
+
+.underlineHover:hover {
+  color: #0d0d0d;
+}
+
+.underlineHover:hover:after {
+  width: 100%;
+}
+
+/* OTHERS */
+
+*:focus {
+  outline: none;
+}
+
+#icon {
+  /* width: 60%; */
+}
+
+#loginRegisterbutton {
+  font-size: 30px;
+  display: flex;
+  margin-top: 20px;
+  color: rgb(0, 0, 0);
+  height: 40px;
+  align-items: center;
+  font-weight: bold
+}
+
+#loginRegisterbutton:hover {
+  color: #b7b7b7;
+}
+.btn-dark {
+  --bs-btn-color: #000000;
+  --bs-btn-bg: #fbfbfb;
+  --bs-btn-hover-color: #000000;
+}
+.btn-dark:hover {
+  background-color: #fcfcfc !important;
+
+}
+
+.btn-outline-secondary:hover {
+  background-color: white;
+}
+
+#user-loginedlogo {
+  height: 28px;
+}
 
 .form-name {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-top: 50px;
-  margin-bottom: 50px;
+font-size: 2.5rem;
+font-weight: bold;
+margin-top: 50px;
+margin-bottom: 50px;
 }
 
 
 #homeBtn{
 margin-top: 30px;
-  height: 35px;
+height: 35px;
 }
 
 #firstBar {
-  display: flex;
-  justify-content: flex-end;
-  width: 118%;
-  margin-top: 5px;
+display: flex;
+justify-content: flex-end;
+width: 92%;
+margin-top: 5px;
 }
 
