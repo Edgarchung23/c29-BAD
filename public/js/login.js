@@ -21,7 +21,7 @@ function clientLogin(){
         const result= await res.json();
 
         if(res.status == 200){     
-            swal.fire("Error... ", result.message)   
+            swal.fire("Hello", result.message)   
             if (result.isAdmin){
                 window.location.href = "https://c29-bad-grp3.yodaandkeungjai.com/";
             } else {

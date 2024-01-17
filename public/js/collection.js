@@ -12,7 +12,7 @@ async function collection() {
     for (let batman of data) {
       console.log("i am goog people", batman);
       collectionHtml += `
-                <div class="collection_div">
+                <div class="card">
                 <a href="../html/reader.html?book=${batman.name}"><img src="${batman.book_cover}" id="bookPh" /></a>
                 <div class="cancelCollect"><button>collect<button></div>
                 </div>`;

@@ -14,17 +14,17 @@ async function collectBtn (){
             body: JSON.stringify({
                 book_id: book
             })
-            
-        }
-        )
+        })
         const result = await res.json();
-
+        // console.log("answer:",result)
         if(res.status == 200){
+            // Swal.fire("收藏成功");
             return
-        
         }
 
         }catch(error){}
+
     }
+
 
 collectBtn();
