@@ -235,7 +235,7 @@ async function fetchData() {
             <source src="../voice/安妮日記Part3.mp3" type="audio/mpeg">
           </audio>`
         }
-      
+    }
       
       
 bookAudio();
