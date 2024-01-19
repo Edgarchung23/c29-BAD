@@ -5,7 +5,7 @@ body {
 }
 .big_container {
 height: 900px;
-  /* max-width: 900px; */
+  max-width: 900px;
 }
 
 .secondBody {
@@ -60,9 +60,7 @@ height: 100%;
   border: solid 1px;
   min-width: 700px;
   height: 100%;
-  background-image: url(https://pic1.zhimg.com/80/v2-b5c7d79a42ab42136abc2a5f5f449ab8_720w.webp);
-  background-repeat: no-repeat;
-  background-size: 100%;
+	background-image: url(../assets/photo-1615800098779-1be32e60cca3.avif);
 }
 
 .arrow {
@@ -76,7 +74,7 @@ height: 100%;
   user-select: none;
   text-decoration: none;
   position: absolute;
-  top: 45%;
+  top: 40%;
 }
 
 #prev {
@@ -94,7 +92,7 @@ height: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding-top: 70px;
+  padding-top: 55px;
 }
 
 #voiceControls {

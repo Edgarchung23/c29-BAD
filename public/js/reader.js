@@ -90,24 +90,24 @@ async function fetchData() {
         } else if (bookName === '富爸爸窮爸爸') {
           document.querySelector(".voiceContaniner").innerHTML += `
           <audio controls id="voiceControls">
-            <source src="../voice/富爸爸窮爸爸part1.mp3" type="audio/mpeg">
+            <source src="../voice/富爸爸窮爸爸Part1.mp3" type="audio/mpeg">
           </audio>
           <audio controls id="voiceControls">
-            <source src="../voice/富爸爸窮爸爸part2.mp3" type="audio/mpeg">
+            <source src="../voice/富爸爸窮爸爸Part2.mp3" type="audio/mpeg">
           </audio>
           <audio controls id="voiceControls">
-            <source src="../voice/富爸爸窮爸爸part3.mp3" type="audio/mpeg">
+            <source src="../voice/富爸爸窮爸爸Part3.mp3" type="audio/mpeg">
           </audio>`
         }else if (bookName === '哈利波特1神秘的魔法石') {
           document.querySelector(".voiceContaniner").innerHTML += `
           <audio controls id="voiceControls">
-            <source src="../voice/哈利波特1神秘的魔法石part1.mp3" type="audio/mpeg">
+            <source src="../voice/哈利波特1神秘的魔法石Part1.mp3" type="audio/mpeg">
           </audio>
           <audio controls id="voiceControls">
-            <source src="../voice/哈利波特1神秘的魔法石part2.mp3" type="audio/mpeg">
+            <source src="../voice/哈利波特1神秘的魔法石Part2.mp3" type="audio/mpeg">
           </audio>
           <audio controls id="voiceControls">
-            <source src="../voice/哈利波特1神秘的魔法石part3.mp3" type="audio/mpeg">
+            <source src="../voice/哈利波特1神秘的魔法石Part3.mp3" type="audio/mpeg">
           </audio>`
         }else if (bookName === '哈利波特2消失的密室') {
           document.querySelector(".voiceContaniner").innerHTML += `

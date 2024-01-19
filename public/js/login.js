@@ -38,7 +38,7 @@ function clientLogin(){
             // }
             return
         }
-        swal.fire("Hello", result.message);
+        swal.fire("Hello", result.message,"error");
 
     })
 }
