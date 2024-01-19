@@ -3,6 +3,13 @@ body{
   flex-wrap: wrap;
   justify-content: center;
 }
+.body-container {
+  visibility: hidden;
+}
+.body-container-visible  {
+  visibility: visible !important;
+}
+
 
 .secondBody {
 max-width: 1000px;

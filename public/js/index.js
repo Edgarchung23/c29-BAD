@@ -1,3 +1,7 @@
+window.addEventListener('load', ()=> {
+  getUsername()
+})
+
 async function logout_account(){
   // let target = document.querySelector("logout-button");
   // target.addEventListener("")
@@ -5,10 +9,9 @@ async function logout_account(){
   window.location.reload();
 }
 
-getUsername()
 async function getUsername() {
   // 1. fetch call /user/session
-  let getUsernameRes = await fetch("/user/session");
+  let getUsernameRes = await fetch("/user/username");
 
   let getUsernameResult;
   

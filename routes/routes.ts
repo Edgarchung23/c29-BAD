@@ -1,9 +1,9 @@
 import { Router } from "express";
-import { bookRoute } from "./bookRoutes";
-import { authRouter } from "./authRoute";
+import { authRoute } from "./auth-route";
+import { chapterRoute } from "./chapter-route";
 
 export const router = Router();
 
-router.use("/book", bookRoute);
-router.use("/chapter", bookRoute);
-router.use("/auth", authRouter)
+router.use("/chapter", chapterRoute);
+router.use("/auth", authRoute)
+// router.use("/user", userRoute)

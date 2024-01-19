@@ -1,11 +1,30 @@
 import { Knex } from "knex";
-import { UserService } from "./user.service";
+import { comparePassword } from "../hash";
 import { HttpError } from "../http.error";
-import { comparePassword, hashPassword } from "../hash";
-import { error } from "console";
+import { UserService } from "./user.service";
 
 export class UserServiceImpl implements UserService {
   constructor(private knex: Knex) {}
+  async saveUser(output: { email: string; username: string; hashed: string; is_admin: boolean; }): Promise<void> {
+    await this.knex
+    .insert({
+      email: output.email,
+      username: output.username,
+      password: output.hashed,
+      is_admin: false
+    })
+    .into("users");
+  }
+
+  async getUserByEmail(email: string): Promise<any> {
+    let queryResult = await this.knex.raw(`SELECT * FROM users where email = ?`, [
+      email,
+    ]);
+    return queryResult
+  }
+
+
+
   async loginUser(output: {
     username: string;
     password: string;

@@ -20,20 +20,11 @@ export class UserController {
     constructor ( 
         private userService: UserService,
         ){
-            this.router.get('/user/session', isLoggedIn, this.getUsername)
-            this.router.get('/user/cancelCollect', isLoggedIn, this.getUsername)
+            // this.router.get('/user/session', isLoggedIn, this.getUsername)
+            // this.router.get('/user/cancelCollect', isLoggedIn, this.getUsername)
+            this.router.get('/user/username', isLoggedIn, this.getUsername)
 
         }
-
-    async getSession(req:Request){
-        const username = req.session.username
-        console.log(username)
-        // if(!req.session.username)
-        //     throw new HttpError(401, 'this API is onl for authenticated users')
-        // return {
-        //     user:req.session.username
-        // }
-    }
 
     async getUsername( req:Request ,res: Response){
         try{

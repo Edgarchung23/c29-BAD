@@ -1,6 +1,6 @@
 async function fetchData() {
     try {
-      let res = await fetch("/chapter/reader", {
+      let res = await fetch("/chapter/books", {
         method: "GET"
       });
 

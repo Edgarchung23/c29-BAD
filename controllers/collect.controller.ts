@@ -1,24 +1,24 @@
-import { NextFunction, Router, Request, Response } from "express";
-import { CollectService } from "../services/collect.service";
+import { Request, Response, Router } from "express";
 import { isLoggedIn } from "../middelware";
-import { number } from "cast.ts";
+import { CollectService } from "../services/collect.service";
 
 export class CollectController {
   public router = Router();
 
-  wrapMethod(
-    method: (req: Request, res: Response) => string | Promise<string>
-  ) {
-    method = method.bind(this);
-    return async (req: Request, res: Response, next: NextFunction) => {
-      try {
-        let json = await method(req, res);
-        res.json(json);
-      } catch (error) {
-        next(error);
-      }
-    };
-  }
+  // wrapMethod(
+  //   method: (req: Request, res: Response) => string | Promise<string>
+  // ) {
+  //   method = method.bind(this);
+  //   return async (req: Request, res: Response, next: NextFunction) => {
+  //     try {
+  //       let json = await method(req, res);
+  //       res.json(json);
+  //     } catch (error) {
+  //       next(error);
+  //     }
+  //   };
+  // }
+  
   constructor(private collectService: CollectService) {
     this.router.post("/user/collection", isLoggedIn, this.collectBook);
     this.router.post("/user/collected", isLoggedIn, this.collectedBook)
@@ -51,8 +51,8 @@ export class CollectController {
 
   collectedBook = async (req:Request, res:Response)=>{
     try {
-      let result2 = req.session.user_id
-      let result = await this.collectService.getCollectedBookByUserId(result2!);
+      let user_id = req.session.user_id
+      let result = await this.collectService.getCollectedBookByUserId(user_id!);
 
       // console.log("i am iron man:",result)
       res.status(200).json({
