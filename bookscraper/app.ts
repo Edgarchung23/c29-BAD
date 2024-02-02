@@ -3,9 +3,9 @@ import * as cheerio from 'cheerio'
 import fetch from 'node-fetch';
 
 // Function starts here
-async function getFormulaOneDrivers(){
+async function getFormulaOneDrivers() {
 
-    try{
+    try {
         // Fetch data from URL and store the response into a const
         const response = await fetch('https://www.formula1.com/en/drivers.html');
 
@@ -18,7 +18,7 @@ async function getFormulaOneDrivers(){
 
         // Selection Each col-12 class name and iterate through the list
         $('.listing-items--wrapper >.row >.col-12').map((i, el) => {
-            
+
             // Select the rank class name add use the text method to only grab the content
             const rank = $(el).find('.rank').text();
             const points = $(el).find('points > .f1-wide--s').text();
@@ -26,7 +26,7 @@ async function getFormulaOneDrivers(){
             const lastName = $(el).find('.listing-item--name span:last').text();
             const team = $(el).find('.listing-item--team').text();
             const photo = $(el).find('.listing-item--photo img').attr('data-src');
-            
+
             // Push the data into the items array
             items.push({
                 rank,
@@ -40,9 +40,11 @@ async function getFormulaOneDrivers(){
         })
 
         console.log(items)
-    
-    }catch(error){
+
+    } catch (error) {
         console.log(error);
     }
 }
 getFormulaOneDrivers();
+
+////--------------
